@@ -1,3 +1,10 @@
+import { Paper } from "@atoms";
+import { StyledContainer } from "./Landing.styles";
+
 export const Landing = () => {
-  return <div>Landing</div>;
+  return (
+    <StyledContainer>
+      <Paper>Landing</Paper>
+    </StyledContainer>
+  );
 };
