@@ -4,9 +4,17 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
     font-family: 'Lato', Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: 100vh;
   }
   
   body {
+    background-color: ${({ theme }) => theme.colors.background};
     font-size: 1.6rem;
+    height: 100%;
+  }
+
+  #root {
+    height: 100%;
   }
 `;

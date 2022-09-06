@@ -9,5 +9,6 @@ export const defaultTheme = {
     text: "",
     black: "",
     white: "",
+    background: "#D9D9D9",
   },
 };
