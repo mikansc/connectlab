@@ -6,7 +6,8 @@
       "@routes": ["./routes"],
       "@services": ["./services"],
       "@pages": ["./components/pages"],
-      "@atoms": ["./components/atoms"]
+      "@atoms": ["./components/atoms"],
+      "@organisms": ["./components/organisms"]
     }
   },
   "include": ["./src"]
