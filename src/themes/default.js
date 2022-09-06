@@ -15,5 +15,6 @@ export const defaultTheme = {
   },
   shadow: {
     default: "1px 1px 1px rgba(0,0,0,0.1)",
+    big: "0 2px 2px rgba(0,0,0,0.2)",
   },
 };
