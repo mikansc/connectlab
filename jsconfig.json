@@ -4,6 +4,7 @@
     "jsx": "react",
     "paths": {
       "@routes": ["./routes"],
+      "@services": ["./services"],
       "@pages": ["./components/pages"]
     }
   },
