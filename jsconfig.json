@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
+    "module": "esnext",
+    "target": "es2020",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "paths": {
       "@routes": ["./routes"],
