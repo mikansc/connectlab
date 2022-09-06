@@ -5,7 +5,8 @@
     "paths": {
       "@routes": ["./routes"],
       "@services": ["./services"],
-      "@pages": ["./components/pages"]
+      "@pages": ["./components/pages"],
+      "@atoms": ["./components/atoms"]
     }
   },
   "include": ["./src"]
