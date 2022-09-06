@@ -1,4 +1,4 @@
-import { axiosInstance } from "./axios-instance";
+import { axiosInstance } from "./axiosInstance";
 
 export const get = (resource) => {
   return axiosInstance.get(resource);
