@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
   }
   
   body {
