@@ -3,6 +3,7 @@
     "baseUrl": "./src",
     "jsx": "react",
     "paths": {
+      "@routes": ["./routes"],
       "@pages": ["./components/pages"]
     }
   },
