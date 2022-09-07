@@ -13,6 +13,6 @@ export const StyledInput = styled.input`
 
   &:focus {
     outline: ${({ theme }) => theme.colors.main.default} solid 2px;
-    border-radius: 3px;
+    border-radius: ${({ theme }) => theme.borderRadius};
   }
 `;
