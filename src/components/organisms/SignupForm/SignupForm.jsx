@@ -1,5 +1,6 @@
 import { Button, Paper, Title } from "@atoms";
 import { InputField } from "@molecules";
+import { Link } from "react-router-dom";
 
 import {
   StyledFields,
@@ -85,7 +86,9 @@ export const SignupForm = () => {
         </StyledFields>
         <StyledButtons>
           <Button onClick={() => {}}>Cadastrar</Button>
-          <Button onClick={() => {}}>Cancelar</Button>
+          <Button as={Link} to="/" onClick={() => {}}>
+            Cancelar
+          </Button>
         </StyledButtons>
       </Paper>
     </StyledContainer>
