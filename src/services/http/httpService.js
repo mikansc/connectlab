@@ -1,15 +1,15 @@
-import { axiosInstance } from "./axiosInstance";
+import { axiosInstance } from "./config/axiosInstance";
 
-export const get = (resource) => {
-  return axiosInstance.get(resource);
+export const get = (resource, config = {}) => {
+  return axiosInstance.get(resource, config);
 };
 
-export const post = (resource) => {
-  return axiosInstance.get(resource);
+export const post = (resource, config = {}) => {
+  return axiosInstance.get(resource, config);
 };
 
-export const remove = (resource) => {
-  return axiosInstance.delete(resource);
+export const remove = (resource, config = {}) => {
+  return axiosInstance.delete(resource, config);
 };
 
 export const httpService = {
