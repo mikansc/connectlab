@@ -1,0 +1,1 @@
+export { WeatherHero } from "./WeatherHero";
