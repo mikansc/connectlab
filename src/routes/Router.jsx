@@ -7,7 +7,6 @@ import {
   DeviceList,
   Home,
   Landing,
-  Login,
   UserCreate,
   UserDetails,
 } from "@pages";
@@ -17,7 +16,6 @@ export const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<UserCreate />} />
 
         <Route path="dashboard" element={<PrivateRoute />}>
