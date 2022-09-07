@@ -1,3 +1,10 @@
+import { WeatherHero } from "@organisms";
+import { DefaultPage } from "@templates";
+
 export const Home = () => {
-  return <div>Home</div>;
+  return (
+    <DefaultPage>
+      <WeatherHero />
+    </DefaultPage>
+  );
 };
