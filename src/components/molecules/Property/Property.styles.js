@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
-  width: 100%;
   line-height: 1.65;
+  margin: 0 0.5em;
 `;
 
 export const StyledTitle = styled.strong`
