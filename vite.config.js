@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [react(), eslint()],
   resolve: {
     alias: {
+      "@templates": path.resolve(__dirname, "./src/components/templates"),
       "@pages": path.resolve(__dirname, "./src/components/pages"),
       "@atoms": path.resolve(__dirname, "./src/components/atoms"),
       "@molecules": path.resolve(__dirname, "./src/components/molecules"),

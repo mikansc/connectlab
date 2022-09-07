@@ -11,6 +11,7 @@
       "@routes": ["./routes"],
       "@services": ["./services"],
       "@pages": ["./components/pages"],
+      "@templates": ["./components/templates"],
       "@atoms": ["./components/atoms"],
       "@molecules": ["./components/molecules"],
       "@organisms": ["./components/organisms"]
