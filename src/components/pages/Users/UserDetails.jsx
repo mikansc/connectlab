@@ -1,3 +1,10 @@
+import { UserDetailsCard } from "@organisms";
+import { DefaultPage } from "@templates";
+
 export const UserDetails = () => {
-  return <div>UserDetails</div>;
+  return (
+    <DefaultPage>
+      <UserDetailsCard />
+    </DefaultPage>
+  );
 };
