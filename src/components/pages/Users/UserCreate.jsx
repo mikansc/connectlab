@@ -1,13 +1,13 @@
 import { Header, SignupForm } from "@organisms";
-import { StyledFormWrapper } from "./Users.styles";
+import { StyledContainer } from "./Users.styles";
 
 export const UserCreate = () => {
   return (
     <>
       <Header />
-      <StyledFormWrapper>
+      <StyledContainer>
         <SignupForm />
-      </StyledFormWrapper>
+      </StyledContainer>
     </>
   );
 };
