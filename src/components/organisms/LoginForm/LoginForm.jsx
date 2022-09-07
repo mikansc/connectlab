@@ -18,6 +18,7 @@ export const LoginForm = () => {
         </StyledLoginFields>
         <StyledButtons>
           <Button onClick={() => {}}>Entrar</Button>
+          <Button onClick={() => {}}>Cadastrar</Button>
         </StyledButtons>
       </Paper>
     </StyledContainer>

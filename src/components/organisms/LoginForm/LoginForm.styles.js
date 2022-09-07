@@ -14,5 +14,5 @@ export const StyledButtons = styled.div`
   width: 100%;
   margin-top: 1.5em;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 `;
