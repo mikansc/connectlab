@@ -5,3 +5,8 @@ export const StyledHeading = styled.h1`
   font-weight: 700;
   color: ${({ theme }) => theme.colors.main.default};
 `;
+
+export const StyledText = styled.span`
+  font-weight: 300;
+  color: ${({ theme }) => theme.colors.text};
+`;
