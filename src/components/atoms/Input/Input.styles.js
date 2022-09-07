@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledInput = styled.input`
   border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: ${({ theme }) => theme.borderRadius};
   padding: 0.5em 1em;
   font-weight: 300;
   font-size: 1.6rem;
