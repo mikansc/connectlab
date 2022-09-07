@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import { StyledContainer, StyledTitle, StyledValue } from "./Property.styles";
 
-export const Property = ({ title, value }) => {
+export const Property = ({ title, value, children }) => {
   return (
     <StyledContainer>
       <StyledTitle>{title}: </StyledTitle>
-      <StyledValue>{value}</StyledValue>
+      <StyledValue>{children || value}</StyledValue>
     </StyledContainer>
   );
 };
@@ -13,4 +13,5 @@ export const Property = ({ title, value }) => {
 Property.propTypes = {
   title: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
+  children: PropTypes.node,
 };
