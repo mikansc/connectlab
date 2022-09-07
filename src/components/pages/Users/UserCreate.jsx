@@ -1,13 +1,10 @@
-import { Header, SignupForm } from "@organisms";
-import { StyledContainer } from "./Users.styles";
+import { SignupForm } from "@organisms";
+import { DefaultPage } from "@templates";
 
 export const UserCreate = () => {
   return (
-    <>
-      <Header />
-      <StyledContainer>
-        <SignupForm />
-      </StyledContainer>
-    </>
+    <DefaultPage>
+      <SignupForm />
+    </DefaultPage>
   );
 };
