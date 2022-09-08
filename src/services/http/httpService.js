@@ -1,19 +1,17 @@
-import { axiosInstance } from "./config/axiosInstance";
+export class HttpService {
+  constructor(httpClient) {
+    this.httpClient = httpClient;
+  }
 
-export const get = (resource, config = {}) => {
-  return axiosInstance.get(resource, config);
-};
+  get = (resource, config = {}) => {
+    return this.httpClient.get(resource, config);
+  };
 
-export const post = (resource, config = {}) => {
-  return axiosInstance.get(resource, config);
-};
+  post = (resource, config = {}) => {
+    return this.httpClient.get(resource, config);
+  };
 
-export const remove = (resource, config = {}) => {
-  return axiosInstance.delete(resource, config);
-};
-
-export const httpService = {
-  get,
-  post,
-  delete: remove,
-};
+  remove = (resource, config = {}) => {
+    return this.httpClient.delete(resource, config);
+  };
+}
