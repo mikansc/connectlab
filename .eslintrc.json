@@ -25,6 +25,7 @@
   "plugins": ["react", "jsx-a11y"],
   "rules": {
     "no-unused-vars": "warn",
-    "react/jsx-no-target-blank": "warn"
+    "react/jsx-no-target-blank": "warn",
+    "camelcase": "off"
   }
 }
