@@ -29,13 +29,12 @@ function getWeatherImg(weatherId) {
 
 function getWeatherIcon(weatherId) {
   // Mapeando imagens do weatherAPI
-  // 200 - 699: chuva rainImg
-  // 700 - 799: neblina mistImg
-  // 800: sol sunImg
-  // 801 - 804: nuvens cloudyImg
-  /* cloud, water_drop, foggy, sunny */
+  // 200 - 699: chuva water_drop
+  // 700 - 799: neblina foggy ou lens_blur
+  // 800: sol sunny
+  // 801 - 804: nuvens cloud
   if (weatherId >= 200 && weatherId < 700) return "water_drop";
-  if (weatherId >= 700 && weatherId < 800) return "foggy";
+  if (weatherId >= 700 && weatherId < 800) return "lens_blur";
   if (weatherId === 800) return "sunny";
   if (weatherId > 800) return "cloud";
 }
