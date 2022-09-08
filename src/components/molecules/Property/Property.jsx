@@ -12,6 +12,6 @@ export const Property = ({ title, value, children }) => {
 
 Property.propTypes = {
   title: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   children: PropTypes.node,
 };
