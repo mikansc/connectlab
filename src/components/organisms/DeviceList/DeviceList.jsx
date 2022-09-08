@@ -1,5 +1,5 @@
 import { Paper, Title } from "@atoms";
-import { DeviceCard } from "@molecules";
+import { UserDevice } from "@molecules";
 import { StyledGrid } from "./DeviceList.styles";
 
 export const DeviceList = () => {
@@ -10,7 +10,7 @@ export const DeviceList = () => {
       </Title>
       <StyledGrid>
         {devicesMock.map((device) => (
-          <DeviceCard key={device.id} device={device} />
+          <UserDevice key={device.id} device={device} />
         ))}
       </StyledGrid>
     </Paper>

@@ -6,9 +6,9 @@ import {
   StyledDeviceData,
   StyledDeviceStatus,
   StyledWrapper,
-} from "./DeviceCard.styles";
+} from "./UserDevice.styles";
 
-export const DeviceCard = ({ device, onClick }) => {
+export const UserDevice = ({ device, onClick }) => {
   const deviceOnline = device && device.is_on;
   const statusIcon = deviceOnline ? "flash_on" : "flash_off";
 
@@ -34,7 +34,7 @@ export const DeviceCard = ({ device, onClick }) => {
   );
 };
 
-DeviceCard.propTypes = {
+UserDevice.propTypes = {
   device: PropTypes.shape({
     title: PropTypes.string,
     photoUrl: PropTypes.string,

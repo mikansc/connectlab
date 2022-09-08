@@ -1,1 +1,0 @@
-export { DeviceCard } from "./DeviceCard";
