@@ -27,13 +27,27 @@ function getWeatherImg(weatherId) {
   if (weatherId > 800) return cloudyImg;
 }
 
+function getWeatherIcon(weatherId) {
+  // Mapeando imagens do weatherAPI
+  // 200 - 699: chuva rainImg
+  // 700 - 799: neblina mistImg
+  // 800: sol sunImg
+  // 801 - 804: nuvens cloudyImg
+  /* cloud, water_drop, foggy, sunny */
+  if (weatherId >= 200 && weatherId < 700) return "water_drop";
+  if (weatherId >= 700 && weatherId < 800) return "foggy";
+  if (weatherId === 800) return "sunny";
+  if (weatherId > 800) return "cloud";
+}
+
 const mockWeatherId = () => Math.min(Math.floor(200 + Math.random() * 1000), 804);
 
-console.log(mockWeatherId());
 export const WeatherHero = () => {
+  const weather = mockWeatherId();
+
   return (
     <StyledContainer>
-      <StyledBackground bgImg={getWeatherImg(mockWeatherId())}>
+      <StyledBackground bgImg={getWeatherImg(weather)}>
         <StyledTemperatureContainer>
           <StyledTemperature>15 °C</StyledTemperature>
           <StyledSubContainer>
@@ -41,7 +55,7 @@ export const WeatherHero = () => {
             <Property title="max">19 °C</Property>
           </StyledSubContainer>
         </StyledTemperatureContainer>
-        <Icon size="3rem" name="cloud" />
+        <Icon size="3rem" name={getWeatherIcon(weather)} />
         <StyledCityName>Joinville, SC</StyledCityName>
         <StyledSubContainer>
           <Property title="Sensação térmica">12°C</Property>
