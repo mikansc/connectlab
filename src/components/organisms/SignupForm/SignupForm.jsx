@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { Button, Paper, Title } from "@atoms";
 import { InputField } from "@molecules";
 import { Link } from "react-router-dom";
@@ -10,11 +12,11 @@ import {
   Separator,
 } from "./SignupForm.styles";
 
-export const SignupForm = () => {
+export const SignupForm = ({ title }) => {
   return (
     <StyledContainer>
       <Paper>
-        <Title as="h2">Cadastrar usuário</Title>
+        <Title as="h2">{title}</Title>
         <StyledFields>
           <Title as="h3" align="left">
             Dados pessoais
@@ -93,4 +95,8 @@ export const SignupForm = () => {
       </Paper>
     </StyledContainer>
   );
+};
+
+SignupForm.propTypes = {
+  title: PropTypes.string.isRequired,
 };
