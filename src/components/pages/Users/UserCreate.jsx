@@ -4,7 +4,7 @@ import { DefaultPage } from "@templates";
 export const UserCreate = () => {
   return (
     <DefaultPage>
-      <SignupForm />
+      <SignupForm title="Cadastrar usuário" />
     </DefaultPage>
   );
 };
