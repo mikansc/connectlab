@@ -6,8 +6,9 @@ export const StyledContainer = styled.div`
   height: 280px;
   border-radius: ${({ theme }) => theme.borderRadius};
   box-shadow: ${({ theme }) => theme.shadow.big};
-
   overflow: hidden;
+
+  margin-bottom: 1em;
 `;
 
 export const StyledBackground = styled.div`
