@@ -49,12 +49,6 @@ export const StyledTemperature = styled.span`
   color: ${({ theme }) => theme.colors.secondary.text};
 `;
 
-export const StyledTemperatureIcon = styled.span`
-  font-size: 3.2rem;
-  padding: 0 0.35em;
-  color: ${({ theme }) => theme.colors.secondary.text};
-`;
-
 export const StyledSubContainer = styled.div`
   width: 100%;
   display: flex;
