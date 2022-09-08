@@ -43,6 +43,9 @@ export const UserDetailsCard = () => {
         <Button as={Link} to="/">
           Voltar
         </Button>
+        <Button as={Link} to="/dashboard/profile/edit">
+          Editar
+        </Button>
       </StyledButtons>
     </Paper>
   );
