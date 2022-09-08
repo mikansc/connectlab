@@ -22,8 +22,3 @@ export const StyledDeviceData = styled.div`
   flex-direction: column;
   padding: 0 1em;
 `;
-
-export const StyledDeviceStatus = styled.div`
-  font-size: 3.2rem;
-  color: ${({ theme, active }) => (active ? theme.colors.success : theme.colors.gray)};
-`;
