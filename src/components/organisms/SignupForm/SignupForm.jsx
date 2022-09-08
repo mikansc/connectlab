@@ -67,7 +67,7 @@ export const SignupForm = () => {
               label="Logradouro / Endereço"
               placeholder="digite o endereço com número..."
             />
-            <InputField name="address2" label="Complemento" placeholder="digite o complemento..." />
+            <InputField name="address2" label="Bairro" placeholder="digite o bairro..." />
           </StyledRow>
           <StyledRow>
             <InputField name="city" label="Cidade" placeholder="digite a cidade..." />
@@ -81,7 +81,7 @@ export const SignupForm = () => {
           </Title>
           <StyledRow>
             <InputField name="local.type" label="Tipo de local" placeholder="escolha..." />
-            <InputField name="local.rooms" label="Tipo de local" placeholder="escolha..." />
+            <InputField name="local.rooms" label="Cômodo" placeholder="escolha..." />
           </StyledRow>
         </StyledFields>
         <StyledButtons>
