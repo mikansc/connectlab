@@ -16,7 +16,8 @@
       "@molecules": ["./components/molecules"],
       "@organisms": ["./components/organisms"],
       "@contexts": ["./contexts"],
-      "@hooks": ["./hooks"]
+      "@hooks": ["./hooks"],
+      "@utils": ["./utils"]
     }
   },
   "include": ["./src"]
