@@ -2,15 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { PrivateRoute } from "./PrivateRoute";
 
-import {
-  Home,
-  Landing,
-  DeviceList,
-  UserCreate,
-  UserUpdate,
-  UserDetails,
-  DeviceCreate,
-} from "@pages";
+import { Home, Landing, DeviceList, UserCreate, UserUpdate, UserDetails } from "@pages";
 
 export const Router = () => {
   return (
@@ -22,10 +14,7 @@ export const Router = () => {
           <Route index element={<Home />} />
           <Route path="profile" element={<UserDetails />} />
           <Route path="profile/edit" element={<UserUpdate />} />
-          <Route path="devices">
-            <Route index element={<DeviceList />} />
-            <Route path="new" element={<DeviceCreate />} />
-          </Route>
+          <Route path="devices" element={<DeviceList />} />
         </Route>
       </Routes>
     </BrowserRouter>
