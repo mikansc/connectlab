@@ -1,12 +1,14 @@
+import PropTypes from "prop-types";
+
 import { Paper, Title } from "@atoms";
 import { UserDevice } from "@molecules";
 import { StyledGrid } from "./DeviceGrid.styles";
 
-export const DeviceGrid = () => {
+export const DeviceGrid = ({ title }) => {
   return (
     <Paper>
       <Title as="h3" align="left">
-        Meus dispositivos
+        {title}
       </Title>
       <StyledGrid>
         {devicesMock.map((device) => (
@@ -15,6 +17,10 @@ export const DeviceGrid = () => {
       </StyledGrid>
     </Paper>
   );
+};
+
+DeviceGrid.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 const devicesMock = [

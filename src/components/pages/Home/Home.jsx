@@ -5,7 +5,7 @@ export const Home = () => {
   return (
     <DefaultPage>
       <WeatherHero />
-      <DeviceGrid />
+      <DeviceGrid title="Meus dispositivos" />
       <DeviceModal open={false} />
     </DefaultPage>
   );
