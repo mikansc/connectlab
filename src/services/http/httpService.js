@@ -7,8 +7,8 @@ export class HttpService {
     return this.httpClient.get(resource, config);
   };
 
-  post = (resource, config = {}) => {
-    return this.httpClient.get(resource, config);
+  post = (resource, data, config = {}) => {
+    return this.httpClient.post(resource, data, config);
   };
 
   remove = (resource, config = {}) => {

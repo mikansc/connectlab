@@ -1,19 +1,35 @@
 import { useState } from "react";
+import { login } from "@services";
+import { useAppContext } from "@contexts";
+import { StatusTypes } from "@utils";
 
 export const useAuthentication = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const { setStatus } = useAppContext();
 
   const signIn = ({ username, password }) => {
-    console.log("sign in with:", username, password);
-    setIsLoggedIn(true);
+    setStatus(StatusTypes.loading);
+    login({ username, password })
+      .then(({ data }) => {
+        const { accessToken, user } = data;
+        setUser({ accessToken, ...user });
+        setStatus(StatusTypes.success);
+      })
+      .catch((err) => {
+        console.error(err.message);
+        setStatus(StatusTypes.error);
+      });
   };
+
   const signOut = () => {
-    console.log("sign out");
-    setIsLoggedIn(false);
+    setUser(null);
   };
+
+  const isLoggedIn = !!user && !!user.accessToken;
 
   return {
     isLoggedIn,
+    user,
     signIn,
     signOut,
   };
