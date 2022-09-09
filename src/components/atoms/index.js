@@ -7,3 +7,4 @@ export * from "./Typography";
 export * from "./Image";
 export * from "./Pill";
 export * from "./Icon";
+export * from "./Spinner";
