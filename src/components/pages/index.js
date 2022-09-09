@@ -1,4 +1,4 @@
 export * from "./Devices";
-export * from "./Home";
+export * from "./Dashboard";
 export * from "./Landing";
 export * from "./Users";

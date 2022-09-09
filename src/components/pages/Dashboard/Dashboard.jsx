@@ -5,7 +5,7 @@ import { DeviceModal, DeviceGrid, WeatherHero } from "@organisms";
 // FIXME remove mock
 import { devices } from "../../../mock/devices";
 
-export const Home = () => {
+export const Dashboard = () => {
   return (
     <DefaultPage>
       <WeatherHero />
