@@ -7,3 +7,4 @@ export * from "./DeviceGrid";
 export * from "./Modal";
 export * from "./Loading";
 export * from "./DeviceModal";
+export * from "./DeviceDetails";

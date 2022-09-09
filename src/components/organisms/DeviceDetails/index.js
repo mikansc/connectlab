@@ -1,0 +1,1 @@
+export { DeviceDetails } from "./DeviceDetails";
