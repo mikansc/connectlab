@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
     font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: 300;
     width: 100vw;
     height: 100%;
   }
