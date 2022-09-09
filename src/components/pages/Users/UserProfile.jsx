@@ -1,7 +1,7 @@
 import { UserDetailsCard } from "@organisms";
 import { DefaultPage } from "@templates";
 
-export const UserDetails = () => {
+export const UserProfile = () => {
   return (
     <DefaultPage>
       <UserDetailsCard />
