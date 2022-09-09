@@ -9,3 +9,4 @@ export * from "./Loading";
 export * from "./DeviceModal";
 export * from "./DeviceDetails";
 export * from "./AddDeviceModal";
+export * from "./NewDevice";
