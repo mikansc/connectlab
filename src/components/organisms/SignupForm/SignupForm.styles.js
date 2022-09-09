@@ -16,13 +16,6 @@ export const StyledRow = styled.div`
   column-gap: 1em;
 `;
 
-export const Separator = styled.hr`
-  width: 100%;
-  border: 1px solid ${({ theme }) => theme.colors.main.black};
-  margin: 1em 0;
-  opacity: 0.1;
-`;
-
 export const StyledButtons = styled.div`
   width: 100%;
   margin-top: 1.5em;

@@ -1,16 +1,10 @@
 import PropTypes from "prop-types";
-
-import { Button, Paper, Title } from "@atoms";
-import { InputField } from "@molecules";
 import { Link } from "react-router-dom";
 
-import {
-  StyledFields,
-  StyledContainer,
-  StyledButtons,
-  StyledRow,
-  Separator,
-} from "./SignupForm.styles";
+import { Button, Paper, Separator, Title } from "@atoms";
+import { InputField } from "@molecules";
+
+import { StyledFields, StyledContainer, StyledButtons, StyledRow } from "./SignupForm.styles";
 
 export const SignupForm = ({ title }) => {
   return (

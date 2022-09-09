@@ -1,12 +1,9 @@
-import { Button, Paper, Pill, Text, Title } from "@atoms";
-import { Avatar, Property } from "@molecules";
 import { Link } from "react-router-dom";
-import {
-  Separator,
-  StyledButtons,
-  StyledContainer,
-  StyledUserDataContainer,
-} from "./UserDetailsCard.styles";
+
+import { Button, Paper, Pill, Separator, Text, Title } from "@atoms";
+import { Avatar, Property } from "@molecules";
+
+import { StyledButtons, StyledContainer, StyledUserDataContainer } from "./UserDetailsCard.styles";
 
 export const UserDetailsCard = () => {
   return (
