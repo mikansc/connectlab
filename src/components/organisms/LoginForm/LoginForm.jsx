@@ -8,7 +8,9 @@ import { useForm } from "react-hook-form";
 
 export const LoginForm = () => {
   const { signIn } = useAuthContext();
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({
+    defaultValues: { username: "usuario@teste.com.br", password: "123456" },
+  });
 
   const handleSignIn = (data) => {
     signIn(data);
