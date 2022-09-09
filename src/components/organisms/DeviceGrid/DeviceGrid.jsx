@@ -1,8 +1,8 @@
 import { Paper, Title } from "@atoms";
 import { UserDevice } from "@molecules";
-import { StyledGrid } from "./DeviceList.styles";
+import { StyledGrid } from "./DeviceGrid.styles";
 
-export const DeviceList = () => {
+export const DeviceGrid = () => {
   return (
     <Paper>
       <Title as="h3" align="left">
