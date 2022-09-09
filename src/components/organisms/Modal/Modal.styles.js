@@ -7,7 +7,7 @@ export const StyledModalBackdrop = styled.div`
   left: 0;
   right: 0;
   background-color: ${({ theme, color }) => color || theme.colors.white};
-  opacity: 0.5;
+  opacity: 0.65;
   z-index: 10;
 `;
 
