@@ -1,10 +1,10 @@
-import { SignupForm } from "@organisms";
+import { UserForm } from "@organisms";
 import { DefaultPage } from "@templates";
 
 export const UserCreate = () => {
   return (
     <DefaultPage>
-      <SignupForm title="Cadastrar usuário" />
+      <UserForm title="Cadastrar usuário" />
     </DefaultPage>
   );
 };

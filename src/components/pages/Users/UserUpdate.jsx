@@ -1,10 +1,10 @@
-import { SignupForm } from "@organisms";
+import { UserForm } from "@organisms";
 import { DefaultPage } from "@templates";
 
 export const UserUpdate = () => {
   return (
     <DefaultPage>
-      <SignupForm title="Atualizar usuário" />
+      <UserForm title="Atualizar usuário" />
     </DefaultPage>
   );
 };

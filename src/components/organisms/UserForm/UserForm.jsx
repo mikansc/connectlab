@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { Button, Paper, Separator, Title } from "@atoms";
 import { ButtonGroup, InputField } from "@molecules";
 
-import { StyledFields, StyledContainer, StyledRow } from "./SignupForm.styles";
+import { StyledFields, StyledContainer, StyledRow } from "./UserForm.styles";
 
-export const SignupForm = ({ title }) => {
+export const UserForm = ({ title }) => {
   return (
     <StyledContainer>
       <Paper>
@@ -91,6 +91,6 @@ export const SignupForm = ({ title }) => {
   );
 };
 
-SignupForm.propTypes = {
+UserForm.propTypes = {
   title: PropTypes.string.isRequired,
 };
