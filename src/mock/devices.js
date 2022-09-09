@@ -3,7 +3,7 @@ export const devices = [
     id: 1,
     userId: 1,
     title: "Lâmpada iteligente",
-    photoUrl: "img/device-placeholder.png",
+    photoUrl: "/img/device-placeholder.png",
     is_on: true,
     local: {
       name: "casa",
@@ -20,7 +20,7 @@ export const devices = [
     id: 2,
     userId: 1,
     title: "Lâmpada iteligente",
-    photoUrl: "img/device-placeholder.png",
+    photoUrl: "/img/device-placeholder.png",
     is_on: false,
     local: {
       name: "casa",
@@ -37,7 +37,7 @@ export const devices = [
     id: 3,
     userId: 1,
     title: "Lâmpada iteligente",
-    photoUrl: "img/device-placeholder.png",
+    photoUrl: "/img/device-placeholder.png",
     is_on: true,
     local: {
       name: "casa",
