@@ -5,3 +5,4 @@ export * from "./WeatherHero";
 export * from "./UserDetailsCard";
 export * from "./DeviceList";
 export * from "./Modal";
+export * from "./Loading";
