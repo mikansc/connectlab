@@ -16,6 +16,6 @@ export const Modal = ({ children, backdropColor, open = true }) => {
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
-  backdropColor: PropTypes.string.isRequired,
+  backdropColor: PropTypes.string,
   open: PropTypes.bool,
 };
