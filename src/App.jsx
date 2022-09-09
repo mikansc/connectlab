@@ -4,16 +4,18 @@ import { defaultTheme } from "./themes/default";
 import { GlobalStyle } from "./themes/GlobalStyle";
 import { Loading } from "@organisms";
 
-import { AuthProvider } from "@contexts";
+import { AppProvider, AuthProvider } from "@contexts";
 
 export const App = () => {
   return (
-    <AuthProvider>
-      <ThemeProvider theme={defaultTheme}>
-        <Router />
-        <Loading show={false} />
-        <GlobalStyle />
-      </ThemeProvider>
-    </AuthProvider>
+    <ThemeProvider theme={defaultTheme}>
+      <AppProvider>
+        <AuthProvider>
+          <Router />
+          <Loading />
+          <GlobalStyle />
+        </AuthProvider>
+      </AppProvider>
+    </ThemeProvider>
   );
 };
