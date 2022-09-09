@@ -8,7 +8,7 @@ export const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Router />
-      <Loading show />
+      <Loading show={false} />
       <GlobalStyle />
     </ThemeProvider>
   );
