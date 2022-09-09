@@ -9,7 +9,7 @@ export const StyledInput = styled.input`
 
   &::placeholder {
     font-weight: 300;
-    color: ${({ theme }) => theme.colors.gray};
+    color: ${({ theme }) => theme.colors.text.light};
   }
 
   &:focus {

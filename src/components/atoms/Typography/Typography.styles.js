@@ -8,5 +8,5 @@ export const StyledHeading = styled.h1`
 
 export const StyledText = styled.span`
   font-weight: 300;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.text.default};
 `;
