@@ -10,7 +10,6 @@ import {
   UserUpdate,
   UserDetails,
   DeviceCreate,
-  DeviceDetails,
 } from "@pages";
 
 export const Router = () => {
@@ -25,7 +24,6 @@ export const Router = () => {
           <Route path="profile/edit" element={<UserUpdate />} />
           <Route path="devices">
             <Route index element={<DeviceList />} />
-            <Route path=":deviceId" element={<DeviceDetails />} />
             <Route path="new" element={<DeviceCreate />} />
           </Route>
         </Route>
