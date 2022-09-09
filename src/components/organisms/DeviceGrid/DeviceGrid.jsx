@@ -1,78 +1,20 @@
 import PropTypes from "prop-types";
 
 import { Paper, Title } from "@atoms";
-import { UserDevice } from "@molecules";
 import { StyledGrid } from "./DeviceGrid.styles";
 
-export const DeviceGrid = ({ title }) => {
+export const DeviceGrid = ({ title, children }) => {
   return (
     <Paper>
       <Title as="h3" align="left">
         {title}
       </Title>
-      <StyledGrid>
-        {devicesMock.map((device) => (
-          <UserDevice key={device.id} device={device} />
-        ))}
-      </StyledGrid>
+      <StyledGrid>{children}</StyledGrid>
     </Paper>
   );
 };
 
 DeviceGrid.propTypes = {
   title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
-
-const devicesMock = [
-  {
-    id: 1,
-    userId: 1,
-    title: "Lâmpada iteligente",
-    photoUrl: "img/device-placeholder.png",
-    is_on: true,
-    local: {
-      name: "casa",
-      room: "sala",
-    },
-    info: {
-      virtual_id: "abcd1234",
-      ip_address: "127.0.0.1",
-      mac_address: "127.0.0.1",
-      signal: "-70dBm",
-    },
-  },
-  {
-    id: 2,
-    userId: 1,
-    title: "Lâmpada iteligente",
-    photoUrl: "img/device-placeholder.png",
-    is_on: false,
-    local: {
-      name: "casa",
-      room: "quarto",
-    },
-    info: {
-      virtual_id: "abcd1234",
-      ip_address: "127.0.0.1",
-      mac_address: "127.0.0.1",
-      signal: "-70dBm",
-    },
-  },
-  {
-    id: 3,
-    userId: 1,
-    title: "Lâmpada iteligente",
-    photoUrl: "img/device-placeholder.png",
-    is_on: true,
-    local: {
-      name: "casa",
-      room: "sala",
-    },
-    info: {
-      virtual_id: "abcd1234",
-      ip_address: "127.0.0.1",
-      mac_address: "127.0.0.1",
-      signal: "-70dBm",
-    },
-  },
-];
