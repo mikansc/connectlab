@@ -2,17 +2,20 @@ import PropTypes from "prop-types";
 
 import { Input, Label } from "@atoms";
 import { StyledInputGroup } from "./InputField.styles";
+import { forwardRef } from "react";
 
-export const InputField = ({ label, color, ...props }) => {
+export const InputField = forwardRef(({ label, color, ...props }, ref) => {
   return (
     <StyledInputGroup>
       <Label color={color} htmlFor={props.name}>
         {label}
       </Label>
-      <Input {...props} />
+      <Input {...props} ref={ref} />
     </StyledInputGroup>
   );
-};
+});
+
+InputField.displayName = "InputField";
 
 InputField.propTypes = {
   label: PropTypes.string.isRequired,
