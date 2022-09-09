@@ -15,6 +15,8 @@ export default defineConfig({
       "@organisms": path.resolve(__dirname, "./src/components/organisms"),
       "@routes": path.resolve(__dirname, "./src/routes"),
       "@services": path.resolve(__dirname, "./src/services"),
+      "@contexts": path.resolve(__dirname, "./src/contexts"),
+      "@hooks": path.resolve(__dirname, "./src/hooks"),
     },
   },
 });

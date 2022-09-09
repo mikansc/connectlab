@@ -14,7 +14,9 @@
       "@templates": ["./components/templates"],
       "@atoms": ["./components/atoms"],
       "@molecules": ["./components/molecules"],
-      "@organisms": ["./components/organisms"]
+      "@organisms": ["./components/organisms"],
+      "@contexts": ["./contexts"],
+      "@hooks": ["./hooks"]
     }
   },
   "include": ["./src"]
