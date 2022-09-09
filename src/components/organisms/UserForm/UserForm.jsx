@@ -6,7 +6,7 @@ import { ButtonGroup, InputField } from "@molecules";
 
 import { StyledFields, StyledContainer, StyledRow } from "./UserForm.styles";
 
-export const UserForm = ({ title }) => {
+export const UserForm = ({ title, userData }) => {
   return (
     <StyledContainer>
       <Paper>
@@ -93,4 +93,5 @@ export const UserForm = ({ title }) => {
 
 UserForm.propTypes = {
   title: PropTypes.string.isRequired,
+  userData: PropTypes.object,
 };
