@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { Button, Paper, Pill, Separator, Text, Title } from "@atoms";
 import { Avatar, ButtonGroup, Property } from "@molecules";
 
-import { StyledContainer, StyledUserDataContainer } from "./UserDetailsCard.styles";
+import { StyledContainer, StyledUserDataContainer } from "./UserDetails.styles";
 
-export const UserDetailsCard = () => {
+export const UserDetails = () => {
   return (
     <Paper>
       <Title as="h2">Perfil do usuário</Title>
