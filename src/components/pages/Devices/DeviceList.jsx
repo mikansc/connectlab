@@ -1,7 +1,9 @@
+import { DefaultPage } from "@templates";
+
 import { Separator, Title } from "@atoms";
 import { Device, Filter } from "@molecules";
-import { DeviceGrid } from "@organisms";
-import { DefaultPage } from "@templates";
+import { AddDeviceModal, DeviceGrid } from "@organisms";
+
 import { devices } from "../../../mock/devices";
 
 export const DeviceList = () => {
@@ -17,6 +19,7 @@ export const DeviceList = () => {
           <Device key={device.id} device={device} />
         ))}
       </DeviceGrid>
+      <AddDeviceModal open={false} />
     </DefaultPage>
   );
 };
