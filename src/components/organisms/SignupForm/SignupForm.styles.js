@@ -15,10 +15,3 @@ export const StyledRow = styled.div`
   grid-template-columns: repeat(${({ columns }) => columns || 2}, 1fr);
   column-gap: 1em;
 `;
-
-export const StyledButtons = styled.div`
-  width: 100%;
-  margin-top: 1.5em;
-  display: flex;
-  justify-content: space-evenly;
-`;

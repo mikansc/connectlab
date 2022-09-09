@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
 import { Button, Paper, Pill, Separator, Text, Title } from "@atoms";
-import { Avatar, Property } from "@molecules";
+import { Avatar, ButtonGroup, Property } from "@molecules";
 
-import { StyledButtons, StyledContainer, StyledUserDataContainer } from "./UserDetailsCard.styles";
+import { StyledContainer, StyledUserDataContainer } from "./UserDetailsCard.styles";
 
 export const UserDetailsCard = () => {
   return (
@@ -36,14 +36,14 @@ export const UserDetailsCard = () => {
       <Property title="Casa">
         <Pill>Quarto</Pill>
       </Property>
-      <StyledButtons>
+      <ButtonGroup>
         <Button as={Link} to="/">
           Voltar
         </Button>
         <Button as={Link} to="/dashboard/profile/edit">
           Editar
         </Button>
-      </StyledButtons>
+      </ButtonGroup>
     </Paper>
   );
 };

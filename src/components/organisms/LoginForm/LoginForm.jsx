@@ -1,7 +1,8 @@
-import { Button, Paper, Title } from "@atoms";
-import { InputField } from "@molecules";
 import { Link } from "react-router-dom";
-import { StyledLoginFields, StyledContainer, StyledButtons } from "./LoginForm.styles";
+
+import { Button, Paper, Title } from "@atoms";
+import { ButtonGroup, InputField } from "@molecules";
+import { StyledLoginFields, StyledContainer } from "./LoginForm.styles";
 
 export const LoginForm = () => {
   return (
@@ -17,12 +18,12 @@ export const LoginForm = () => {
             placeholder="digite sua senha..."
           />
         </StyledLoginFields>
-        <StyledButtons>
+        <ButtonGroup>
           <Button onClick={() => {}}>Entrar</Button>
           <Button as={Link} to="/signup">
             Cadastrar
           </Button>
-        </StyledButtons>
+        </ButtonGroup>
       </Paper>
     </StyledContainer>
   );

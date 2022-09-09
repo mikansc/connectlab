@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import { Button, Paper, Separator, Title } from "@atoms";
-import { InputField } from "@molecules";
+import { ButtonGroup, InputField } from "@molecules";
 
-import { StyledFields, StyledContainer, StyledButtons, StyledRow } from "./SignupForm.styles";
+import { StyledFields, StyledContainer, StyledRow } from "./SignupForm.styles";
 
 export const SignupForm = ({ title }) => {
   return (
@@ -80,12 +80,12 @@ export const SignupForm = ({ title }) => {
             <InputField name="local.rooms" label="Cômodo" placeholder="escolha..." />
           </StyledRow>
         </StyledFields>
-        <StyledButtons>
+        <ButtonGroup>
           <Button onClick={() => {}}>Cadastrar</Button>
           <Button as={Link} to="/" onClick={() => {}}>
             Cancelar
           </Button>
-        </StyledButtons>
+        </ButtonGroup>
       </Paper>
     </StyledContainer>
   );
