@@ -24,7 +24,7 @@
   },
   "plugins": ["react", "jsx-a11y"],
   "rules": {
-    "no-unused-vars": "warn",
+    "no-unused-vars": "error",
     "react/jsx-no-target-blank": "warn",
     "camelcase": "off"
   }
