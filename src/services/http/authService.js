@@ -8,5 +8,7 @@ const httpService = new HttpService(axiosInstance);
 const loginUrl = "/login";
 
 export const login = ({ username, password }) => {
-  return httpService.post(loginUrl, { email: username, password }).then((res) => res.data);
+  return httpService.post(loginUrl, { email: username, password }).then(({ data }) => {
+    return { accessToken: data.accessToken, ...data.user };
+  });
 };

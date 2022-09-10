@@ -23,10 +23,9 @@ export const useAuthentication = () => {
   const signIn = ({ username, password }) => {
     setStatus(StatusTypes.loading);
     login({ username, password })
-      .then(({ accessToken, user }) => {
-        const flattenedData = { accessToken, ...user };
-        storageService.save(query, flattenedData);
-        setUser(flattenedData);
+      .then((data) => {
+        storageService.save(query, data);
+        setUser(data);
         setStatus(StatusTypes.success);
       })
       .catch((err) => {

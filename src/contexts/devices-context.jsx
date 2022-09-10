@@ -3,21 +3,31 @@ import React, { useEffect, useState } from "react";
 
 import { useAuthentication } from "@hooks";
 import { getUserDevices } from "@services";
+import { useAppContext } from "./app-context";
+import { StatusTypes } from "@utils";
 
 const context = React.createContext(null);
 const ContextProvider = context.Provider;
 
 export const DevicesProvider = ({ children }) => {
   const [devices, setDevices] = useState([]);
+  const { setStatus } = useAppContext();
   const { user } = useAuthentication();
   const userId = user?.id;
 
   useEffect(() => {
     if (!userId) return;
+    setStatus(StatusTypes.loading);
     getUserDevices(userId)
-      .then(setDevices)
-      .catch((e) => console.error(e.message));
-  }, [userId]);
+      .then((data) => {
+        setDevices(data);
+        setStatus(StatusTypes.success);
+      })
+      .catch((e) => {
+        console.error(e.message);
+        setStatus(StatusTypes.error);
+      });
+  }, [setStatus, userId]);
 
   return <ContextProvider value={{ devices }}>{children}</ContextProvider>;
 };
