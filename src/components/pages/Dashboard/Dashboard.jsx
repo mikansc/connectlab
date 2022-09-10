@@ -2,10 +2,13 @@ import { DefaultPage } from "@templates";
 import { UserDevice } from "@molecules";
 import { DeviceModal, DeviceGrid, WeatherHero } from "@organisms";
 
-// FIXME remove mock
-import { devices } from "../../../mock/devices";
+import { useUserDevices } from "@hooks";
+import { useAuthContext } from "@contexts";
 
 export const Dashboard = () => {
+  const { user } = useAuthContext();
+  const { devices } = useUserDevices(user.id);
+
   return (
     <DefaultPage>
       <WeatherHero />

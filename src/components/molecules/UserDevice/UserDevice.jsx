@@ -16,7 +16,8 @@ export const UserDevice = ({ device, onClick }) => {
     <StyledWrapper onClick={onClick}>
       <Paper>
         <StyledContainer>
-          <Avatar imageUrl={device?.photoUrl} name={device?.title} size="medium" />
+          {/* FIXME - url from device must come from backend */}
+          <Avatar imageUrl={`img/${device?.photoUrl}`} name={device?.title} size="medium" />
           <StyledDeviceData>
             <Title as="span" align="left" variant="secondary">
               {device?.title}
