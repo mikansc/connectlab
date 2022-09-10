@@ -22,8 +22,8 @@ export const StyledLink = styled(Link)`
   font-size: 1.6rem;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.main.text};
-  background-color: ${({ active, theme }) =>
-    active ? theme.colors.main.dark : theme.colors.main.default};
+  background-color: ${({ $active, theme }) =>
+    $active ? theme.colors.main.dark : theme.colors.main.default};
 
   transition: background-color 100ms ease-in-out;
 

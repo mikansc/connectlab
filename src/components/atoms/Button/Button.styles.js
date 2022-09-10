@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledButton = styled.button`
-  width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
+  width: ${({ $fullWidth }) => ($fullWidth ? "100%" : "auto")};
   background: ${({ theme }) => theme.colors.main.default};
   color: ${({ theme }) => theme.colors.main.text};
   padding: 1em 2em;

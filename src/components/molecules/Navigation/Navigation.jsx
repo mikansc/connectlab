@@ -14,7 +14,7 @@ export const Navigation = () => {
   return (
     <StyledNav>
       {routeLinks.map(({ path, name }) => (
-        <StyledLink key={name} active={pathname === path} to={path}>
+        <StyledLink key={name} $active={pathname === path} to={path}>
           {name}
         </StyledLink>
       ))}
