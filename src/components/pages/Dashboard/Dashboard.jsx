@@ -2,12 +2,10 @@ import { DefaultPage } from "@templates";
 import { UserDevice } from "@molecules";
 import { DeviceModal, DeviceGrid, WeatherHero } from "@organisms";
 
-import { useUserDevices } from "@hooks";
-import { useAuthContext } from "@contexts";
+import { useDevicesContext } from "@contexts";
 
 export const Dashboard = () => {
-  const { user } = useAuthContext();
-  const { devices } = useUserDevices(user.id);
+  const { devices } = useDevicesContext();
 
   return (
     <DefaultPage>
