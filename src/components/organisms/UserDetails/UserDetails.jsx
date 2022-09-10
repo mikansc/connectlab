@@ -37,7 +37,7 @@ export const UserDetails = () => {
         <Pill>Quarto</Pill>
       </Property>
       <ButtonGroup>
-        <Button as={Link} to="/">
+        <Button as={Link} to="/dashboard">
           Voltar
         </Button>
         <Button as={Link} to="/dashboard/profile/edit">
