@@ -82,7 +82,7 @@ export const UserForm = ({ title, userData }) => {
         </StyledFields>
         <ButtonGroup>
           <Button onClick={() => {}}>Cadastrar</Button>
-          <Button as={Link} to="/" onClick={() => {}}>
+          <Button as={Link} to="/dashboard">
             Cancelar
           </Button>
         </ButtonGroup>

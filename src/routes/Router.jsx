@@ -14,9 +14,8 @@ export const Router = () => {
           <Route path="dashboard" element={<DashboardRoutes />}>
             <Route index element={<Dashboard />} />
             <Route path="devices" element={<DeviceList />} />
-            <Route path="profile" element={<UserProfile />}>
-              <Route path="edit" element={<UserUpdate />} />
-            </Route>
+            <Route path="profile" element={<UserProfile />} />
+            <Route path="profile/edit" element={<UserUpdate />} />
           </Route>
         </Route>
       </Routes>
