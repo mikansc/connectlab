@@ -6,9 +6,11 @@ const context = React.createContext(null);
 const ContextProvider = context.Provider;
 
 export const AuthProvider = ({ children }) => {
-  const { isLoggedIn, signIn, signOut } = useAuthentication();
+  const { isLoggedIn, signIn, signOut, user } = useAuthentication();
 
-  return <ContextProvider value={{ isLoggedIn, signIn, signOut }}>{children}</ContextProvider>;
+  return (
+    <ContextProvider value={{ isLoggedIn, signIn, signOut, user }}>{children}</ContextProvider>
+  );
 };
 
 export const useAuthContext = () => {

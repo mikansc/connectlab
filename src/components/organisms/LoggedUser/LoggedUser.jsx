@@ -1,3 +1,4 @@
+import { useAuthContext } from "@contexts";
 import { Avatar } from "@molecules";
 import { useNavigate } from "react-router-dom";
 import {
@@ -13,15 +14,19 @@ const formatDate = (date) => {
 
 export const LoggedUser = () => {
   const navigate = useNavigate();
+  const { user } = useAuthContext();
+  const { fullName, photoUrl } = user;
+
   const goToUserProfile = () => {
     navigate("/dashboard/profile");
   };
+
   return (
     <StyledWrapper onClick={goToUserProfile}>
       <StyledContainer>
-        <Avatar imageUrl="https://github.com/mikansc.png" size="small" />
+        <Avatar imageUrl={photoUrl} name={fullName} size="small" />
         <StyledUserData>
-          <StyledUserName>Olá, Michael Nascimento</StyledUserName>
+          <StyledUserName>Olá, {fullName}!</StyledUserName>
           <StyledClock>{formatDate(Date.now())}</StyledClock>
         </StyledUserData>
       </StyledContainer>
