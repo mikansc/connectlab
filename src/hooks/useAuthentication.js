@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { login, storageService } from "@services";
 import { useAppContext } from "@contexts";
 import { StatusTypes } from "@utils";
@@ -9,12 +9,16 @@ export const useAuthentication = () => {
   const [user, setUser] = useState(null);
   const { setStatus } = useAppContext();
 
+  const retrieveUser = useCallback(() => {
+    return storageService.get(query);
+  }, []);
+
   useEffect(() => {
     setStatus(StatusTypes.loading);
-    const user = storageService.get(query);
+    const user = retrieveUser();
     if (user) setUser(user);
     setStatus(StatusTypes.success);
-  }, [setStatus]);
+  }, [retrieveUser, setStatus]);
 
   const signIn = ({ username, password }) => {
     setStatus(StatusTypes.loading);
@@ -43,5 +47,6 @@ export const useAuthentication = () => {
     user,
     signIn,
     signOut,
+    retrieveUser,
   };
 };
