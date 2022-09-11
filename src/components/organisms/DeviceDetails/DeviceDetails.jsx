@@ -2,7 +2,7 @@ import { Button, Paper, Separator, Title } from "@atoms";
 import { useModalContext } from "@contexts";
 import { Avatar, ButtonGroup, Property } from "@molecules";
 
-import { StyledContainer } from "./DeviceDetails.styles";
+import { StyledContainer, StyledHeader } from "./DeviceDetails.styles";
 
 export const DeviceDetails = () => {
   const { closeModal, data } = useModalContext();
@@ -11,8 +11,10 @@ export const DeviceDetails = () => {
   return (
     <StyledContainer>
       <Paper>
-        <Avatar size="medium" imageUrl={`img/${photoUrl}`} />
-        <Title as="h3">{title}</Title>
+        <StyledHeader>
+          <Avatar size="large" imageUrl={`img/${photoUrl}`} />
+          <Title as="h3">{title}</Title>
+        </StyledHeader>
         <Separator />
         <Property title="Virtual ID" value={info.virtual_id} />
         <Property title="IP Address" value={info.ip_address} />
