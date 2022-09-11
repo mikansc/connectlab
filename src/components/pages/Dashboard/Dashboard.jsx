@@ -2,20 +2,21 @@ import { DefaultPage } from "@templates";
 import { UserDevice } from "@molecules";
 import { DeviceModal, DeviceGrid, WeatherHero } from "@organisms";
 
-import { useDevicesContext } from "@contexts";
+import { useDevicesContext, useModalContext } from "@contexts";
 
 export const Dashboard = () => {
   const { devices } = useDevicesContext();
+  const { isOpen, openWith } = useModalContext();
 
   return (
     <DefaultPage>
       <WeatherHero />
       <DeviceGrid title="Meus dispositivos">
         {devices.map((device) => (
-          <UserDevice key={device.id} device={device} />
+          <UserDevice onClick={() => openWith(device)} key={device.id} device={device} />
         ))}
       </DeviceGrid>
-      <DeviceModal open={false} />
+      <DeviceModal open={isOpen} />
     </DefaultPage>
   );
 };
