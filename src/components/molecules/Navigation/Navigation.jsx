@@ -1,5 +1,5 @@
-import { useAuthContext } from "@contexts";
-import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
+
 import { StyledLink, StyledNav } from "./Navigation.styles";
 
 const routeLinks = [
@@ -7,20 +7,22 @@ const routeLinks = [
   { path: "/dashboard/devices", name: "Dispositivos" },
 ];
 
-export const Navigation = () => {
-  const { pathname } = useLocation();
-  const { signOut } = useAuthContext();
-
+export const Navigation = ({ activePath, onSignOut }) => {
   return (
     <StyledNav>
       {routeLinks.map(({ path, name }) => (
-        <StyledLink key={name} $active={pathname === path} to={path}>
+        <StyledLink key={name} $active={activePath === path} to={path}>
           {name}
         </StyledLink>
       ))}
-      <StyledLink as="button" onClick={signOut}>
+      <StyledLink as="button" onClick={onSignOut}>
         Sair
       </StyledLink>
     </StyledNav>
   );
+};
+
+Navigation.propTypes = {
+  activePath: PropTypes.string.isRequired,
+  onSignOut: PropTypes.func.isRequired,
 };
