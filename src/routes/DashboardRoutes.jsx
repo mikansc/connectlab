@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
-import { DevicesProvider } from "@contexts";
+import { DevicesProvider, ModalProvider } from "@contexts";
 
 export const DashboardRoutes = () => {
   return (
     <DevicesProvider>
-      <Outlet />
+      <ModalProvider>
+        <Outlet />
+      </ModalProvider>
     </DevicesProvider>
   );
 };
