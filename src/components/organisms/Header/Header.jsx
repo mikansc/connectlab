@@ -7,13 +7,13 @@ import { StyledContainer } from "./Header.styles";
 
 export const Header = () => {
   const { pathname } = useLocation();
-  const { signOut } = useAuthContext();
+  const { signOut, isLoggedIn } = useAuthContext();
 
   return (
     <StyledContainer>
       <Logo />
-      <LoggedUser />
-      <Navigation activePath={pathname} onSignOut={signOut} />
+      {isLoggedIn && <LoggedUser />}
+      {isLoggedIn && <Navigation activePath={pathname} onSignOut={signOut} />}
     </StyledContainer>
   );
 };
