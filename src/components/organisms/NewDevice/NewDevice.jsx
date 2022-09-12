@@ -4,8 +4,11 @@ import { Button, Paper, Separator, Title } from "@atoms";
 import { Avatar, ButtonGroup, InputField } from "@molecules";
 
 import { StyledCenteredAvatar, StyledContainer } from "./NewDevice.styles";
+import { useModalContext } from "@contexts";
 
 export const NewDevice = ({ onSave, onCancel }) => {
+  const { closeModal } = useModalContext();
+
   return (
     <StyledContainer>
       <Paper>
@@ -19,7 +22,7 @@ export const NewDevice = ({ onSave, onCancel }) => {
         <Separator />
         <ButtonGroup>
           <Button>Salvar</Button>
-          <Button>Cancelar</Button>
+          <Button onClick={closeModal}>Cancelar</Button>
         </ButtonGroup>
       </Paper>
     </StyledContainer>
