@@ -4,28 +4,36 @@ import { Link } from "react-router-dom";
 import { Button, Paper, Separator, Title } from "@atoms";
 import { ButtonGroup, InputField } from "@molecules";
 
-import { StyledFields, StyledContainer, StyledRow } from "./UserForm.styles";
+import { StyledFields, StyledContainer, StyledRow, StyledButtonContainer } from "./UserForm.styles";
+import { useForm } from "react-hook-form";
+import { useFetchAddress } from "@hooks";
 
-export const UserForm = ({ title, userData }) => {
+export const UserForm = ({ title }) => {
+  const { register, handleSubmit, setValue, getValues } = useForm();
+
+  const { findByCep } = useFetchAddress({
+    onFound: (address) => setValue("userAddress", address),
+  });
+
   return (
     <StyledContainer>
       <Paper>
         <Title as="h2">{title}</Title>
-        <StyledFields>
+        <StyledFields onSubmit={handleSubmit((d) => console.log(d))}>
           <Title as="h3" align="left">
             Dados pessoais
           </Title>
           <StyledRow>
             <InputField
-              name="fullName"
+              {...register("fullName")}
               label="Nome completo"
               placeholder="digite seu nome completo..."
             />
-            <InputField name="phone" label="Telefone" placeholder="(XX) XXXXX-XXXX" />
+            <InputField {...register("phone")} label="Telefone" placeholder="(XX) XXXXX-XXXX" />
           </StyledRow>
 
           <StyledRow>
-            <InputField name="email" label="E-mail" placeholder="usuario@mail.com" />
+            <InputField {...register("email")} label="E-mail" placeholder="usuario@mail.com" />
 
             <InputField
               name="photoUrk"
@@ -36,13 +44,13 @@ export const UserForm = ({ title, userData }) => {
 
           <StyledRow>
             <InputField
-              name="password"
+              {...register("password")}
               type="password"
               label="Senha"
               placeholder="digite sua senha..."
             />
             <InputField
-              name="passwordConfirm"
+              {...register("passwordConfirm")}
               type="password"
               label="Confirme a senha"
               placeholder="digite sua senha novamente..."
@@ -55,37 +63,55 @@ export const UserForm = ({ title, userData }) => {
             Endereço
           </Title>
           <StyledRow columns="3">
-            <InputField name="cep" label="CEP" placeholder="XXXXX-XXX" />
+            <InputField
+              {...register("userAddress.zipCode")}
+              type="number"
+              label="CEP"
+              placeholder="12345000"
+            />
+            <StyledButtonContainer>
+              <Button type="button" onClick={() => findByCep(getValues("userAddress.zipCode"))}>
+                Buscar
+              </Button>
+            </StyledButtonContainer>
+          </StyledRow>
+          <StyledRow columns="3">
+            <InputField
+              {...register("userAddress.street")}
+              label="Logradouro / Endereço"
+              placeholder="digite o endereço..."
+            />
+            <InputField
+              {...register("userAddress.number")}
+              label="Número"
+              placeholder="digite o número..."
+            />
+            <InputField
+              {...register("userAddress.neighborhood")}
+              label="Bairro"
+              placeholder="digite o bairro..."
+            />
           </StyledRow>
           <StyledRow>
             <InputField
-              name="address1"
-              label="Logradouro / Endereço"
-              placeholder="digite o endereço com número..."
+              {...register("userAddress.city")}
+              label="Cidade"
+              placeholder="digite a cidade..."
             />
-            <InputField name="address2" label="Bairro" placeholder="digite o bairro..." />
+            <InputField
+              {...register("userAddress.state")}
+              label="Estado"
+              placeholder="digite o estado..."
+            />
           </StyledRow>
-          <StyledRow>
-            <InputField name="city" label="Cidade" placeholder="digite a cidade..." />
-            <InputField name="state" label="Estado" placeholder="digite o estado..." />
-          </StyledRow>
-
           <Separator />
-
-          <Title as="h3" align="left">
-            Identificação do local
-          </Title>
-          <StyledRow>
-            <InputField name="local.type" label="Tipo de local" placeholder="escolha..." />
-            <InputField name="local.rooms" label="Cômodo" placeholder="escolha..." />
-          </StyledRow>
+          <ButtonGroup>
+            <Button type="submit">Cadastrar</Button>
+            <Button as={Link} to="/dashboard">
+              Cancelar
+            </Button>
+          </ButtonGroup>
         </StyledFields>
-        <ButtonGroup>
-          <Button onClick={() => {}}>Cadastrar</Button>
-          <Button as={Link} to="/dashboard">
-            Cancelar
-          </Button>
-        </ButtonGroup>
       </Paper>
     </StyledContainer>
   );
