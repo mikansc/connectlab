@@ -45,7 +45,6 @@ function getWeatherIcon(weatherId) {
 export const WeatherHero = () => {
   const { user } = useAuthContext();
   const { weather, status } = useWeather(user.userAddress.city);
-  console.log(weather);
 
   if (!weather || status.isLoading) return <StyledContainer>Carregando...</StyledContainer>;
 
