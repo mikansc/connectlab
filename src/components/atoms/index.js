@@ -8,4 +8,5 @@ export * from "./Image";
 export * from "./Pill";
 export * from "./Separator";
 export * from "./Icon";
+export * from "./Select";
 export * from "./Spinner";
