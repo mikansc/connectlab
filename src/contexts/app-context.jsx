@@ -1,15 +1,14 @@
 /* eslint-disable react/prop-types */
-import { StatusTypes } from "@utils";
-import React, { useState } from "react";
+import React from "react";
+import { useStatus } from "@hooks";
 
 const context = React.createContext(null);
 const ContextProvider = context.Provider;
 
 export const AppProvider = ({ children }) => {
-  const [status, setStatus] = useState(StatusTypes.idle);
-  const loading = status === StatusTypes.loading;
+  const { setStatus, status } = useStatus();
 
-  return <ContextProvider value={{ status, setStatus, loading }}>{children}</ContextProvider>;
+  return <ContextProvider value={{ status, setStatus }}>{children}</ContextProvider>;
 };
 
 export const useAppContext = () => {
