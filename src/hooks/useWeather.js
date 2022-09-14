@@ -31,7 +31,10 @@ export const useWeather = (cityName) => {
   useEffect(() => {
     setStatus.loading();
     const weather = retrieveWeather();
-    if (!weather) getWeather();
+    if (!weather) {
+      getWeather();
+      return;
+    }
 
     if (!hasExpired(weather.date)) {
       setWeather(weather);
