@@ -1,24 +1,32 @@
 import { Button, Paper, Separator, Title } from "@atoms";
-import { Avatar, ButtonGroup, InputField } from "@molecules";
+import { Avatar, ButtonGroup, InputField, SelectField } from "@molecules";
 
 import { StyledCenteredAvatar, StyledContainer } from "./NewDevice.styles";
 import { useAppContext } from "@contexts";
+import { useFetchLocals } from "@hooks";
 
 export const NewDevice = () => {
   const { modal } = useAppContext();
+  const { locals, isLoading } = useFetchLocals();
 
-  const { title, photoUrl } = modal.data;
+  const { name, photoUrl } = modal.data;
 
   return (
     <StyledContainer>
       <Paper>
         <StyledCenteredAvatar>
-          <Avatar imageUrl={photoUrl} name={title} size="large" />
+          <Avatar imageUrl={photoUrl} name={name} size="large" />
         </StyledCenteredAvatar>
-        <Title as="h3">{title}</Title>
+        <Title as="h3">{name}</Title>
         <Separator />
-        <InputField name="local" label="Local" placeholder="Selecione o local..." />
-        <InputField name="comodo" label="Cômodo" placeholder="Selecione o cômodo..." />
+        <SelectField
+          label="Local"
+          name="name"
+          placeholder="Selecione o local..."
+          disabled={isLoading}
+          options={isLoading ? ["carregando"] : locals}
+        />
+        <InputField name="comodo" label="Cômodo" placeholder="Quarto, sala, cozinha, etc..." />
         <Separator />
         <ButtonGroup>
           <Button>Salvar</Button>
