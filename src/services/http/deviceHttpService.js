@@ -1,17 +1,24 @@
 import { HttpService } from "./httpService";
 import { axiosInstanceFactory } from "./utils/axiosInstanceFactory";
+import { getBearer } from "./utils/getBearer";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 const axiosInstance = axiosInstanceFactory(apiUrl);
+
+axiosInstance.interceptors.request.use((config) => {
+  config.headers.common = { ...config.headers.common, ...getBearer() };
+  return config;
+});
+
 const httpService = new HttpService(axiosInstance);
 
 const devices = "/devices";
-const user = "/users";
+const userDevices = "/userDevices/user";
 
 export const getAllDevices = async () => {
-  return await httpService.get(devices);
+  return await httpService.get(devices).then((res) => res.data);
 };
 
 export const getUserDevices = (userId) => {
-  return httpService.get(`${user}/${userId + devices}`).then((res) => res.data);
+  return httpService.get(`${userDevices}/${userId}`).then((res) => res.data);
 };
