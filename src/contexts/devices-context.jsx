@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useAuthentication } from "@hooks";
 import { getUserDevices } from "@services";
 import { useAppContext } from "./app-context";
-import { StatusTypes } from "@utils";
 
 const context = React.createContext(null);
 const ContextProvider = context.Provider;
@@ -17,15 +16,15 @@ export const DevicesProvider = ({ children }) => {
 
   useEffect(() => {
     if (!userId) return;
-    setStatus(StatusTypes.loading);
+    setStatus.loading();
     getUserDevices(userId)
       .then((data) => {
         setDevices(data);
-        setStatus(StatusTypes.success);
+        setStatus.success();
       })
       .catch((e) => {
         console.error(e.message);
-        setStatus(StatusTypes.error);
+        setStatus.error();
       });
   }, [setStatus, userId]);
 

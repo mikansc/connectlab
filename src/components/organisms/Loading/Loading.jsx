@@ -3,10 +3,10 @@ import { Modal } from "@organisms";
 import { useAppContext } from "@contexts";
 
 export const Loading = () => {
-  const { loading } = useAppContext();
+  const { status } = useAppContext();
 
   return (
-    <Modal open={loading}>
+    <Modal open={status.isLoading}>
       <Spinner />
       <Text>Aguarde</Text>
     </Modal>

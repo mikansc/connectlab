@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { login, storageService } from "@services";
 import { useAppContext } from "@contexts";
-import { StatusTypes } from "@utils";
 
 const query = "usr";
 
@@ -14,23 +13,23 @@ export const useAuthentication = () => {
   }, []);
 
   useEffect(() => {
-    setStatus(StatusTypes.loading);
+    setStatus.loading();
     const user = retrieveUser();
     if (user) setUser(user);
-    setStatus(StatusTypes.success);
+    setStatus.success();
   }, [retrieveUser, setStatus]);
 
   const signIn = ({ username, password }) => {
-    setStatus(StatusTypes.loading);
+    setStatus.loading();
     login({ username, password })
       .then((data) => {
         storageService.save(query, data);
         setUser(data);
-        setStatus(StatusTypes.success);
+        setStatus.success();
       })
       .catch((err) => {
         console.error(err.message);
-        setStatus(StatusTypes.error);
+        setStatus.error();
       });
   };
 
