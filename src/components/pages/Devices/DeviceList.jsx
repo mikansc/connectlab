@@ -4,10 +4,11 @@ import { Separator, Title } from "@atoms";
 import { Device, Filter } from "@molecules";
 import { AddDeviceModal, DeviceGrid } from "@organisms";
 
-import { devices } from "../../../mock/devices";
 import { useAppContext } from "@contexts";
+import { useFetchDefices } from "@hooks";
 
 export const DeviceList = () => {
+  const { devices } = useFetchDefices();
   const { modal } = useAppContext();
 
   return (
