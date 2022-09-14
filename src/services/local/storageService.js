@@ -14,8 +14,13 @@ const clear = (resource) => {
   sessionStorage.removeItem(key.concat(resource));
 };
 
+const clearAll = () => {
+  sessionStorage.clear();
+};
+
 export const storageService = {
   save,
   get,
   clear,
+  clearAll,
 };

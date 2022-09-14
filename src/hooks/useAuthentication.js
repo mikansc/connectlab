@@ -34,7 +34,7 @@ export const useAuthentication = () => {
   };
 
   const signOut = () => {
-    storageService.clear(query);
+    storageService.clearAll();
     setUser(null);
   };
 
