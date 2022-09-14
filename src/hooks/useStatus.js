@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 const StatusTypes = {
   idle: "idle",
@@ -10,17 +10,23 @@ const StatusTypes = {
 export const useStatus = () => {
   const [situation, setSituation] = useState(StatusTypes.idle);
 
-  const status = {
-    isLoading: situation === StatusTypes.loading,
-    isSuccess: situation === StatusTypes.success,
-    isError: situation === StatusTypes.error,
-  };
+  const status = useMemo(
+    () => ({
+      isLoading: situation === StatusTypes.loading,
+      isSuccess: situation === StatusTypes.success,
+      isError: situation === StatusTypes.error,
+    }),
+    [situation],
+  );
 
-  const setStatus = {
-    loading: () => setSituation(StatusTypes.loading),
-    success: () => setSituation(StatusTypes.success),
-    error: () => setSituation(StatusTypes.error),
-  };
+  const setStatus = useMemo(
+    () => ({
+      loading: () => setSituation(StatusTypes.loading),
+      success: () => setSituation(StatusTypes.success),
+      error: () => setSituation(StatusTypes.error),
+    }),
+    [],
+  );
 
   return {
     status,
