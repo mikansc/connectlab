@@ -1,35 +1,30 @@
-import PropTypes from "prop-types";
-
 import { Button, Paper, Separator, Title } from "@atoms";
 import { Avatar, ButtonGroup, InputField } from "@molecules";
 
 import { StyledCenteredAvatar, StyledContainer } from "./NewDevice.styles";
-import { useModalContext } from "@contexts";
+import { useAppContext } from "@contexts";
 
-export const NewDevice = ({ onSave, onCancel }) => {
-  const { closeModal } = useModalContext();
+export const NewDevice = () => {
+  const { modal } = useAppContext();
+
+  const { title, photoUrl } = modal.data;
 
   return (
     <StyledContainer>
       <Paper>
         <StyledCenteredAvatar>
-          <Avatar size="large" />
+          <Avatar imageUrl={photoUrl} name={title} size="large" />
         </StyledCenteredAvatar>
-        <Title as="h3">Lâmpada inteligente</Title>
+        <Title as="h3">{title}</Title>
         <Separator />
-        <InputField label="Local" placeholder="Selecione o local..." />
-        <InputField label="Cômodo" placeholder="Selecione o cômodo..." />
+        <InputField name="local" label="Local" placeholder="Selecione o local..." />
+        <InputField name="comodo" label="Cômodo" placeholder="Selecione o cômodo..." />
         <Separator />
         <ButtonGroup>
           <Button>Salvar</Button>
-          <Button onClick={closeModal}>Cancelar</Button>
+          <Button onClick={() => modal.close()}>Cancelar</Button>
         </ButtonGroup>
       </Paper>
     </StyledContainer>
   );
-};
-
-NewDevice.propTypes = {
-  onSave: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired,
 };

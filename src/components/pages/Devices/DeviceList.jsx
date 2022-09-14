@@ -5,10 +5,10 @@ import { Device, Filter } from "@molecules";
 import { AddDeviceModal, DeviceGrid } from "@organisms";
 
 import { devices } from "../../../mock/devices";
-import { useModalContext } from "@contexts";
+import { useAppContext } from "@contexts";
 
 export const DeviceList = () => {
-  const { isOpen, toggleModal } = useModalContext();
+  const { modal } = useAppContext();
 
   return (
     <DefaultPage>
@@ -19,10 +19,10 @@ export const DeviceList = () => {
       <Filter />
       <DeviceGrid title="Todos os dispositivos">
         {devices.map((device) => (
-          <Device key={device.id} device={device} onClick={toggleModal} />
+          <Device key={device.id} device={device} onClick={() => modal.open(device)} />
         ))}
       </DeviceGrid>
-      <AddDeviceModal open={isOpen} />
+      <AddDeviceModal open={modal.isOpen} />
     </DefaultPage>
   );
 };

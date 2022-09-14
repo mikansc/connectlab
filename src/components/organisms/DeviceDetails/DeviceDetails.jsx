@@ -1,12 +1,12 @@
 import { Button, Paper, Separator, Title } from "@atoms";
-import { useModalContext } from "@contexts";
+import { useAppContext } from "@contexts";
 import { Avatar, ButtonGroup, Property } from "@molecules";
 
 import { StyledContainer, StyledHeader } from "./DeviceDetails.styles";
 
 export const DeviceDetails = () => {
-  const { closeModal, data } = useModalContext();
-  const { photoUrl, title, info } = data;
+  const { modal } = useAppContext();
+  const { photoUrl, title, info } = modal.data;
 
   return (
     <StyledContainer>
@@ -22,7 +22,7 @@ export const DeviceDetails = () => {
         <Property title="Signal" value={info.signal} />
         <ButtonGroup>
           <Button>Remover</Button>
-          <Button onClick={() => closeModal()}>Fechar</Button>
+          <Button onClick={() => modal.close()}>Fechar</Button>
         </ButtonGroup>
       </Paper>
     </StyledContainer>
