@@ -8,8 +8,11 @@ import { StyledFields, StyledContainer, StyledRow, StyledButtonContainer } from 
 import { useForm } from "react-hook-form";
 import { useFetchAddress } from "@hooks";
 
-export const UserForm = ({ title }) => {
-  const { register, handleSubmit, setValue, getValues } = useForm();
+export const UserForm = ({ title, userData }) => {
+  console.log(userData);
+  const { register, handleSubmit, setValue, getValues } = useForm({
+    defaultValues: userData,
+  });
 
   const { findByCep } = useFetchAddress({
     onFound: (address) => setValue("userAddress", address),
@@ -36,7 +39,7 @@ export const UserForm = ({ title }) => {
             <InputField {...register("email")} label="E-mail" placeholder="usuario@mail.com" />
 
             <InputField
-              name="photoUrk"
+              {...register("photoUrl")}
               label="URL da foto"
               placeholder="insira a url da foto de perfil..."
             />
@@ -63,12 +66,7 @@ export const UserForm = ({ title }) => {
             Endereço
           </Title>
           <StyledRow columns="3">
-            <InputField
-              {...register("userAddress.zipCode")}
-              type="number"
-              label="CEP"
-              placeholder="12345000"
-            />
+            <InputField {...register("userAddress.zipCode")} label="CEP" placeholder="12345000" />
             <StyledButtonContainer>
               <Button type="button" onClick={() => findByCep(getValues("userAddress.zipCode"))}>
                 Buscar
