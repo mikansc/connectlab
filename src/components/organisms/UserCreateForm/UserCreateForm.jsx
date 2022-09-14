@@ -1,17 +1,20 @@
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import { Button, Paper, Separator, Title } from "@atoms";
 import { ButtonGroup, InputField } from "@molecules";
 
-import { StyledFields, StyledContainer, StyledRow, StyledButtonContainer } from "./UserForm.styles";
+import {
+  StyledFields,
+  StyledContainer,
+  StyledRow,
+  StyledButtonContainer,
+} from "./UserCreateForm.styles";
 import { useForm } from "react-hook-form";
 import { useFetchAddress } from "@hooks";
 
-export const UserForm = ({ title, userData }) => {
-  console.log(userData);
+export const UserCreateForm = () => {
   const { register, handleSubmit, setValue, getValues } = useForm({
-    defaultValues: userData,
+    defaultValues: {},
   });
 
   const { findByCep } = useFetchAddress({
@@ -21,7 +24,7 @@ export const UserForm = ({ title, userData }) => {
   return (
     <StyledContainer>
       <Paper>
-        <Title as="h2">{title}</Title>
+        <Title as="h2">Cadastrar usuário</Title>
         <StyledFields onSubmit={handleSubmit((d) => console.log(d))}>
           <Title as="h3" align="left">
             Dados pessoais
@@ -113,9 +116,4 @@ export const UserForm = ({ title, userData }) => {
       </Paper>
     </StyledContainer>
   );
-};
-
-UserForm.propTypes = {
-  title: PropTypes.string.isRequired,
-  userData: PropTypes.object,
 };

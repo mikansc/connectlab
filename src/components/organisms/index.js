@@ -1,6 +1,6 @@
 export * from "./Header";
 export * from "./LoginForm";
-export * from "./UserForm";
+export * from "./UserCreateForm";
 export * from "./WeatherHero";
 export * from "./UserDetails";
 export * from "./DeviceGrid";
@@ -11,3 +11,4 @@ export * from "./DeviceDetails";
 export * from "./AddDeviceModal";
 export * from "./NewDevice";
 export * from "./LoggedUser";
+export * from "./UserUpdateForm";
