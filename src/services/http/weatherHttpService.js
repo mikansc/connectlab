@@ -1,5 +1,6 @@
 import { HttpService } from "./httpService";
 import { axiosInstanceFactory } from "./utils/axiosInstanceFactory";
+import { weaterAdapter } from "./utils/weatherAdapter";
 
 const baseURL = import.meta.env.VITE_OW_URL;
 const apikey = import.meta.env.VITE_WAPI;
@@ -9,16 +10,7 @@ const axiosInstance = axiosInstanceFactory(baseURL);
 const httpService = new HttpService(axiosInstance);
 
 export const getWeatherByCityName = async (name) => {
-  const query = `?q=${name},BR&appid=${apikey}`;
-  const { main } = await httpService.get(URL.concat(weather, query), { baseURL });
-  const { temp, temp_min, temp_max, feels_like, humidity } = main;
-
-  return {
-    city: name,
-    temp,
-    tempMin: temp_min,
-    tempMax: temp_max,
-    feelsLike: feels_like,
-    humidity,
-  };
+  const query = `?q=${name},BR&units=metric&lang=pt_br&appid=${apikey}`;
+  const response = await httpService.get(baseURL.concat(weather, query), { baseURL });
+  return weaterAdapter(response);
 };

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import sunImg from "./assets/img/sun.png";
 import cloudyImg from "./assets/img/cloudy.png";
 import mistImg from "./assets/img/mist.png";
@@ -14,6 +15,8 @@ import {
 
 import { Icon } from "@atoms";
 import { Property } from "@molecules";
+import { useWeather } from "@hooks";
+import { useAuthContext } from "@contexts";
 
 function getWeatherImg(weatherId) {
   // Mapeando imagens do weatherAPI
@@ -39,27 +42,35 @@ function getWeatherIcon(weatherId) {
   if (weatherId > 800) return "cloud";
 }
 
-const mockWeatherId = () => Math.min(Math.floor(200 + Math.random() * 1000), 804);
-
 export const WeatherHero = () => {
-  const weather = mockWeatherId();
+  const { user } = useAuthContext();
+  const { weather, status } = useWeather(user.userAddress.city);
+  console.log(weather);
+
+  if (!weather || status.isLoading) return <StyledContainer>Carregando...</StyledContainer>;
 
   return (
     <StyledContainer>
-      <StyledBackground bgImg={getWeatherImg(weather)}>
+      <StyledBackground bgImg={getWeatherImg(weather.weatherId)}>
         <StyledTemperatureContainer>
-          <StyledTemperature>15 °C</StyledTemperature>
+          <StyledTemperature>{weather.temp} °C</StyledTemperature>
           <StyledSubContainer>
-            <Property title="min">12 °C</Property>
-            <Property title="max">19 °C</Property>
+            <Property title="min">{weather.tempMin} °C</Property>
+            <Property title="max">{weather.tempMax} °C</Property>
           </StyledSubContainer>
         </StyledTemperatureContainer>
-        <Icon size="3rem" name={getWeatherIcon(weather)} />
-        <StyledCityName>Joinville, SC</StyledCityName>
+        <Icon size="3rem" name={getWeatherIcon(weather.weatherId)} />
+        <StyledCityName>{weather.city}</StyledCityName>
         <StyledSubContainer>
-          <Property title="Sensação térmica">12°C</Property>
+          <Property title="Sensação térmica">{weather.feelsLike} °C</Property>
           <span> | </span>
-          <Property title="Umidade do ar"> 14%</Property>
+          <Property title="Umidade do ar">{weather.humidity} %</Property>
+          <span> | </span>
+          <Property title="Atualizado em">
+            {Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short" }).format(
+              weather.date * 1000,
+            )}
+          </Property>
         </StyledSubContainer>
       </StyledBackground>
     </StyledContainer>
