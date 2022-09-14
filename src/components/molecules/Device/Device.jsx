@@ -9,10 +9,10 @@ export const Device = ({ device, onClick }) => {
   return (
     <Paper>
       <StyledContainer>
-        <Avatar imageUrl={device?.photoUrl} name={device?.title} size="large" />
+        <Avatar imageUrl={device?.photoUrl} name={device?.name} size="large" />
         <StyledDeviceData>
-          <Title as="span" align="left" variant="secondary">
-            {device?.title}
+          <Title as="span" variant="secondary">
+            {device?.name}
           </Title>
           <ButtonGroup>
             <Button onClick={onClick}>Adicionar</Button>
@@ -25,13 +25,10 @@ export const Device = ({ device, onClick }) => {
 
 Device.propTypes = {
   device: PropTypes.shape({
-    title: PropTypes.string,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    madeBy: PropTypes.string,
     photoUrl: PropTypes.string,
-    is_on: PropTypes.bool,
-    local: PropTypes.shape({
-      name: PropTypes.string,
-      room: PropTypes.string,
-    }),
   }).isRequired,
   onClick: PropTypes.func,
 };
