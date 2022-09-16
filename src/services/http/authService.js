@@ -1,6 +1,6 @@
 import { HttpService } from "./httpService";
-import { axiosInstanceFactory } from "./utils/axiosInstanceFactory";
-import { userDataAdapter } from "./utils/userDataAdapter";
+import { axiosInstanceFactory } from "./factories/axiosInstanceFactory";
+import { userDataAdapter } from "./adapters/userDataAdapter";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 const axiosInstance = axiosInstanceFactory(apiUrl);

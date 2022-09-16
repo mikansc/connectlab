@@ -1,6 +1,6 @@
 import { HttpService } from "./httpService";
-import { addressAdapter } from "./utils/addressAdapter";
-import { axiosInstanceFactory } from "./utils/axiosInstanceFactory";
+import { addressAdapter } from "./adapters/addressAdapter";
+import { axiosInstanceFactory } from "./factories/axiosInstanceFactory";
 
 const apiUrl = import.meta.env.VITE_VIACEP_URL;
 const axiosInstance = axiosInstanceFactory(apiUrl);

@@ -1,5 +1,5 @@
 import { HttpService } from "./httpService";
-import { axiosInstanceFactory } from "./utils/axiosInstanceFactory";
+import { axiosInstanceFactory } from "./factories/axiosInstanceFactory";
 import { getBearer } from "./utils/getBearer";
 
 const apiUrl = import.meta.env.VITE_API_URL;

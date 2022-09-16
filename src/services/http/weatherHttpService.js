@@ -1,6 +1,6 @@
 import { HttpService } from "./httpService";
-import { axiosInstanceFactory } from "./utils/axiosInstanceFactory";
-import { weaterAdapter } from "./utils/weatherAdapter";
+import { axiosInstanceFactory } from "./factories/axiosInstanceFactory";
+import { weaterAdapter } from "./adapters/weatherAdapter";
 
 const baseURL = import.meta.env.VITE_OW_URL;
 const apikey = import.meta.env.VITE_WAPI;
