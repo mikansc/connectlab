@@ -1,6 +1,6 @@
 import { HttpService } from "./httpService";
 import { axiosInstanceFactory } from "./factories/axiosInstanceFactory";
-import { userDataAdapter } from "./adapters/userDataAdapter";
+import { userLoginResponseAdapter } from "./adapters/userLoginResponseAdapter";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 const axiosInstance = axiosInstanceFactory(apiUrl);
@@ -10,6 +10,6 @@ const loginUrl = "auth/login";
 
 export const login = ({ username, password }) => {
   return httpService.post(loginUrl, { email: username, password }).then(({ data }) => {
-    return userDataAdapter(data);
+    return userLoginResponseAdapter(data);
   });
 };
