@@ -16,6 +16,7 @@ export const useWeather = (cityName) => {
   }, []);
 
   const getWeather = useCallback(() => {
+    setStatus.loading();
     getWeatherByCityName(cityName)
       .then((data) => {
         storageService.save(query, data);
@@ -29,16 +30,11 @@ export const useWeather = (cityName) => {
   }, [cityName, setStatus]);
 
   useEffect(() => {
-    setStatus.loading();
     const weather = retrieveWeather();
-    if (!weather) {
+    if (!weather || (weather && hasExpired(weather.date))) {
       getWeather();
-      return;
-    }
-
-    if (!hasExpired(weather.date)) {
+    } else {
       setWeather(weather);
-      setStatus.success();
     }
   }, [getWeather, retrieveWeather, setStatus]);
 
@@ -48,8 +44,8 @@ export const useWeather = (cityName) => {
   };
 };
 
-function hasExpired(time) {
-  const FIFTEEN_MINUTES = 60 * 15;
-  const timeNow = parseInt(Date.now() / 1000);
-  return timeNow - time > FIFTEEN_MINUTES;
+function hasExpired(creationTimestamp) {
+  const TWENTY_MINUTES = 1000 * 60 * 20;
+  const timestampNow = parseInt(Date.now());
+  return timestampNow - creationTimestamp * 1000 > TWENTY_MINUTES;
 }
