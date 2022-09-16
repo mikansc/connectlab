@@ -19,24 +19,37 @@ export const useAuthentication = () => {
     setStatus.success();
   }, [retrieveUser, setStatus]);
 
-  const signIn = ({ username, password }) => {
+  useEffect(() => {
     setStatus.loading();
-    login({ username, password })
-      .then((data) => {
-        storageService.save(query, data);
-        setUser(data);
-        setStatus.success();
-      })
-      .catch((err) => {
-        console.error(err.message);
-        setStatus.error();
-      });
-  };
+    storageService.save(query, user);
+    setStatus.success();
+  }, [setStatus, user]);
 
-  const signOut = () => {
+  const persistUser = useCallback((user) => {
+    console.log("persistUser", user);
+    setUser(user);
+  }, []);
+
+  const signIn = useCallback(
+    (authData) => {
+      setStatus.loading();
+      login(authData)
+        .then((data) => {
+          setUser(data);
+          setStatus.success();
+        })
+        .catch((err) => {
+          console.error(err.message);
+          setStatus.error();
+        });
+    },
+    [setStatus],
+  );
+
+  const signOut = useCallback(() => {
     storageService.clearAll();
     setUser(null);
-  };
+  }, []);
 
   const isLoggedIn = !!user && !!user.accessToken;
 
@@ -45,6 +58,7 @@ export const useAuthentication = () => {
     user,
     signIn,
     signOut,
+    persistUser,
     retrieveUser,
   };
 };
