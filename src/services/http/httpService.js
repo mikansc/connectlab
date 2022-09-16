@@ -11,6 +11,10 @@ export class HttpService {
     return this.httpClient.post(resource, data, config);
   };
 
+  put = (resource, data, config = {}) => {
+    return this.httpClient.put(resource, data, config);
+  };
+
   remove = (resource, config = {}) => {
     return this.httpClient.delete(resource, config);
   };
