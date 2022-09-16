@@ -1,6 +1,7 @@
 import { HttpService } from "./httpService";
 import { axiosInstanceFactory } from "./factories/axiosInstanceFactory";
 import { getBearer } from "./utils/getBearer";
+import { userUpdateResponseAdapter } from "./adapters/userUpdateResponseAdapter";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -19,7 +20,7 @@ export const updateUser = (id, user) => {
     console.error("ID do usuário não informado");
     return Promise.reject(new Error("Erro na requisição!"));
   }
-  return httpService.put(`${usersUrl}/${id}`, user).then(({ data: user }) => {
-    return { ...user, userAddress: user.userAddress, id: user._id };
+  return httpService.put(`${usersUrl}/${id}`, user).then(({ data }) => {
+    return userUpdateResponseAdapter(data);
   });
 };
