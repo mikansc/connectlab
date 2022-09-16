@@ -1,4 +1,5 @@
 import { StyledContainer } from "./Logo.styles";
+
 import LogoImage from "./logo.png";
 
 export const Logo = () => {

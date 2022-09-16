@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { useTheme } from "styled-components";
 
-import { Avatar } from "@molecules";
 import { Icon, Paper, Text, Title } from "@atoms";
+import { Avatar } from "@molecules";
 
 import { StyledContainer, StyledDeviceData, StyledWrapper } from "./UserDevice.styles";
 

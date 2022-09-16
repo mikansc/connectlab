@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 import { StyledContainer, StyledTitle, StyledValue } from "./Property.styles";
 
 export const Property = ({ title, value, children }) => {

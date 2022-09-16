@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
+import { useAuthContext } from "@contexts";
 import { Button, Paper, Title } from "@atoms";
 import { ButtonGroup, InputField } from "@molecules";
+
 import { StyledLoginFields, StyledContainer } from "./LoginForm.styles";
-import { useAuthContext } from "@contexts";
-import { useForm } from "react-hook-form";
 
 export const LoginForm = () => {
   const { signIn } = useAuthContext();

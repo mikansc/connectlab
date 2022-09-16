@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 import { StyledSpan } from "./Icon.styles";
 
 export const Icon = ({ name, color, size, ...props }) => {

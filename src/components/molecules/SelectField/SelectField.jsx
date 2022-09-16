@@ -1,8 +1,9 @@
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 import { Select, Label } from "@atoms";
+
 import { StyledInputGroup } from "./SelectField.styles";
-import { forwardRef } from "react";
 
 export const SelectField = forwardRef(({ label, options = [], color, ...props }, ref) => {
   return (

@@ -1,8 +1,9 @@
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
 
 import { Input, Label } from "@atoms";
+
 import { StyledInputGroup } from "./InputField.styles";
-import { forwardRef } from "react";
 
 export const InputField = forwardRef(({ label, color, ...props }, ref) => {
   return (
