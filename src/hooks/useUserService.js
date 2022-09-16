@@ -1,4 +1,4 @@
-import { updateUser } from "@services";
+import { storageService, updateUser } from "@services";
 import { useAppContext, useAuthContext } from "@contexts";
 
 export const useUserService = () => {
@@ -12,6 +12,7 @@ export const useUserService = () => {
     updateUser(user.id, userData)
       .then((updatedUser) => {
         persistUser({ ...user, ...updatedUser });
+        storageService.clear("weather");
         setStatus.success();
       })
       .catch(() => setStatus.error());
