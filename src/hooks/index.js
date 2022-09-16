@@ -5,3 +5,4 @@ export * from "./useModal";
 export * from "./useWeather";
 export * from "./useFetchDevices";
 export * from "./useFetchLocals";
+export * from "./useUserService";
