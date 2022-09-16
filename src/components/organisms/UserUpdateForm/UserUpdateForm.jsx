@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-import { useFetchAddress } from "@hooks";
+import { useFetchAddress, useUserService } from "@hooks";
 import { useAuthContext } from "@contexts";
 import { Button, Paper, Separator, Title } from "@atoms";
 import { ButtonGroup, InputField } from "@molecules";
@@ -15,6 +15,7 @@ import {
 
 export const UserUpdateForm = () => {
   const { user } = useAuthContext();
+  const { saveUser } = useUserService();
 
   const { register, handleSubmit, setValue, getValues } = useForm({
     defaultValues: user,
@@ -28,7 +29,7 @@ export const UserUpdateForm = () => {
     <StyledContainer>
       <Paper>
         <Title as="h2">Atualizar usuário</Title>
-        <StyledFields onSubmit={handleSubmit((d) => console.log(d))}>
+        <StyledFields onSubmit={handleSubmit(saveUser)}>
           <Title as="h3" align="left">
             Dados pessoais
           </Title>
