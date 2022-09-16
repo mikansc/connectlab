@@ -1,8 +1,10 @@
-import { Logo } from "@atoms";
-import { useAuthContext } from "@contexts";
-import { Navigation } from "@molecules";
 import { useLocation } from "react-router-dom";
-import { LoggedUser } from "../LoggedUser";
+
+import { useAuthContext } from "@contexts";
+import { Logo } from "@atoms";
+import { Navigation } from "@molecules";
+import { LoggedUser } from "@organisms";
+
 import { StyledContainer } from "./Header.styles";
 
 export const Header = () => {

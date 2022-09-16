@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
+import { useAuthContext } from "@contexts";
 import { Button, Paper, Separator, Text, Title } from "@atoms";
 import { Avatar, ButtonGroup, Property } from "@molecules";
 
 import { StyledContainer, StyledUserDataContainer } from "./UserDetails.styles";
-import { useAuthContext } from "@contexts";
 
 export const UserDetails = () => {
   const { user } = useAuthContext();

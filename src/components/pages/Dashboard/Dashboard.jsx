@@ -1,8 +1,7 @@
-import { DefaultPage } from "@templates";
+import { useAppContext, useDevicesContext } from "@contexts";
 import { UserDevice } from "@molecules";
 import { DeviceModal, DeviceGrid, WeatherHero } from "@organisms";
-
-import { useAppContext, useDevicesContext } from "@contexts";
+import { DefaultPage } from "@templates";
 
 export const Dashboard = () => {
   const { devices } = useDevicesContext();

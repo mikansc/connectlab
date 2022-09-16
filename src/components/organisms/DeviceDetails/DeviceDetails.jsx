@@ -1,5 +1,5 @@
-import { Button, Paper, Separator, Title } from "@atoms";
 import { useAppContext } from "@contexts";
+import { Button, Paper, Separator, Title } from "@atoms";
 import { Avatar, ButtonGroup, Property } from "@molecules";
 
 import { StyledContainer, StyledHeader } from "./DeviceDetails.styles";

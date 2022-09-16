@@ -1,11 +1,9 @@
-import { DefaultPage } from "@templates";
-
+import { useFetchDefices } from "@hooks";
+import { useAppContext } from "@contexts";
 import { Separator, Title } from "@atoms";
 import { Device, Filter } from "@molecules";
 import { AddDeviceModal, DeviceGrid } from "@organisms";
-
-import { useAppContext } from "@contexts";
-import { useFetchDefices } from "@hooks";
+import { DefaultPage } from "@templates";
 
 export const DeviceList = () => {
   const { devices } = useFetchDefices();

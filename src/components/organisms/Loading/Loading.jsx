@@ -1,6 +1,6 @@
+import { useAppContext } from "@contexts";
 import { Spinner, Text } from "@atoms";
 import { Modal } from "@organisms";
-import { useAppContext } from "@contexts";
 
 export const Loading = () => {
   const { status } = useAppContext();

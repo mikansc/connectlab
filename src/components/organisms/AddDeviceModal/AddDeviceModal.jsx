@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useTheme } from "styled-components";
+
 import { Modal, NewDevice } from "@organisms";
 
 export const AddDeviceModal = ({ open }) => {

@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
+import { useFetchAddress } from "@hooks";
+import { useAuthContext } from "@contexts";
 import { Button, Paper, Separator, Title } from "@atoms";
 import { ButtonGroup, InputField } from "@molecules";
 
@@ -9,10 +12,6 @@ import {
   StyledRow,
   StyledButtonContainer,
 } from "./UserUpdateForm.styles";
-
-import { useForm } from "react-hook-form";
-import { useFetchAddress } from "@hooks";
-import { useAuthContext } from "@contexts";
 
 export const UserUpdateForm = () => {
   const { user } = useAuthContext();

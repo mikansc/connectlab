@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 import { useAuthContext } from "@contexts";
 import { Avatar } from "@molecules";
-import { useNavigate } from "react-router-dom";
+
 import {
   StyledClock,
   StyledContainer,
@@ -8,6 +10,7 @@ import {
   StyledUserName,
   StyledWrapper,
 } from "./LoggedUser.styles";
+
 const formatDate = (date) => {
   return Intl.DateTimeFormat("pt-BR", { dateStyle: "full" }).format(date);
 };

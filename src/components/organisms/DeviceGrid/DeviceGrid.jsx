@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 import { Paper, Title } from "@atoms";
+
 import { StyledGrid } from "./DeviceGrid.styles";
 
 export const DeviceGrid = ({ title, children }) => {

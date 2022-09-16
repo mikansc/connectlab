@@ -1,9 +1,9 @@
+import { useFetchLocals } from "@hooks";
+import { useAppContext } from "@contexts";
 import { Button, Paper, Separator, Title } from "@atoms";
 import { Avatar, ButtonGroup, InputField, SelectField } from "@molecules";
 
 import { StyledCenteredAvatar, StyledContainer } from "./NewDevice.styles";
-import { useAppContext } from "@contexts";
-import { useFetchLocals } from "@hooks";
 
 export const NewDevice = () => {
   const { modal } = useAppContext();
