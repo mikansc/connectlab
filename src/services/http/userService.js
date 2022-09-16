@@ -14,6 +14,13 @@ axiosInstance.interceptors.request.use((config) => {
 const httpService = new HttpService(axiosInstance);
 
 const usersUrl = "/users";
+const newUserUrl = "auth/register";
+
+export const createUser = (user) => {
+  return httpService.post(newUserUrl, user).then(({ data }) => {
+    return userUpdateResponseAdapter(data);
+  });
+};
 
 export const updateUser = (id, user) => {
   if (!id) {

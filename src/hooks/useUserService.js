@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { storageService, updateUser } from "@services";
+import { storageService, updateUser, createUser } from "@services";
 import { useAppContext, useAuthContext } from "@contexts";
 
 export const useUserService = () => {
@@ -8,7 +8,15 @@ export const useUserService = () => {
   const { user, persistUser } = useAuthContext();
   const { setStatus } = useAppContext();
 
-  const registerUser = () => {};
+  const registerUser = (userData) => {
+    createUser(userData)
+      .then((updatedUser) => {
+        persistUser({ ...user, ...updatedUser });
+        setStatus.success();
+        navigate("/");
+      })
+      .catch(() => setStatus.error());
+  };
 
   const saveUser = (userData) => {
     setStatus.loading();

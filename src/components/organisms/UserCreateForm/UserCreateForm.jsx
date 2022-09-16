@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
-import { useFetchAddress } from "@hooks";
+import { useFetchAddress, useUserService } from "@hooks";
 import { Button, Paper, Separator, Title } from "@atoms";
 import { ButtonGroup, InputField } from "@molecules";
+import { newUserSchema } from "@validations";
 
 import {
   StyledFields,
@@ -13,8 +15,10 @@ import {
 } from "./UserCreateForm.styles";
 
 export const UserCreateForm = () => {
+  const { registerUser } = useUserService();
   const { register, handleSubmit, setValue, getValues } = useForm({
     defaultValues: {},
+    resolver: yupResolver(newUserSchema),
   });
 
   const { findByCep } = useFetchAddress({
@@ -25,7 +29,7 @@ export const UserCreateForm = () => {
     <StyledContainer>
       <Paper>
         <Title as="h2">Cadastrar usuário</Title>
-        <StyledFields onSubmit={handleSubmit((d) => console.log(d))}>
+        <StyledFields onSubmit={handleSubmit(registerUser)}>
           <Title as="h3" align="left">
             Dados pessoais
           </Title>
