@@ -17,7 +17,8 @@
       "@organisms": ["./components/organisms"],
       "@contexts": ["./contexts"],
       "@hooks": ["./hooks"],
-      "@utils": ["./utils"]
+      "@utils": ["./utils"],
+      "@validations": ["./validations"]
     }
   },
   "include": ["./src"]
