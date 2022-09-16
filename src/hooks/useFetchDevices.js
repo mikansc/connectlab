@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "@contexts";
 import { getAllDevices } from "@services";
 
-export const useFetchDefices = () => {
+export const useFetchDevices = () => {
   const { setStatus } = useAppContext();
 
-  const [devices, setDevices] = useState([]);
+  const [allDevices, setAllDevices] = useState([]);
+  const [filter, setFilter] = useState(null);
 
   useEffect(() => {
     setStatus.loading();
     getAllDevices()
       .then((data) => {
-        setDevices(data);
+        setAllDevices(data);
         setStatus.success();
       })
       .catch((e) => {
@@ -20,7 +21,20 @@ export const useFetchDefices = () => {
       });
   }, [setStatus]);
 
+  const filterByName = (deviceName) => {
+    if (deviceName && deviceName.trim()) {
+      setFilter(deviceName.trim().toLowerCase());
+    } else {
+      setFilter(null);
+    }
+  };
+
+  const devices = filter
+    ? allDevices.filter((d) => d.name.toLowerCase().includes(filter))
+    : allDevices;
+
   return {
     devices,
+    filterByName,
   };
 };

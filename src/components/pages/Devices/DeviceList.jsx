@@ -1,4 +1,4 @@
-import { useFetchDefices } from "@hooks";
+import { useFetchDevices } from "@hooks";
 import { useAppContext } from "@contexts";
 import { Separator, Title } from "@atoms";
 import { Device, Filter } from "@molecules";
@@ -6,7 +6,7 @@ import { AddDeviceModal, DeviceGrid } from "@organisms";
 import { DefaultPage } from "@templates";
 
 export const DeviceList = () => {
-  const { devices } = useFetchDefices();
+  const { devices, filterByName } = useFetchDevices();
   const { modal } = useAppContext();
 
   return (
@@ -15,7 +15,7 @@ export const DeviceList = () => {
         Adicionar dispositivo
       </Title>
       <Separator />
-      <Filter />
+      <Filter onChangeFilter={filterByName} />
       <DeviceGrid title="Todos os dispositivos">
         {devices.map((device, idx) => (
           <Device key={`${idx}-${device.id}`} device={device} onClick={() => modal.open(device)} />
