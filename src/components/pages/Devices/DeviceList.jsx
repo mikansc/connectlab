@@ -19,8 +19,8 @@ export const DeviceList = () => {
       <Separator />
       <Filter />
       <DeviceGrid title="Todos os dispositivos">
-        {devices.map((device) => (
-          <Device key={device.id} device={device} onClick={() => modal.open(device)} />
+        {devices.map((device, idx) => (
+          <Device key={`${idx}-${device.id}`} device={device} onClick={() => modal.open(device)} />
         ))}
       </DeviceGrid>
       <AddDeviceModal open={modal.isOpen} />
