@@ -16,7 +16,7 @@ const addressSchema = yup.object({
 });
 
 export const updateUserSchema = yup.object({
-  firstName: yup.string().required(required),
+  fullName: yup.string().required(required),
   phone: yup.string().matches(phoneExp, phone).required(required),
   email: yup.string().email(email).required(required),
   photoUrl: yup.string().url(url).required(required),
