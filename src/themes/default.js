@@ -11,7 +11,15 @@ export const defaultTheme = {
     black: "#333",
     white: "#EEE",
     gray: "#D7BDDD",
-    background: "#D9D9D9",
+    background: {
+      default: "#D9D9D9",
+      main: "#FFDDA2",
+      secondary: "#C3DFED",
+      error: "#FDC7AE",
+      info: "#A9F4FE",
+      warning: "#FFE6A8",
+      success: "#D4F8CB",
+    },
     border: "rgba(0,0,0,0.1)",
   },
   shadow: {
