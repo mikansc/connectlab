@@ -1,5 +1,4 @@
 import { ThemeProvider } from "styled-components";
-import { ToastContainer } from "react-toastify";
 
 import { Router } from "./routes";
 
@@ -8,6 +7,7 @@ import { AppProvider, AuthProvider } from "@contexts";
 
 import { defaultTheme } from "./themes/default";
 import { GlobalStyle } from "./themes/GlobalStyle";
+import { StyledToastContainer } from "./themes/ToastContainer.styles";
 
 export const App = () => {
   return (
@@ -17,10 +17,10 @@ export const App = () => {
           <Router />
           <Loading />
           <GlobalStyle />
-          <ToastContainer
+          <StyledToastContainer
             pauseOnHover={false}
             closeButton={false}
-            theme="colored"
+            // theme="colored"
             position="top-right"
           />
         </AuthProvider>
