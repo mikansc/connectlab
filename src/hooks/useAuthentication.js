@@ -36,7 +36,7 @@ export const useAuthentication = () => {
       login(authData)
         .then((data) => {
           setUser(data);
-          setStatus.success();
+          setStatus.success("Seja bem vindo!");
         })
         .catch((err) => {
           console.error(err.message);

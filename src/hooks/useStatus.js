@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { toast } from "react-toastify";
 
 const StatusTypes = {
   idle: "idle",
@@ -22,8 +23,18 @@ export const useStatus = () => {
   const setStatus = useMemo(
     () => ({
       loading: () => setSituation(StatusTypes.loading),
-      success: () => setSituation(StatusTypes.success),
-      error: () => setSituation(StatusTypes.error),
+      success: (msg) => {
+        if (msg) {
+          toast.success(msg);
+        }
+        setSituation(StatusTypes.success);
+      },
+      error: (msg) => {
+        if (msg) {
+          toast.error(msg);
+        }
+        setSituation(StatusTypes.error);
+      },
     }),
     [],
   );

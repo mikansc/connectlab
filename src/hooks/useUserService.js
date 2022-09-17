@@ -12,7 +12,7 @@ export const useUserService = () => {
     setStatus.loading();
     createUser(userData)
       .then(() => {
-        setStatus.success();
+        setStatus.success("Usuário cadastrado com sucesso");
         navigate("/");
       })
       .catch(() => setStatus.error());
@@ -24,7 +24,7 @@ export const useUserService = () => {
       .then((updatedUser) => {
         persistUser({ ...user, ...updatedUser });
         storageService.clear("weather");
-        setStatus.success();
+        setStatus.success("Usuário atualizado com sucesso");
         navigate("../profile");
       })
       .catch(() => setStatus.error());
