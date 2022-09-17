@@ -14,10 +14,28 @@ import {
   StyledButtonContainer,
 } from "./UserCreateForm.styles";
 
+const DATA_USR = {
+  email: "michael@teste.com.br",
+  password: "11223344",
+  passwordConfirm: "11223344",
+  fullName: "Mika Nsc",
+  photoUrl: "https://github.com/mikansc.png",
+  phone: "(47) 99999-9999",
+  userAddress: {
+    zipCode: "89227-210",
+    street: "",
+    number: 123,
+    neighborhood: "",
+    city: "",
+    state: "",
+    complement: "Casa",
+  },
+};
+
 export const UserCreateForm = () => {
   const { registerUser } = useUserService();
   const { register, handleSubmit, setValue, getValues, formState } = useForm({
-    defaultValues: {},
+    defaultValues: DATA_USR,
     resolver: yupResolver(newUserSchema),
   });
   const { errors } = formState;

@@ -9,9 +9,9 @@ export const useUserService = () => {
   const { setStatus } = useAppContext();
 
   const registerUser = (userData) => {
+    setStatus.loading();
     createUser(userData)
-      .then((updatedUser) => {
-        persistUser({ ...user, ...updatedUser });
+      .then(() => {
         setStatus.success();
         navigate("/");
       })

@@ -17,9 +17,7 @@ const usersUrl = "/users";
 const newUserUrl = "auth/register";
 
 export const createUser = (user) => {
-  return httpService.post(newUserUrl, user).then(({ data }) => {
-    return userUpdateResponseAdapter(data);
-  });
+  return httpService.post(newUserUrl, user);
 };
 
 export const updateUser = (id, user) => {
