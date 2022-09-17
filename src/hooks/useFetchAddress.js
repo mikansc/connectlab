@@ -1,6 +1,7 @@
+import { useState } from "react";
+
 import { useAppContext } from "@contexts";
 import { getAddressByZipCode } from "@services";
-import { useState } from "react";
 
 export const useFetchAddress = ({ onFound = () => {} }) => {
   const { setStatus } = useAppContext();
