@@ -9,6 +9,7 @@ const zipCodeExp = /[0-9]{5}-?[0-9]{3}/;
 const addressSchema = yup.object({
   street: yup.string().required(required),
   number: yup.number().typeError(number).required(required),
+  compliment: yup.string(),
   neighborhood: yup.string().required(required),
   city: yup.string().required(required),
   state: yup.string().required(required),
@@ -22,7 +23,7 @@ export const newUserSchema = yup.object({
   photoUrl: yup.string().url(url).required(required),
   userAddress: addressSchema,
   password: yup.string().min(6, password).required(required),
-  confirmPassword: yup
+  passwordConfirm: yup
     .string()
     .min(6, password)
     .oneOf([yup.ref("password")], passwordMatch)
