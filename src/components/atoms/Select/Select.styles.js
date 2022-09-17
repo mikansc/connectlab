@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledInputSelect = styled.select`
   border: 1px solid ${({ theme }) => theme.colors.border};
@@ -16,4 +16,13 @@ export const StyledInputSelect = styled.select`
     outline: ${({ theme }) => theme.colors.main.default} solid 2px;
     border-radius: ${({ theme }) => theme.borderRadius};
   }
+
+  ${({ $hasError, theme }) =>
+    $hasError &&
+    css`
+      border: 2px solid ${theme.colors.error};
+      &:focus {
+        outline: ${theme.colors.error} solid 1px;
+      }
+    `}
 `;

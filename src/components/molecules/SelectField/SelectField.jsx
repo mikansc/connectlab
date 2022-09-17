@@ -5,13 +5,13 @@ import { Select, Label } from "@atoms";
 
 import { StyledInputGroup } from "./SelectField.styles";
 
-export const SelectField = forwardRef(({ label, options = [], color, ...props }, ref) => {
+export const SelectField = forwardRef(({ label, options = [], color, error, ...props }, ref) => {
   return (
     <StyledInputGroup>
-      <Label color={color} htmlFor={props.name}>
+      <Label hasError={!!error} color={color} htmlFor={props.name}>
         {label}
       </Label>
-      <Select {...props} ref={ref}>
+      <Select hasError={!!error} {...props} ref={ref}>
         {options.map((option) => (
           <option key={option} value={option.id ? option.id : option}>
             {option.title ? option.title : option}
@@ -34,6 +34,7 @@ const optionType = PropTypes.shape({
 const optionsType = PropTypes.oneOfType([PropTypes.arrayOf(optionType), PropTypes.string]);
 
 SelectField.propTypes = {
+  error: PropTypes.string,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   color: PropTypes.string,
