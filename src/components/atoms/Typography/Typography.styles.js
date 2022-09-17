@@ -10,3 +10,12 @@ export const StyledText = styled.span`
   font-weight: 300;
   color: ${({ theme }) => theme.colors.text.default};
 `;
+
+export const StyledErrorMessage = styled.span`
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: 0.02rem;
+  padding-top: 0.25em;
+  padding-left: 0.5em;
+  color: ${({ theme }) => theme.colors.error};
+`;
