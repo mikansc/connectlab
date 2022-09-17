@@ -19,10 +19,12 @@ export const UserUpdateForm = () => {
   const { user } = useAuthContext();
   const { saveUser } = useUserService();
 
-  const { register, handleSubmit, setValue, getValues } = useForm({
+  const { register, handleSubmit, setValue, getValues, formState } = useForm({
     defaultValues: user,
     resolver: yupResolver(updateUserSchema),
   });
+
+  const { errors } = formState;
 
   const { findByCep } = useFetchAddress({
     onFound: (address) => setValue("userAddress", address),
@@ -41,32 +43,29 @@ export const UserUpdateForm = () => {
               {...register("fullName")}
               label="Nome completo"
               placeholder="digite seu nome completo..."
+              error={errors.fullName?.message}
             />
-            <InputField {...register("phone")} label="Telefone" placeholder="(XX) XXXXX-XXXX" />
+            <InputField
+              {...register("phone")}
+              label="Telefone"
+              placeholder="(XX) XXXXX-XXXX"
+              error={errors.phone?.message}
+            />
           </StyledRow>
 
           <StyledRow>
-            <InputField {...register("email")} label="E-mail" placeholder="usuario@mail.com" />
+            <InputField
+              {...register("email")}
+              label="E-mail"
+              placeholder="usuario@mail.com"
+              error={errors.email?.message}
+            />
 
             <InputField
               {...register("photoUrl")}
               label="URL da foto"
               placeholder="insira a url da foto de perfil..."
-            />
-          </StyledRow>
-
-          <StyledRow>
-            <InputField
-              {...register("password")}
-              type="password"
-              label="Senha"
-              placeholder="digite sua senha..."
-            />
-            <InputField
-              {...register("passwordConfirm")}
-              type="password"
-              label="Confirme a senha"
-              placeholder="digite sua senha novamente..."
+              error={errors.photoUrl?.message}
             />
           </StyledRow>
 
@@ -76,7 +75,12 @@ export const UserUpdateForm = () => {
             Endereço
           </Title>
           <StyledRow columns="3">
-            <InputField {...register("userAddress.zipCode")} label="CEP" placeholder="12345000" />
+            <InputField
+              {...register("userAddress.zipCode")}
+              label="CEP"
+              placeholder="12345000"
+              error={errors.userAddress?.zipCode?.message}
+            />
             <StyledButtonContainer>
               <Button type="button" onClick={() => findByCep(getValues("userAddress.zipCode"))}>
                 Buscar
@@ -88,16 +92,19 @@ export const UserUpdateForm = () => {
               {...register("userAddress.street")}
               label="Logradouro / Endereço"
               placeholder="digite o endereço..."
+              error={errors.userAddress?.street?.message}
             />
             <InputField
               {...register("userAddress.number")}
               label="Número"
               placeholder="digite o número..."
+              error={errors.userAddress?.number?.message}
             />
             <InputField
               {...register("userAddress.neighborhood")}
               label="Bairro"
               placeholder="digite o bairro..."
+              error={errors.userAddress?.neighborhood?.message}
             />
           </StyledRow>
           <StyledRow>
@@ -105,11 +112,13 @@ export const UserUpdateForm = () => {
               {...register("userAddress.city")}
               label="Cidade"
               placeholder="digite a cidade..."
+              error={errors.userAddress?.city?.message}
             />
             <InputField
               {...register("userAddress.state")}
               label="Estado"
               placeholder="digite o estado..."
+              error={errors.userAddress?.state?.message}
             />
           </StyledRow>
           <Separator />
