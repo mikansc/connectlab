@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.background.default};
     color: ${({ theme }) => theme.colors.text.default};
     font-size: 1.6rem;
     height: 100%;
