@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useFetchAddress, useUserService } from "@hooks";
 import { useAuthContext } from "@contexts";
 import { Button, Paper, Separator, Title } from "@atoms";
 import { ButtonGroup, InputField } from "@molecules";
+import { updateUserSchema } from "@validations";
 
 import {
   StyledFields,
@@ -19,6 +21,7 @@ export const UserUpdateForm = () => {
 
   const { register, handleSubmit, setValue, getValues } = useForm({
     defaultValues: user,
+    resolver: yupResolver(updateUserSchema),
   });
 
   const { findByCep } = useFetchAddress({
