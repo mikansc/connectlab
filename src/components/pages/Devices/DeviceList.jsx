@@ -5,7 +5,7 @@ import { AddDeviceModal, DeviceGrid } from "@organisms";
 import { DefaultPage } from "@templates";
 
 export const DeviceList = () => {
-  const { devices, filterByName } = useDevicesContext();
+  const { allDevices: devices, filterByName } = useDevicesContext();
   const { modal } = useAppContext();
 
   return (

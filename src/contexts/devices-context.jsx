@@ -1,15 +1,19 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from "react";
 
-import { useFetchDevices } from "@hooks";
+import { useFetchAllDevices, useFetchUserDevices } from "@hooks";
 
 const context = React.createContext(null);
 const ContextProvider = context.Provider;
 
 export const DevicesProvider = ({ children }) => {
-  const result = useFetchDevices();
+  const { devices: allDevices, filterByName } = useFetchAllDevices();
+  const { userDevices } = useFetchUserDevices();
 
-  return <ContextProvider value={result}>{children}</ContextProvider>;
+  return (
+    <ContextProvider value={{ allDevices, userDevices, filterByName }}>{children}</ContextProvider>
+  );
 };
 
 export const useDevicesContext = () => {

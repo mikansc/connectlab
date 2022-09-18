@@ -3,6 +3,7 @@ export * from "./useFetchAddress";
 export * from "./useStatus";
 export * from "./useModal";
 export * from "./useWeather";
-export * from "./useFetchDevices";
+export * from "./useFetchAllDevices";
+export * from "./useFetchUserDevices";
 export * from "./useFetchLocals";
 export * from "./useUserService";
