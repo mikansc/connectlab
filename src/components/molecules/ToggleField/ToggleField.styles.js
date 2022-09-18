@@ -9,7 +9,7 @@ export const StyledInputGroup = styled.div`
 export const StyledToggleLabel = styled(StyledLabel)`
   display: flex;
   align-items: center;
-  font-weight: 300;
+  font-weight: 400;
 
   & > * {
     margin-left: 0.5em;
