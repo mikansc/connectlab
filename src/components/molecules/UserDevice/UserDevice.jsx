@@ -6,24 +6,24 @@ import { Avatar } from "@molecules";
 
 import { StyledContainer, StyledDeviceData, StyledWrapper } from "./UserDevice.styles";
 
-export const UserDevice = ({ device, onClick }) => {
+export const UserDevice = ({ deviceData, onClick }) => {
   const theme = useTheme();
-  const deviceOnline = device && device.is_on;
-  const statusIcon = deviceOnline ? "flash_on" : "flash_off";
-  const iconColor = deviceOnline ? theme.colors.success : theme.colors.gray;
+
+  const { device, room, is_on } = deviceData;
+  const statusIcon = is_on ? "flash_on" : "flash_off";
+  const iconColor = is_on ? theme.colors.success : theme.colors.gray;
 
   return (
     <StyledWrapper onClick={onClick}>
       <Paper>
         <StyledContainer>
-          {/* FIXME - url from device must come from backend */}
-          <Avatar imageUrl={`img/${device?.photoUrl}`} name={device?.title} size="medium" />
+          <Avatar imageUrl={`${device.photoUrl}`} name={device.name} size="medium" />
           <StyledDeviceData>
             <Title as="span" align="left" variant="secondary">
-              {device?.title}
+              {device?.name}
             </Title>
             <Text>
-              {device?.local.room} | {deviceOnline ? "ON" : "OFF"}
+              {room} | {is_on ? "ON" : "OFF"}
             </Text>
           </StyledDeviceData>
           <Icon size="3.2rem" color={iconColor} name={statusIcon} />
@@ -34,13 +34,12 @@ export const UserDevice = ({ device, onClick }) => {
 };
 
 UserDevice.propTypes = {
-  device: PropTypes.shape({
-    title: PropTypes.string,
-    photoUrl: PropTypes.string,
+  deviceData: PropTypes.shape({
     is_on: PropTypes.bool,
-    local: PropTypes.shape({
+    room: PropTypes.string,
+    device: PropTypes.shape({
+      photoUrl: PropTypes.string,
       name: PropTypes.string,
-      room: PropTypes.string,
     }),
   }).isRequired,
   onClick: PropTypes.func,

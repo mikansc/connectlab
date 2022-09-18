@@ -12,7 +12,7 @@ export const Dashboard = () => {
       <WeatherHero />
       <DeviceGrid title="Meus dispositivos">
         {devices.map((device) => (
-          <UserDevice onClick={() => modal.open(device)} key={device.id} device={device} />
+          <UserDevice onClick={() => modal.open(device)} key={device._id} deviceData={device} />
         ))}
       </DeviceGrid>
       <DeviceModal open={modal.isOpen} />
