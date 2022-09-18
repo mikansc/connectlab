@@ -6,14 +6,14 @@ import { StyledContainer, StyledHeader } from "./DeviceDetails.styles";
 
 export const DeviceDetails = () => {
   const { modal } = useAppContext();
-  const { photoUrl, title, info } = modal.data;
-
+  const { device } = modal.data;
+  const { info, photoUrl, name } = device;
   return (
     <StyledContainer>
       <Paper>
         <StyledHeader>
-          <Avatar size="large" imageUrl={`img/${photoUrl}`} />
-          <Title as="h3">{title}</Title>
+          <Avatar size="large" imageUrl={`${photoUrl}`} />
+          <Title as="h3">{name}</Title>
         </StyledHeader>
         <Separator />
         <Property title="Virtual ID" value={info.virtual_id} />
@@ -21,7 +21,7 @@ export const DeviceDetails = () => {
         <Property title="Mac Address" value={info.mac_address} />
         <Property title="Signal" value={info.signal} />
         <ButtonGroup>
-          <Button>Remover</Button>
+          {/* <Button>Remover</Button> */}
           <Button onClick={() => modal.close()}>Fechar</Button>
         </ButtonGroup>
       </Paper>
