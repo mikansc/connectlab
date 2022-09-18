@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 
 import { StyledLabel } from "./Label.styles";
 
-export const Label = ({ children, color, hasError = false }) => {
+export const Label = ({ children, color, htmlFor, hasError = false }) => {
   return (
-    <StyledLabel $hasError={hasError} color={color}>
+    <StyledLabel $hasError={hasError} color={color} htmlFor={htmlFor}>
       {children}
     </StyledLabel>
   );
@@ -12,6 +12,7 @@ export const Label = ({ children, color, hasError = false }) => {
 
 Label.propTypes = {
   children: PropTypes.node.isRequired,
+  htmlFor: PropTypes.string.isRequired,
   hasError: PropTypes.bool,
   color: PropTypes.string,
 };
