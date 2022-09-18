@@ -3,9 +3,8 @@ import { useAppContext } from "@contexts";
 import { getAllLocals } from "@services";
 
 export const useFetchLocals = () => {
-  const { setStatus, status } = useAppContext();
-
   const [locals, setLocals] = useState([]);
+  const { setStatus } = useAppContext();
 
   useEffect(() => {
     setStatus.loading();
@@ -22,6 +21,5 @@ export const useFetchLocals = () => {
 
   return {
     locals,
-    isLoading: status.isLoading,
   };
 };

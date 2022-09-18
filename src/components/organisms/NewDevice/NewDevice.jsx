@@ -6,8 +6,8 @@ import { Avatar, ButtonGroup, InputField, SelectField } from "@molecules";
 import { StyledCenteredAvatar, StyledContainer } from "./NewDevice.styles";
 
 export const NewDevice = () => {
-  const { modal } = useAppContext();
-  const { locals, isLoading } = useFetchLocals();
+  const { modal, status } = useAppContext();
+  const { locals } = useFetchLocals();
 
   const { name, photoUrl } = modal.data;
 
@@ -23,8 +23,8 @@ export const NewDevice = () => {
           label="Local"
           name="name"
           placeholder="Selecione o local..."
-          disabled={isLoading}
-          options={isLoading ? ["carregando"] : locals}
+          disabled={status.isLoading}
+          options={status.isLoading ? ["carregando"] : locals}
         />
         <InputField name="comodo" label="Cômodo" placeholder="Quarto, sala, cozinha, etc..." />
         <Separator />
