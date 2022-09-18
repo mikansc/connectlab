@@ -1,12 +1,11 @@
-import { useFetchDevices } from "@hooks";
-import { useAppContext } from "@contexts";
+import { useAppContext, useDevicesContext } from "@contexts";
 import { Separator, Title } from "@atoms";
 import { Device, Filter } from "@molecules";
 import { AddDeviceModal, DeviceGrid } from "@organisms";
 import { DefaultPage } from "@templates";
 
 export const DeviceList = () => {
-  const { devices, filterByName } = useFetchDevices();
+  const { devices, filterByName } = useDevicesContext();
   const { modal } = useAppContext();
 
   return (

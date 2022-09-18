@@ -1,34 +1,15 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import { useAuthentication } from "@hooks";
-import { getUserDevices } from "@services";
-import { useAppContext } from "./app-context";
+import { useFetchDevices } from "@hooks";
 
 const context = React.createContext(null);
 const ContextProvider = context.Provider;
 
 export const DevicesProvider = ({ children }) => {
-  const [devices, setDevices] = useState([]);
-  const { setStatus } = useAppContext();
-  const { user } = useAuthentication();
-  const userId = user?.id;
+  const result = useFetchDevices();
 
-  useEffect(() => {
-    if (!userId) return;
-    setStatus.loading();
-    getUserDevices(userId)
-      .then((data) => {
-        setDevices(data);
-        setStatus.success();
-      })
-      .catch((e) => {
-        console.error(e.message);
-        setStatus.error();
-      });
-  }, [setStatus, userId]);
-
-  return <ContextProvider value={{ devices }}>{children}</ContextProvider>;
+  return <ContextProvider value={result}>{children}</ContextProvider>;
 };
 
 export const useDevicesContext = () => {

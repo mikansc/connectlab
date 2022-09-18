@@ -4,7 +4,7 @@ import { DeviceModal, DeviceGrid, WeatherHero } from "@organisms";
 import { DefaultPage } from "@templates";
 
 export const Dashboard = () => {
-  const { devices } = useDevicesContext();
+  const { userDevices: devices } = useDevicesContext();
   const { modal } = useAppContext();
 
   return (
