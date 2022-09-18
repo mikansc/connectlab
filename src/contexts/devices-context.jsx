@@ -3,16 +3,24 @@
 import React from "react";
 
 import { useFetchAllDevices, useFetchUserDevices } from "@hooks";
+import { useAuthContext } from "./auth-context";
 
 const context = React.createContext(null);
 const ContextProvider = context.Provider;
 
 export const DevicesProvider = ({ children }) => {
+  const { user } = useAuthContext();
   const { devices: allDevices, filterByName } = useFetchAllDevices();
-  const { userDevices } = useFetchUserDevices();
+  const { userDevices, saveDeviceToUser } = useFetchUserDevices(user?.id);
+
+  const addDeviceToUser = (device) => {
+    saveDeviceToUser({ ...device, user: user.id });
+  };
 
   return (
-    <ContextProvider value={{ allDevices, userDevices, filterByName }}>{children}</ContextProvider>
+    <ContextProvider value={{ allDevices, userDevices, filterByName, addDeviceToUser }}>
+      {children}
+    </ContextProvider>
   );
 };
 

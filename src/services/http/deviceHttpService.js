@@ -13,12 +13,17 @@ axiosInstance.interceptors.request.use((config) => {
 const httpService = new HttpService(axiosInstance);
 
 const devices = "/devices";
-const userDevices = "/userDevices/user";
+const user = "/user";
+const userDevices = "/userDevices";
 
 export const getAllDevices = async () => {
   return await httpService.get(devices).then((res) => res.data);
 };
 
 export const getUserDevices = (userId) => {
-  return httpService.get(`${userDevices}/${userId}`).then((res) => res.data);
+  return httpService.get(`${userDevices + user}/${userId}`).then((res) => res.data);
+};
+
+export const addDeviceToUser = (device) => {
+  return httpService.post(`${userDevices}`, device).then((res) => res.data);
 };
