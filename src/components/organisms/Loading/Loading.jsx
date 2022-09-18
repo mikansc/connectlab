@@ -6,7 +6,7 @@ export const Loading = () => {
   const { status } = useAppContext();
 
   return (
-    <Modal open={status.isLoading}>
+    <Modal open={status.isLoading} zIndex="1100">
       <Spinner />
       <Text>Aguarde</Text>
     </Modal>
