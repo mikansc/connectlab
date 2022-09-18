@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { StyledHeading } from "@atoms/Typography/Typography.styles";
+
 export const StyledWrapper = styled.div`
   width: 100%;
   cursor: pointer;
@@ -21,4 +23,11 @@ export const StyledDeviceData = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1em;
+
+  & ${StyledHeading} {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 160px;
+    text-overflow: ellipsis;
+  }
 `;
