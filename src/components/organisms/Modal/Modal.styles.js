@@ -8,7 +8,7 @@ export const StyledModalBackdrop = styled.div`
   right: 0;
   background-color: ${({ theme, color }) => color || theme.colors.white};
   opacity: 0.65;
-  z-index: 10;
+  z-index: ${({ $zIndex }) => $zIndex - 5};
 `;
 
 export const StyledModalContent = styled.div`

@@ -7,7 +7,7 @@ export const Modal = ({ children, backdropColor, zIndex = 1000, open = true }) =
   if (!open) return;
   return ReactDOM.createPortal(
     <>
-      <StyledModalBackdrop color={backdropColor} />
+      <StyledModalBackdrop $zIndex={zIndex} color={backdropColor} />
       <StyledModalContent $zIndex={zIndex}>{children}</StyledModalContent>
     </>,
     document.getElementById("portal"),
