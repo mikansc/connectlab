@@ -10,3 +10,4 @@ export * from "./Separator";
 export * from "./Icon";
 export * from "./Select";
 export * from "./Spinner";
+export * from "./Toggle";
