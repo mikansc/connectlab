@@ -12,11 +12,16 @@ export const SelectField = forwardRef(({ label, options = [], color, error, ...p
         {label}
       </Label>
       <Select hasError={!!error} {...props} ref={ref}>
-        {options.map((option) => (
-          <option key={option} value={option.id ? option.id : option}>
-            {option.title ? option.title : option}
-          </option>
-        ))}
+        <option value="">Selecione...</option>
+        {options.map((option, idx) => {
+          const value = option.id ? option.id : option;
+          const label = option.title ? option.title : option;
+          return (
+            <option key={`${value}-${idx}`} value={value}>
+              {label}
+            </option>
+          );
+        })}
       </Select>
     </StyledInputGroup>
   );
@@ -24,19 +29,10 @@ export const SelectField = forwardRef(({ label, options = [], color, error, ...p
 
 SelectField.displayName = "SelectField";
 
-const idType = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
-
-const optionType = PropTypes.shape({
-  title: PropTypes.string,
-  id: idType,
-});
-
-const optionsType = PropTypes.oneOfType([PropTypes.arrayOf(optionType), PropTypes.string]);
-
 SelectField.propTypes = {
   error: PropTypes.string,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   color: PropTypes.string,
-  options: optionsType,
+  options: PropTypes.array,
 };
