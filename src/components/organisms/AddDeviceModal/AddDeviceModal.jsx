@@ -6,7 +6,7 @@ import { Modal, NewDevice } from "@organisms";
 export const AddDeviceModal = ({ open }) => {
   const theme = useTheme();
   return (
-    <Modal backdropColor={theme.colors.black} open={open}>
+    <Modal backdropColor={theme.colors.black} zIndex={500} open={open}>
       <NewDevice />
     </Modal>
   );
