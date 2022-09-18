@@ -15,8 +15,8 @@ function getAvatarSize(avatarString) {
 
 export const StyledAvatarWrapper = styled.div`
   ${({ size }) => css`
-    width: ${getAvatarSize(size)};
-    height: ${getAvatarSize(size)};
+    max-width: ${getAvatarSize(size)};
+    max-height: ${getAvatarSize(size)};
     border-radius: ${getAvatarSize(size)};
   `}
   overflow: hidden;
