@@ -8,12 +8,7 @@ import { Button, Paper, Separator, Title } from "@atoms";
 import { ButtonGroup, InputField } from "@molecules";
 import { updateUserSchema } from "@validations";
 
-import {
-  StyledFields,
-  StyledContainer,
-  StyledRow,
-  StyledButtonContainer,
-} from "../UserForm.styles";
+import { StyledFields, StyledContainer, StyledRow, StyledButtonContainer } from "./UserForm.styles";
 
 export const UserUpdateForm = () => {
   const { user } = useAuthContext();
