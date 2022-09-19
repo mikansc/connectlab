@@ -1,6 +1,6 @@
 export * from "./Header";
 export * from "./LoginForm";
-export * from "./UserCreateForm";
+export * from "./UserForm";
 export * from "./WeatherHero";
 export * from "./UserDetails";
 export * from "./DeviceGrid";

@@ -1,1 +1,0 @@
-export { UserUpdateForm } from "./UserUpdateForm";

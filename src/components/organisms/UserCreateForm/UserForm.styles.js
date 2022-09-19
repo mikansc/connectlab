@@ -16,7 +16,16 @@ export const StyledButtonContainer = styled.div`
 
 export const StyledRow = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(${({ columns }) => columns || 2}, 1fr);
-  column-gap: 1em;
+
+  @media screen and (min-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(${({ columns }) => Math.min(columns, 2)}, 1fr);
+    column-gap: 1em;
+  }
+
+  @media screen and (min-width: 870px) {
+    display: grid;
+    grid-template-columns: repeat(${({ columns }) => columns || 2}, 1fr);
+    column-gap: 1em;
+  }
 `;

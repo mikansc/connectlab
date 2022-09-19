@@ -13,7 +13,7 @@ import {
   StyledContainer,
   StyledRow,
   StyledButtonContainer,
-} from "./UserUpdateForm.styles";
+} from "../UserForm.styles";
 
 export const UserUpdateForm = () => {
   const { user } = useAuthContext();

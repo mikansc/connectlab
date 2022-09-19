@@ -7,12 +7,7 @@ import { Button, Paper, Separator, Title } from "@atoms";
 import { ButtonGroup, InputField } from "@molecules";
 import { newUserSchema } from "@validations";
 
-import {
-  StyledFields,
-  StyledContainer,
-  StyledRow,
-  StyledButtonContainer,
-} from "./UserCreateForm.styles";
+import { StyledFields, StyledContainer, StyledRow, StyledButtonContainer } from "./UserForm.styles";
 
 const DATA_USR = {
   email: "michael@teste.com.br",
