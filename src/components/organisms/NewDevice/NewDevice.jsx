@@ -5,17 +5,20 @@ import { Avatar, ButtonGroup, InputField, SelectField, ToggleField } from "@mole
 
 import { StyledCenteredAvatar, StyledContainer } from "./NewDevice.styles";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { addDeviceSchema } from "@validations";
 
 export const NewDevice = () => {
   const { modal, status } = useAppContext();
   const { locals } = useFetchLocals();
   const { addDeviceToUser } = useDevicesContext();
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit, formState } = useForm({
     defaultValues: { is_on: true },
+    resolver: yupResolver(addDeviceSchema),
   });
-
+  const { errors } = formState;
   const { name, photoUrl, _id } = modal.data;
-  console.log(modal.data._id);
+
   return (
     <StyledContainer>
       <Paper>
@@ -29,12 +32,14 @@ export const NewDevice = () => {
           <SelectField
             label="Local"
             {...register("local")}
+            error={errors.local?.message}
             placeholder="Selecione o local..."
             disabled={status.isLoading}
             options={status.isLoading ? ["carregando"] : locals}
           />
           <InputField
             {...register("room")}
+            error={errors.room?.message}
             label="Cômodo"
             placeholder="Quarto, sala, cozinha, etc..."
           />

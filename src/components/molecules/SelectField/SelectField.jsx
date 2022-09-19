@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import PropTypes from "prop-types";
 
-import { Select, Label } from "@atoms";
+import { Select, Label, ErrorMessage } from "@atoms";
 
 import { StyledInputGroup } from "./SelectField.styles";
 
@@ -23,6 +23,7 @@ export const SelectField = forwardRef(({ label, options = [], color, error, ...p
           );
         })}
       </Select>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </StyledInputGroup>
   );
 });
