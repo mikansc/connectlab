@@ -27,3 +27,7 @@ export const getUserDevices = (userId) => {
 export const addDeviceToUser = (device) => {
   return httpService.post(`${userDevices}`, device).then((res) => res.data);
 };
+
+export const updateUserDeviceStatus = (deviceId, data) => {
+  return httpService.put(`${userDevices}/${deviceId}`, data).then((res) => res.data);
+};

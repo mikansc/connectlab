@@ -13,5 +13,5 @@ export const useModal = () => {
 
   const isOpen = !!data;
 
-  return { isOpen, open, close, data };
+  return { isOpen, open, close, data, setData };
 };

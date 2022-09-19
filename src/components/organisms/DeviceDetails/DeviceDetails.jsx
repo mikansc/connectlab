@@ -1,20 +1,29 @@
-import { useAppContext } from "@contexts";
+import { useAppContext, useDevicesContext } from "@contexts";
 import { Button, Paper, Separator, Title } from "@atoms";
-import { Avatar, ButtonGroup, Property } from "@molecules";
+import { Avatar, ButtonGroup, Property, ToggleField } from "@molecules";
 
 import { StyledContainer, StyledHeader } from "./DeviceDetails.styles";
 
 export const DeviceDetails = () => {
   const { modal } = useAppContext();
-  const { device } = modal.data;
+  const { toggleDevice } = useDevicesContext();
+  const { device, is_on } = modal.data;
   const { info, photoUrl, name } = device;
+  console.log(modal.data);
   return (
     <StyledContainer>
       <Paper>
         <StyledHeader>
           <Avatar size="large" imageUrl={`${photoUrl}`} />
           <Title as="h3">{name}</Title>
+          <ToggleField
+            label="Ligado"
+            name="is_on"
+            checked={is_on}
+            onChange={() => toggleDevice(modal.data)}
+          />
         </StyledHeader>
+
         <Separator />
         <Property title="Virtual ID" value={info.virtual_id} />
         <Property title="IP Address" value={info.ip_address} />

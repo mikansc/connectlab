@@ -11,14 +11,16 @@ const ContextProvider = context.Provider;
 export const DevicesProvider = ({ children }) => {
   const { user } = useAuthContext();
   const { devices: allDevices, filterByName } = useFetchAllDevices();
-  const { userDevices, saveDeviceToUser } = useFetchUserDevices(user?.id);
+  const { userDevices, saveDeviceToUser, toggleDevice } = useFetchUserDevices(user?.id);
 
   const addDeviceToUser = (device) => {
     saveDeviceToUser({ ...device, user: user.id });
   };
 
   return (
-    <ContextProvider value={{ allDevices, userDevices, filterByName, addDeviceToUser }}>
+    <ContextProvider
+      value={{ allDevices, userDevices, filterByName, addDeviceToUser, toggleDevice }}
+    >
       {children}
     </ContextProvider>
   );

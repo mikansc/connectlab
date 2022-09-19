@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { useAppContext } from "@contexts";
-import { getUserDevices, addDeviceToUser } from "@services";
+import { getUserDevices, addDeviceToUser, updateUserDeviceStatus } from "@services";
 import { useNavigate } from "react-router-dom";
 
 export const useFetchUserDevices = (userId) => {
@@ -35,7 +35,22 @@ export const useFetchUserDevices = (userId) => {
         setStatus.error("Não foi possível listar seus dispositivos");
       }
     },
-    [requestAllDevices, setStatus],
+    [modal, navigate, requestAllDevices, setStatus],
+  );
+
+  const toggleDevice = useCallback(
+    async (device) => {
+      try {
+        setStatus.loading();
+        await updateUserDeviceStatus(device._id, { is_on: !device.is_on });
+        await requestAllDevices();
+        modal.setData({ ...device, is_on: !device.is_on });
+        setStatus.success("Dispositivo atualizado com sucesso");
+      } catch {
+        setStatus.error("Não foi possível atualizar o dispositivo");
+      }
+    },
+    [modal, requestAllDevices, setStatus],
   );
 
   useEffect(() => {
@@ -46,5 +61,6 @@ export const useFetchUserDevices = (userId) => {
   return {
     userDevices,
     saveDeviceToUser,
+    toggleDevice,
   };
 };

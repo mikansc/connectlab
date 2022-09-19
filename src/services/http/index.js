@@ -1,4 +1,4 @@
-export { getAllDevices, getUserDevices, addDeviceToUser } from "./deviceHttpService";
+export * from "./deviceHttpService";
 export { getWeatherByCityName } from "./weatherHttpService";
 export { login } from "./authService";
 export { getAllLocals } from "./localsHttpService";
