@@ -10,20 +10,20 @@ import { newUserSchema } from "@validations";
 import { StyledFields, StyledContainer, StyledRow, StyledButtonContainer } from "./UserForm.styles";
 
 const DATA_USR = {
-  email: "michael@teste.com.br",
-  password: "11223344",
-  passwordConfirm: "11223344",
-  fullName: "Mika Nsc",
-  photoUrl: "https://github.com/mikansc.png",
-  phone: "(47) 99999-9999",
+  email: "",
+  password: "",
+  passwordConfirm: "",
+  fullName: "",
+  photoUrl: "",
+  phone: "",
   userAddress: {
-    zipCode: "89227-210",
+    zipCode: "",
     street: "",
-    number: 123,
+    number: null,
     neighborhood: "",
     city: "",
     state: "",
-    complement: "Casa",
+    complement: "",
   },
 };
 
