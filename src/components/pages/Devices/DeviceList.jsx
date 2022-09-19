@@ -1,5 +1,5 @@
 import { useAppContext, useDevicesContext } from "@contexts";
-import { Separator, Title } from "@atoms";
+import { Separator, Text, Title } from "@atoms";
 import { Device, Filter } from "@molecules";
 import { AddDeviceModal, DeviceGrid } from "@organisms";
 import { DefaultPage } from "@templates";
@@ -16,6 +16,7 @@ export const DeviceList = () => {
       <Separator />
       <Filter onChangeFilter={filterByName} />
       <DeviceGrid title="Todos os dispositivos">
+        {devices.length === 0 && <Text>Não há dispositivos para serem exibidos.</Text>}
         {devices.map((device, idx) => (
           <Device key={`${idx}-${device.id}`} device={device} onClick={() => modal.open(device)} />
         ))}
