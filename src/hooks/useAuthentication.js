@@ -26,7 +26,6 @@ export const useAuthentication = () => {
   }, [setStatus, user]);
 
   const persistUser = useCallback((user) => {
-    console.log("persistUser", user);
     setUser(user);
   }, []);
 

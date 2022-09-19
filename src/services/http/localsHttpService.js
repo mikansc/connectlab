@@ -17,7 +17,6 @@ const locals = "/locals";
 
 export const getAllLocals = async () => {
   return await httpService.get(locals).then((a) => {
-    console.log(a);
     return localsAdapter(a.data);
   });
 };

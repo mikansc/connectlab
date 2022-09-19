@@ -15,7 +15,7 @@ export const useFetchAddress = ({ onFound = () => {} }) => {
         setStatus.success();
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
         setStatus.error();
       });
   };

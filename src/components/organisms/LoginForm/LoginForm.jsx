@@ -12,7 +12,7 @@ import { StyledLoginFields, StyledContainer } from "./LoginForm.styles";
 export const LoginForm = () => {
   const { signIn } = useAuthContext();
   const { register, handleSubmit, formState } = useForm({
-    defaultValues: { username: "michael@teste.com.br", password: "112233" },
+    defaultValues: { username: "", password: "" },
     resolver: yupResolver(loginSchema),
   });
 

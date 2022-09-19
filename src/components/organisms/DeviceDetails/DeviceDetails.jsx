@@ -9,7 +9,7 @@ export const DeviceDetails = () => {
   const { toggleDevice } = useDevicesContext();
   const { device, is_on } = modal.data;
   const { info, photoUrl, name } = device;
-  console.log(modal.data);
+
   return (
     <StyledContainer>
       <Paper>
