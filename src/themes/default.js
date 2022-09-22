@@ -27,4 +27,9 @@ export const defaultTheme = {
     big: "0 2px 2px rgba(0,0,0,0.2)",
   },
   borderRadius: "3px",
+  breakpoints: {
+    small: "min-width: 426px",
+    medium: "min-width: 769px",
+    large: "min-width: 1025px",
+  },
 };
