@@ -8,3 +8,4 @@ export * from "./Device";
 export * from "./SelectField";
 export * from "./Navigation";
 export * from "./ToggleField";
+export * from "./LoggedUser";
