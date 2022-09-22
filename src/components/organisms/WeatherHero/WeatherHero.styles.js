@@ -41,7 +41,8 @@ export const StyledBackground = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.2); // FIXME: color from theme
+    background: ${({ theme }) => theme.colors.black};
+    opacity: 0.3;
     z-index: -1;
   }
 `;
