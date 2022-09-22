@@ -28,8 +28,8 @@ export const defaultTheme = {
   },
   borderRadius: "3px",
   breakpoints: {
-    small: "min-width: 426px",
-    medium: "min-width: 769px",
-    large: "min-width: 1025px",
+    small: "426px",
+    medium: "769px",
+    large: "1025px",
   },
 };

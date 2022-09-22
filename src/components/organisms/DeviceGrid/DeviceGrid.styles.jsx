@@ -8,7 +8,7 @@ export const StyledGrid = styled.div`
     margin-bottom: 1em;
   }
 
-  @media screen and (${({ theme }) => theme.breakpoints.medium}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1em;
@@ -18,7 +18,7 @@ export const StyledGrid = styled.div`
     }
   }
 
-  @media screen and (${({ theme }) => theme.breakpoints.large}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1em;

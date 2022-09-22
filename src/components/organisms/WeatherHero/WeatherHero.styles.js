@@ -13,7 +13,7 @@ export const StyledContainer = styled.div`
   overflow: hidden;
   margin-bottom: 1em;
 
-  @media screen and (${({ theme }) => theme.breakpoints.medium}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     height: 280px;
   }
 `;
@@ -30,7 +30,7 @@ export const StyledBackground = styled.div`
   justify-content: space-evenly;
   z-index: -2;
 
-  @media screen and (${({ theme }) => theme.breakpoints.medium}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     justify-content: center;
   }
 
@@ -73,7 +73,7 @@ export const StyledCityContainer = styled(StyledSubContainer)`
   & > * {
     margin: 0 0.15em;
   }
-  @media screen and (${({ theme }) => theme.breakpoints.medium}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     & > * {
       margin: 0.5em 0.15em;
     }
@@ -85,7 +85,7 @@ export const StyledCityName = styled.span`
   font-weight: 700;
   color: ${({ theme }) => theme.colors.secondary.text};
 
-  @media screen and (${({ theme }) => theme.breakpoints.medium}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     font-size: 2.4rem;
   }
 `;
@@ -108,7 +108,7 @@ export const StyledWeatherDataContainer = styled(StyledSubContainer)`
     font-size: 1rem;
   }
 
-  @media screen and (${({ theme }) => theme.breakpoints.small}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.small}) {
     color: ${({ theme }) => theme.colors.secondary.text};
 
     ${StyledPropertyContainer} {
