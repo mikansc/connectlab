@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledModalBackdrop = styled.div`
+  width: 100%;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -12,6 +13,7 @@ export const StyledModalBackdrop = styled.div`
 `;
 
 export const StyledModalContent = styled.div`
+  width: 100%;
   position: fixed;
   top: 50%;
   left: 50%;

@@ -3,6 +3,7 @@ import { Separator, Text, Title } from "@atoms";
 import { Device, Filter } from "@molecules";
 import { AddDeviceModal, DeviceGrid } from "@organisms";
 import { DefaultPage } from "@templates";
+import styled from "styled-components";
 
 export const DeviceList = () => {
   const { allDevices: devices, filterByName } = useDevicesContext();
@@ -10,11 +11,13 @@ export const DeviceList = () => {
 
   return (
     <DefaultPage>
-      <Title as="h2" align="left">
-        Adicionar dispositivo
-      </Title>
-      <Separator />
-      <Filter onChangeFilter={filterByName} />
+      <DeviceListHeader>
+        <Title as="h2" align="left">
+          Adicionar dispositivo
+        </Title>
+        <Separator />
+        <Filter onChangeFilter={filterByName} />
+      </DeviceListHeader>
       <DeviceGrid title="Todos os dispositivos">
         {devices.length === 0 && <Text>Não há dispositivos para serem exibidos.</Text>}
         {devices.map((device, idx) => (
@@ -25,3 +28,10 @@ export const DeviceList = () => {
     </DefaultPage>
   );
 };
+
+const DeviceListHeader = styled.div`
+  padding: 0 1em;
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    padding: 0;
+  }
+`;
