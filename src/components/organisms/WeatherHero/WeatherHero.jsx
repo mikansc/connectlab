@@ -5,11 +5,13 @@ import { Property } from "@molecules";
 
 import {
   StyledBackground,
+  StyledCityContainer,
   StyledCityName,
   StyledContainer,
   StyledSubContainer,
   StyledTemperature,
   StyledTemperatureContainer,
+  StyledWeatherDataContainer,
 } from "./WeatherHero.styles";
 
 import sunImg from "./assets/img/sun.png";
@@ -33,9 +35,11 @@ export const WeatherHero = () => {
             <Property title="max">{weather.tempMax} °C</Property>
           </StyledSubContainer>
         </StyledTemperatureContainer>
-        <Icon size="3rem" name={getWeatherIcon(weather.weatherId)} />
-        <StyledCityName>{weather.city}</StyledCityName>
-        <StyledSubContainer>
+        <StyledCityContainer>
+          <StyledCityName>{weather.city}</StyledCityName>
+          <Icon size="3rem" name={getWeatherIcon(weather.weatherId)} />
+        </StyledCityContainer>
+        <StyledWeatherDataContainer>
           <Property title="Sensação térmica">{weather.feelsLike} °C</Property>
           <span> | </span>
           <Property title="Umidade do ar">{weather.humidity} %</Property>
@@ -45,7 +49,7 @@ export const WeatherHero = () => {
               weather.date * 1000,
             )}
           </Property>
-        </StyledSubContainer>
+        </StyledWeatherDataContainer>
       </StyledBackground>
     </StyledContainer>
   );
