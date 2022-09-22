@@ -7,3 +7,4 @@ export * from "./useFetchAllDevices";
 export * from "./useFetchUserDevices";
 export * from "./useFetchLocals";
 export * from "./useUserService";
+export * from "./useMatchMedia";
