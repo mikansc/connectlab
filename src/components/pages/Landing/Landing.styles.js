@@ -7,7 +7,7 @@ export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: 426px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     flex-direction: row;
   }
 `;
@@ -18,7 +18,7 @@ export const StyledLeftContent = styled.div`
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.main.default};
 
-  @media screen and (min-width: 426px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.small}) {
     height: 100%;
   }
 `;
@@ -35,7 +35,7 @@ export const StyledLogoWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.main.default};
   opacity: 0.9;
 
-  @media screen and (min-width: 426px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     position: initial;
     top: 0;
     display: flex;
@@ -53,7 +53,7 @@ export const StyledFormWrapper = styled.div`
   display: grid;
   place-items: center;
 
-  @media screen and (min-width: 870px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
     width: 100%;
   }
 `;
