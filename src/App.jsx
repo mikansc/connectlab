@@ -17,12 +17,7 @@ export const App = () => {
           <Router />
           <Loading />
           <GlobalStyle />
-          <StyledToastContainer
-            pauseOnHover={false}
-            closeButton={false}
-            // theme="colored"
-            position="top-right"
-          />
+          <StyledToastContainer pauseOnHover={false} closeButton={false} position="top-right" />
         </AuthProvider>
       </AppProvider>
     </ThemeProvider>
