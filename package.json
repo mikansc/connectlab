@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
     "lint": "eslint src/**/*.{js,jsx}",
     "format": "prettier src/**/*.{js,jsx} --write"
   },
@@ -23,10 +25,31 @@
     "styled-components": "^5.3.5",
     "yup": "^0.32.11"
   },
+  "vitest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,js,ts,tsx}",
+      "!<rootDir>/src/*.{js,js,ts,tsx}",
+      "!<rootDir>/src/**/mock*.{js,js,ts,tsx}",
+      "!<rootDir>/src/styles/*.{js,js,ts,tsx}",
+      "!<rootDir>/**/*.stories.{js,js,ts,tsx}",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90
+      }
+    }
+  },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
+    "@vitest/coverage-c8": "^0.23.4",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
@@ -36,7 +59,9 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.7",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "jsdom": "^20.0.0",
     "vite": "^3.1.0",
-    "vite-plugin-eslint": "^1.8.1"
+    "vite-plugin-eslint": "^1.8.1",
+    "vitest": "^0.23.4"
   }
 }

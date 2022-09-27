@@ -6,6 +6,21 @@ import eslint from "vite-plugin-eslint";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), eslint()],
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/setup-test.js",
+    reporters: "verbose",
+    coverage: {
+      provider: "c8",
+      lines: 95,
+      branches: 95,
+      functions: 95,
+      statements: 95,
+      logHeapUsage: true,
+      exclude: ["**/*.styles.js"],
+    },
+  },
   resolve: {
     alias: {
       "@templates": path.resolve(__dirname, "./src/components/templates"),

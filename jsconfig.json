@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["vitest/globals"],
     "baseUrl": "./src",
     "module": "esnext",
     "target": "es2020",

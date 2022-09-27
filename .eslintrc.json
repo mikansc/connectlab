@@ -17,7 +17,15 @@
     "standard",
     "plugin:prettier/recommended"
   ],
-  "overrides": [],
+  "overrides": [
+    {
+      "files": ["**/*.test.jsx", "**/*.spec.jsx"],
+      "env": {
+        //necessary to use vitest as global config
+        "jest": true
+      }
+    }
+  ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
