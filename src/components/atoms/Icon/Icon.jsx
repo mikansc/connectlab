@@ -2,11 +2,11 @@ import PropTypes from "prop-types";
 
 import { StyledSpan } from "./Icon.styles";
 
-export const Icon = ({ name, color, size, ...props }) => {
+export const Icon = ({ name = "question_mark", color, size, ...props }) => {
   return (
     <StyledSpan
       $color={color}
-      size={size}
+      $size={size}
       className="material-icons"
       {...props}
       data-testId="app-icon"
