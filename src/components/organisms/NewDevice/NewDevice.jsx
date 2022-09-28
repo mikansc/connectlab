@@ -1,7 +1,7 @@
 import { useFetchLocals } from "@hooks";
 import { useAppContext, useDevicesContext } from "@contexts";
-import { Button, Paper, Separator, Title } from "@atoms";
-import { Avatar, ButtonGroup, InputField, SelectField, ToggleField } from "@molecules";
+import { Button, Paper, Separator, Title, ButtonGroup } from "@atoms";
+import { Avatar, InputField, SelectField, ToggleField } from "@molecules";
 
 import { StyledCenteredAvatar, StyledContainer } from "./NewDevice.styles";
 import { useForm } from "react-hook-form";

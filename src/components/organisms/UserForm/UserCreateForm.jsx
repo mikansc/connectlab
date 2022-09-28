@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useFetchAddress, useUserService } from "@hooks";
-import { Button, Paper, Separator, Title } from "@atoms";
-import { ButtonGroup, InputField } from "@molecules";
+import { Button, Paper, Separator, Title, ButtonGroup } from "@atoms";
+import { InputField } from "@molecules";
 import { newUserSchema } from "@validations";
 
 import { StyledFields, StyledContainer, StyledRow, StyledButtonContainer } from "./UserForm.styles";

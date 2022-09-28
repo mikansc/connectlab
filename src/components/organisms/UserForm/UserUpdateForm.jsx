@@ -4,8 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useFetchAddress, useUserService } from "@hooks";
 import { useAuthContext } from "@contexts";
-import { Button, Paper, Separator, Title } from "@atoms";
-import { ButtonGroup, InputField } from "@molecules";
+import { Button, Paper, Separator, Title, ButtonGroup } from "@atoms";
+import { InputField } from "@molecules";
 import { updateUserSchema } from "@validations";
 
 import { StyledFields, StyledContainer, StyledRow, StyledButtonContainer } from "./UserForm.styles";

@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useAuthContext } from "@contexts";
-import { Button, Paper, Title } from "@atoms";
-import { ButtonGroup, InputField } from "@molecules";
+import { Button, ButtonGroup, Paper, Title } from "@atoms";
+import { InputField } from "@molecules";
 import { loginSchema } from "@validations";
 
 import { StyledLoginFields, StyledContainer } from "./LoginForm.styles";

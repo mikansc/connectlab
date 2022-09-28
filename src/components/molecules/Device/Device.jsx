@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
-import { Avatar, ButtonGroup } from "@molecules";
-import { Button, Paper, Title } from "@atoms";
+import { Avatar } from "@molecules";
+import { Button, ButtonGroup, Paper, Title } from "@atoms";
 
 import { StyledContainer, StyledDeviceData } from "./Device.styles";
 

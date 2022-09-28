@@ -1,6 +1,6 @@
 import { useAppContext, useDevicesContext } from "@contexts";
-import { Button, Paper, Separator, Title } from "@atoms";
-import { Avatar, ButtonGroup, Property, ToggleField } from "@molecules";
+import { Button, ButtonGroup, Paper, Separator, Title } from "@atoms";
+import { Avatar, Property, ToggleField } from "@molecules";
 
 import { StyledContainer, StyledHeader } from "./DeviceDetails.styles";
 
@@ -30,7 +30,6 @@ export const DeviceDetails = () => {
         <Property title="Mac Address" value={info.mac_address} />
         <Property title="Signal" value={info.signal} />
         <ButtonGroup>
-          {/* <Button>Remover</Button> */}
           <Button onClick={() => modal.close()}>Fechar</Button>
         </ButtonGroup>
       </Paper>
