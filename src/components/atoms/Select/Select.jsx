@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 import { StyledInputSelect } from "./Select.styles";
 
-export const Select = forwardRef((props, ref) => {
+export const Select = forwardRef(({ children, ...props }, ref) => {
   return (
     <StyledInputSelect {...props} $hasError={props.hasError} ref={ref}>
-      {props.children}
+      {children}
     </StyledInputSelect>
   );
 });
