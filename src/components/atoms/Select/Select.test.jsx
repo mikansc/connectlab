@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { render } from "@utils";
+import { render } from "@test-utils";
 import { vi } from "vitest";
 import { Select } from "./Select";
 

@@ -18,7 +18,7 @@ export default defineConfig({
       functions: 95,
       statements: 95,
       logHeapUsage: true,
-      exclude: ["**/*.styles.js"],
+      exclude: ["**/*.styles.js", "src/test-utils/*.{js,jsx}"],
     },
   },
   resolve: {
@@ -33,6 +33,7 @@ export default defineConfig({
       "@contexts": path.resolve(__dirname, "./src/contexts"),
       "@hooks": path.resolve(__dirname, "./src/hooks"),
       "@utils": path.resolve(__dirname, "./src/utils"),
+      "@test-utils": path.resolve(__dirname, "./src/test-utils"),
       "@validations": path.resolve(__dirname, "./src/validations"),
     },
   },

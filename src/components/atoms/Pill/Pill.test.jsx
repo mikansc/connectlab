@@ -1,5 +1,5 @@
 import { screen } from "@testing-library/react";
-import { render } from "@utils";
+import { render } from "@test-utils";
 import { Pill } from "./Pill";
 
 describe("@atom/Pill", () => {
