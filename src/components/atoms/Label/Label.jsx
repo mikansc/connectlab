@@ -4,7 +4,7 @@ import { StyledLabel } from "./Label.styles";
 
 export const Label = ({ children, color, htmlFor, hasError = false }) => {
   return (
-    <StyledLabel $hasError={hasError} color={color} htmlFor={htmlFor}>
+    <StyledLabel $hasError={hasError} $color={color} htmlFor={htmlFor}>
       {children}
     </StyledLabel>
   );

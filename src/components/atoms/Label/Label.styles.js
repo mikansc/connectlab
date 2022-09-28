@@ -5,7 +5,7 @@ export const StyledLabel = styled.label`
   padding-left: 0.25em;
   font-weight: 400;
   font-size: 1.15rem;
-  color: ${({ theme, color }) => color || theme.colors.main.default};
+  color: ${({ theme, $color }) => $color || theme.colors.main.default};
 
   ${({ $hasError, theme }) =>
     $hasError &&
