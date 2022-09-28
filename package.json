@@ -25,23 +25,6 @@
     "styled-components": "^5.3.5",
     "yup": "^0.32.11"
   },
-  "vitest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,js,ts,tsx}",
-      "!<rootDir>/src/*.{js,js,ts,tsx}",
-      "!<rootDir>/src/**/mock*.{js,js,ts,tsx}",
-      "!<rootDir>/src/styles/*.{js,js,ts,tsx}",
-      "!<rootDir>/**/*.stories.{js,js,ts,tsx}",
-      "!<rootDir>/node_modules/"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90
-      }
-    }
-  },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
