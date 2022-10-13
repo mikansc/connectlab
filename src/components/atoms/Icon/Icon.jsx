@@ -9,7 +9,7 @@ export const Icon = ({ name = "question_mark", color, size, ...props }) => {
       $size={size}
       className="material-icons"
       {...props}
-      data-testId="app-icon"
+      data-testid="app-icon"
     >
       {name}
     </StyledSpan>
