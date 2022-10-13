@@ -19,7 +19,7 @@
   ],
   "overrides": [
     {
-      "files": ["**/*.test.jsx", "**/*.spec.jsx"],
+      "files": ["**/*.test.{js,jsx}", "**/*.spec.{js,jsx}"],
       "env": {
         //necessary to use vitest as global config
         "jest": true
