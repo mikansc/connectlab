@@ -13,17 +13,15 @@ export const useAuthentication = () => {
   }, []);
 
   useEffect(() => {
-    setStatus.loading();
     const user = retrieveUser();
     if (user) setUser(user);
-    setStatus.success();
-  }, [retrieveUser, setStatus]);
+  }, [retrieveUser]);
 
   useEffect(() => {
-    setStatus.loading();
-    storageService.save(query, user);
-    setStatus.success();
-  }, [setStatus, user]);
+    if (user) {
+      storageService.save(query, user);
+    }
+  }, [user]);
 
   const persistUser = useCallback((user) => {
     setUser(user);
