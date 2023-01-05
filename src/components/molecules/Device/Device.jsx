@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 import { Avatar } from "@molecules";
 import { Button, ButtonGroup, Paper, Title } from "@atoms";
@@ -6,6 +7,8 @@ import { Button, ButtonGroup, Paper, Title } from "@atoms";
 import { StyledContainer, StyledDeviceData } from "./Device.styles";
 
 export const Device = ({ device, onClick }) => {
+  const { t } = useTranslation();
+
   return (
     <Paper>
       <StyledContainer>
@@ -15,7 +18,7 @@ export const Device = ({ device, onClick }) => {
             {device?.name}
           </Title>
           <ButtonGroup>
-            <Button onClick={onClick}>Adicionar</Button>
+            <Button onClick={onClick}>{t("button.add")}</Button>
           </ButtonGroup>
         </StyledDeviceData>
       </StyledContainer>

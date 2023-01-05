@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useTranslation } from "react-i18next";
 
 import { useAuthContext } from "@contexts";
 import { Button, ButtonGroup, Paper, Title } from "@atoms";
@@ -10,6 +11,7 @@ import { loginSchema } from "@validations";
 import { StyledLoginFields, StyledContainer } from "./LoginForm.styles";
 
 export const LoginForm = () => {
+  const { t } = useTranslation();
   const { signIn } = useAuthContext();
   const { register, handleSubmit, formState } = useForm({
     defaultValues: { username: "", password: "" },
@@ -30,21 +32,21 @@ export const LoginForm = () => {
           <InputField
             {...register("username")}
             error={errors.username?.message}
-            label="Usuário"
+            label={t("input.username")}
             placeholder="usuario@mail.com"
           />
           <InputField
             {...register("password")}
             error={errors.password?.message}
             type="password"
-            label="Senha"
-            placeholder="digite sua senha..."
+            label={t("input.password")}
+            placeholder={t("input.password_placeholder")}
           />
         </StyledLoginFields>
         <ButtonGroup>
-          <Button onClick={handleSubmit(handleSignIn)}>Entrar</Button>
+          <Button onClick={handleSubmit(handleSignIn)}>{t("button.enter")}</Button>
           <Button as={Link} to="/signup">
-            Cadastrar
+            {t("button.signup")}
           </Button>
         </ButtonGroup>
       </Paper>

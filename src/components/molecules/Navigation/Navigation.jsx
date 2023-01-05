@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 import { StyledLink, StyledNav } from "./Navigation.styles";
-// import { LoggedUser } from "@molecules";
 
 const routeLinks = [
   { path: "/dashboard", name: "Home" },
@@ -9,6 +9,7 @@ const routeLinks = [
 ];
 
 export const Navigation = ({ activePath, onSignOut, loggedUserComponent }) => {
+  const { t } = useTranslation();
   return (
     <>
       <StyledNav>
@@ -19,7 +20,7 @@ export const Navigation = ({ activePath, onSignOut, loggedUserComponent }) => {
           </StyledLink>
         ))}
         <StyledLink as="button" onClick={onSignOut}>
-          Sair
+          {t("button.signout")}
         </StyledLink>
       </StyledNav>
     </>

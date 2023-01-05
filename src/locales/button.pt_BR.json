@@ -1,0 +1,11 @@
+{
+  "button": {
+    "add": "Adicionar",
+    "close": "Fechar",
+    "cancel": "Cancelar",
+    "enter": "Entrar",
+    "save": "Salvar",
+    "signout": "Sair",
+    "signup": "Cadastrar"
+  }
+}

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { Avatar } from "@molecules";
@@ -17,6 +18,7 @@ const formatDate = (date) => {
 
 export const LoggedUser = ({ user }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { fullName, photoUrl } = user;
 
   const goToUserProfile = () => {
@@ -28,7 +30,7 @@ export const LoggedUser = ({ user }) => {
       <StyledContainer>
         <Avatar imageUrl={photoUrl} name={fullName} size="small" />
         <StyledUserData>
-          <StyledUserName>Olá, {fullName}!</StyledUserName>
+          <StyledUserName>{t("user.greeting", { name: fullName })}</StyledUserName>
           <StyledClock>{formatDate(Date.now())}</StyledClock>
         </StyledUserData>
       </StyledContainer>
