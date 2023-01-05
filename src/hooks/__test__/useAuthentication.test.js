@@ -51,7 +51,7 @@ describe("@hooks/useAuthentication", () => {
       storageService.get.mockReturnValue({ user: "user", accessToken: "token" });
       const { user, isLoggedIn } = render_useAuthentication();
       expect(isLoggedIn).toBe(true);
-      expect(user).toEqual({ user: "sser", accessToken: "token" });
+      expect(user).toEqual({ user: "sser", accessToken: "token" }); // broken... testing CI params
     });
   });
 });
