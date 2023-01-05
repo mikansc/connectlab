@@ -1,6 +1,6 @@
 /* eslint-disable prefer-const */
 /* eslint-disable no-unused-vars */
-import * as contexts from "@contexts";
+import { storageService } from "@services";
 import { renderHook } from "@testing-library/react";
 import { vi } from "vitest";
 import { useAuthentication } from "../useAuthentication";
@@ -15,7 +15,6 @@ vi.mock("@services", () => ({
 }));
 
 // setup contexts
-
 vi.mock("@contexts", () => ({
   useAppContext: vi.fn().mockReturnValue({
     setStatus: {
@@ -39,9 +38,20 @@ describe("@hooks/useAuthentication", () => {
     expect(retrieveUser).toBeDefined();
   });
 
-  it("should return initial props correctly", () => {
-    const { isLoggedIn, user } = render_useAuthentication();
-    expect(isLoggedIn).toBe(false);
-    expect(user).toBeNull();
+  describe("when it has no user authenticated", () => {
+    it("should return initial props correctly", () => {
+      const { isLoggedIn, user } = render_useAuthentication();
+      expect(isLoggedIn).toBe(false);
+      expect(user).toBeNull();
+    });
+  });
+
+  describe("when it has an authenticated user", () => {
+    it("should return initial props correctly", () => {
+      storageService.get.mockReturnValue({ user: "user", accessToken: "token" });
+      const { user, isLoggedIn } = render_useAuthentication();
+      expect(isLoggedIn).toBe(true);
+      expect(user).toEqual({ user: "user", accessToken: "token" });
+    });
   });
 });
