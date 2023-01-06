@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useAppContext, useDevicesContext } from "@contexts";
 import { Separator, Text, Title } from "@atoms";
 import { Device, Filter } from "@molecules";
@@ -6,6 +7,7 @@ import { DefaultPage } from "@templates";
 import styled from "styled-components";
 
 export const DeviceList = () => {
+  const { t } = useTranslation();
   const { allDevices: devices, filterByName } = useDevicesContext();
   const { modal } = useAppContext();
 
@@ -13,13 +15,13 @@ export const DeviceList = () => {
     <DefaultPage>
       <DeviceListHeader>
         <Title as="h2" align="left">
-          Adicionar dispositivo
+          {t("heading.add_device")}
         </Title>
         <Separator />
         <Filter onChangeFilter={filterByName} />
       </DeviceListHeader>
       <DeviceGrid title="Todos os dispositivos">
-        {devices.length === 0 && <Text>Não há dispositivos para serem exibidos.</Text>}
+        {devices.length === 0 && <Text>{t("misc.no_devices")}</Text>}
         {devices.map((device, idx) => (
           <Device key={`${idx}-${device.id}`} device={device} onClick={() => modal.open(device)} />
         ))}

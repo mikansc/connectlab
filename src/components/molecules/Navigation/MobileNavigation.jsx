@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
-import { Icon } from "@atoms";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+import { Icon } from "@atoms";
 
 import {
   StyledBurger,
@@ -18,6 +20,7 @@ const routeLinks = [
 
 export const MobileNavigation = ({ activePath, onSignOut, loggedUserComponent }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -41,7 +44,7 @@ export const MobileNavigation = ({ activePath, onSignOut, loggedUserComponent })
           </StyledButton>
         ))}
         <StyledButton as="button" onClick={onSignOut}>
-          Sair
+          {t("button.signout")}
         </StyledButton>
       </StyledNavContainer>
     </>

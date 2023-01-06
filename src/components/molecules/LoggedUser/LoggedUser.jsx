@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { Avatar } from "@molecules";
@@ -11,12 +12,9 @@ import {
   StyledWrapper,
 } from "./LoggedUser.styles";
 
-const formatDate = (date) => {
-  return Intl.DateTimeFormat("pt-BR", { dateStyle: "full" }).format(date);
-};
-
 export const LoggedUser = ({ user }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { fullName, photoUrl } = user;
 
   const goToUserProfile = () => {
@@ -28,8 +26,8 @@ export const LoggedUser = ({ user }) => {
       <StyledContainer>
         <Avatar imageUrl={photoUrl} name={fullName} size="small" />
         <StyledUserData>
-          <StyledUserName>Olá, {fullName}!</StyledUserName>
-          <StyledClock>{formatDate(Date.now())}</StyledClock>
+          <StyledUserName>{t("user.greeting", { name: fullName })}</StyledUserName>
+          <StyledClock>{t("misc.full_date", { date: Date.now() })}</StyledClock>
         </StyledUserData>
       </StyledContainer>
     </StyledWrapper>
