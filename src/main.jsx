@@ -5,7 +5,7 @@ import { App } from "./App";
 import "./assets/css/reset.css";
 import "react-toastify/dist/ReactToastify.min.css";
 
-import "./configs/i18n";
+import "./i18n";
 
 const app = ReactDOM.createRoot(document.getElementById("root"));
 
