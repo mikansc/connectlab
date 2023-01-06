@@ -20,7 +20,7 @@ export const Navigation = ({ activePath, onSignOut, loggedUserComponent }) => {
           </StyledLink>
         ))}
         <StyledLink as="button" onClick={onSignOut}>
-          {t("button.signout")}
+          {t("button.sign_out")}
         </StyledLink>
       </StyledNav>
     </>

@@ -46,7 +46,7 @@ export const LoginForm = () => {
         <ButtonGroup>
           <Button onClick={handleSubmit(handleSignIn)}>{t("button.enter")}</Button>
           <Button as={Link} to="/signup">
-            {t("button.signup")}
+            {t("button.sign_up")}
           </Button>
         </ButtonGroup>
       </Paper>

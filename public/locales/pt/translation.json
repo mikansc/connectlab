@@ -5,8 +5,8 @@
     "cancel": "Cancelar",
     "enter": "Entrar",
     "save": "Salvar",
-    "signout": "Sair",
-    "signup": "Cadastrar"
+    "sign_out": "Sair",
+    "sign_up": "Cadastrar"
   },
   "device": {
     "property": {
