@@ -33,7 +33,7 @@
     "default_select": "Selecione...",
 
     "username": "Usuário",
-    "username_placeholder": "usuario@email.com.br",
+    "username_placeholder": "digite o seu email...",
     "password": "Senha",
     "password_placeholder": "digite sua senha...",
     "submit": "Entrar",
