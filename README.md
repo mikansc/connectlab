@@ -1,4 +1,4 @@
-[![Crowdin](https://badges.crowdin.net/devinhouse-connectlab/localized.svg)](https://crowdin.com) ![Testes](https://github.com/mikansc/connectlab/actions/workflows/tests.yml/badge.svg?branch=main)
+[![Crowdin](https://badges.crowdin.net/devinhouse-connectlab/localized.svg)](https://crowdin.com) ![Testes](https://github.com/mikansc/connectlab/actions/workflows/tests.yml/badge.svg?branch=main) [![Netlify Status](https://api.netlify.com/api/v1/badges/a7e33b6e-2db0-47a2-a7ce-62ddce4f2733/deploy-status)](https://app.netlify.com/sites/mikalab/deploys)
 
 # DEVInHouse ConnectLab
 
