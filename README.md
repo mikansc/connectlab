@@ -6,4 +6,55 @@
 
 Aproveitei o projeto para incluir algumas ferramentas e práticas utilizadas no dia-a-dia de uma empresa real, para que os alunos tenham contato com ferramentas que, muito provavelmente, farão parte do seu trabalho quando formados.
 
-## Esta documentação está em construção
+---
+
+## Rodar o front end localmente
+
+Configure as variáveis de ambiente de acordo com o arquivo [`.env.example`](.env.example).
+
+| Variável          | Descrição                                                                                                                         |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `VITE_API_URL`    | URL do Back End                                                                                                                   |
+| `VITE_VIACEP_URL` | API para consulta de CEPs utilizada no sistema. (_Se alterar, precisará mudar a estrutura das respostas ao endpoint no projeto!_) |
+| `VITE_OW_URL`     | API do Weather API para consulta de previsão do tempo **(não alterar)**                                                           |
+| `VITE_WAPI`       | Chave API do Weather API (você precisa se cadastrar e gerar a chave). [Ver o site Weather Api](https://openweathermap.org/api)    |
+
+- Verifique se o back end já está rodando corretamente. [Ver Backend Connectlab](https://github.com/DEVin-Intelbras/connect-lab-server-node)
+
+- Abra o terminal na pasta raiz do projeto e execute o comando
+
+```bash
+yarn
+```
+
+- Sem seguida, execute
+
+```bash
+yarn dev
+```
+
+---
+
+## Utilizando o docker
+
+Através do docker, você poderá subir o sistema com dados pré-populados e prontos para usar. O usuário padrão para testes é o seguinte:
+
+| Usuário         | Senha    |
+| --------------- | -------- |
+| admin@teste.com | 12345678 |
+
+Configure as variáveis de ambiente de acordo com o arquivo [`.env.example`](.env.example).
+
+| Variável          | Descrição                                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `API_URL`         | URL do Back End                                                                                                                |
+| `WEATHER_API_KEY` | Chave API do Weather API (você precisa se cadastrar e gerar a chave). [Ver o site Weather Api](https://openweathermap.org/api) |
+| `PORT`            | Porta do app front end                                                                                                         |
+
+- Abra o terminal na pasta raiz do projeto e execute o comando
+
+```bash
+docker compose up -d
+```
+
+- Acesse `http://localhost:porta`
