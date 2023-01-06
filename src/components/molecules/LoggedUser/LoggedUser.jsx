@@ -12,10 +12,6 @@ import {
   StyledWrapper,
 } from "./LoggedUser.styles";
 
-const formatDate = (date) => {
-  return Intl.DateTimeFormat("pt-BR", { dateStyle: "full" }).format(date);
-};
-
 export const LoggedUser = ({ user }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -31,7 +27,7 @@ export const LoggedUser = ({ user }) => {
         <Avatar imageUrl={photoUrl} name={fullName} size="small" />
         <StyledUserData>
           <StyledUserName>{t("user.greeting", { name: fullName })}</StyledUserName>
-          <StyledClock>{formatDate(Date.now())}</StyledClock>
+          <StyledClock>{t("misc.full_date", { date: Date.now() })}</StyledClock>
         </StyledUserData>
       </StyledContainer>
     </StyledWrapper>

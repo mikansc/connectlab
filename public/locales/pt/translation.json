@@ -47,7 +47,8 @@
   "misc": {
     "wait": "Aguarde...",
     "loading": "Carregando...",
-    "no_devices": "Não há dispositivos para serem exibidos."
+    "no_devices": "Não há dispositivos para serem exibidos.",
+    "full_date": "{{date, FULL_DATE}}"
   },
   "question": {
     "is_on": "Ligado?"
