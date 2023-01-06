@@ -27,13 +27,13 @@ export const LoginForm = () => {
   return (
     <StyledContainer>
       <Paper>
-        <Title as="h2">Acessar</Title>
+        <Title as="h2">{t("heading.access")}</Title>
         <StyledLoginFields>
           <InputField
             {...register("username")}
             error={errors.username?.message}
             label={t("input.username")}
-            placeholder="usuario@mail.com"
+            placeholder={t("input.username_placeholder")}
           />
           <InputField
             {...register("password")}
