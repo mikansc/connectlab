@@ -26,12 +26,14 @@
   },
   "heading": {
     "my_devices": "Meus Dispositivos",
-    "add_device": "Adicionar Dispositivo"
+    "add_device": "Adicionar Dispositivo",
+    "access": "Acessar"
   },
   "input": {
     "default_select": "Selecione...",
 
     "username": "Usuário",
+    "username_placeholder": "usuario@email.com.br",
     "password": "Senha",
     "password_placeholder": "digite sua senha...",
     "submit": "Entrar",
