@@ -1,0 +1,47 @@
+version: "3.8"
+services:
+  mongo_db:
+    container_name: db_connectlab
+    restart: always
+    image: michaelnsc/mongo-connectlab:1.0.0
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=connectlab
+    networks:
+      - network_connectlab
+
+  backend:
+    container_name: service_connectlab
+    image: "michaelnsc/connectlab-service:1.2"
+    ports:
+      - "3030:3030"
+    environment:
+      DB_URI_CONNECTION: mongodb://db_connectlab:27017/connectlab
+      PORT: 3030
+      SECRET: thesecret
+    depends_on:
+      - mongo_db
+    networks:
+      - network_connectlab
+
+  frontend:
+    container_name: front_connectlab
+    env_file: .env
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        API_URL: ${API_URL}
+        WEATHER_API_KEY: ${WEATHER_API_KEY}
+    environment:
+      PORT: ${PORT}
+    ports:
+      - "3000:${PORT}"
+    depends_on:
+      - backend
+    networks:
+      - network_connectlab
+
+networks:
+  network_connectlab:

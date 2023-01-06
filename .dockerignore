@@ -1,0 +1,9 @@
+Dockerfile
+node_modules
+coverage
+dist
+environment
+.github
+.git
+.vscode
+.idea
