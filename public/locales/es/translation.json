@@ -1,57 +1,57 @@
 {
   "button": {
-    "add": "Adicionar",
-    "close": "Fechar",
+    "add": "Añadir",
+    "close": "Cerrar",
     "cancel": "Cancelar",
-    "enter": "Entrar",
-    "save": "Salvar",
-    "sign_out": "Sair",
-    "sign_up": "Cadastrar"
+    "enter": "Iniciar sesión",
+    "save": "Guardar",
+    "sign_out": "Salir",
+    "sign_up": "Registrar"
   },
   "device": {
     "property": {
-      "virtual_id": "ID Virtual",
-      "ip_address": "Endereço IP",
-      "mac_address": "Endereço MAC",
-      "signal": "Sinal",
+      "virtual_id": "ID virtual",
+      "ip_address": "Dirección IP",
+      "mac_address": "Dirección MAC",
+      "signal": "Señal",
       "toggle": {
-        "label": "Ligado"
+        "label": "Conectado"
       }
     }
   },
   "filter": {
     "label": "Buscar dispositivo",
-    "placeholder": "digite o nome de um dispositivo...",
-    "clear": "Limpar"
+    "placeholder": "escriba el nombre del dispositivo...",
+    "clear": "Limpio"
   },
   "heading": {
-    "my_devices": "Meus Dispositivos",
-    "add_device": "Adicionar Dispositivo",
-    "access": "Acessar"
+    "my_devices": "Mis dispositivos",
+    "add_device": "Agregar dispositivo",
+    "access": "Acceso"
   },
   "input": {
-    "default_select": "Selecione...",
-    "username": "Usuário",
-    "username_placeholder": "digite o seu email...",
-    "password": "Senha",
-    "password_placeholder": "digite sua senha...",
-    "submit": "Entrar",
-    "error": "Usuário ou senha inválidos",
+    "default_select": "Selecciona...",
+    "username": "Usuario",
+    "username_placeholder": "introduce tu correo electrónico...",
+    "password": "Contraseña",
+    "password_placeholder": "introduce tu contraseña...",
+    "submit": "Iniciar sesión",
+    "error": "Nombre de usuario o contraseña inválidos",
     "local": "Local",
-    "local_placeholder": "selecione o local...",
-    "room": "Cômodo",
-    "room_placeholder": "Quarto, sala, cozinha, etc..."
+    "local_placeholder": "seleccionar local...",
+    "room": "Ambiente",
+    "room_placeholder": "Dormitorio, sala de estar, cocina, etc..."
   },
   "misc": {
-    "wait": "Aguarde...",
-    "loading": "Carregando...",
-    "no_devices": "Não há dispositivos para serem exibidos.",
+    "wait": "Espera...",
+    "loading": "Cargando...",
+    "no_devices": "No hay ningún dispositivo para mostrar.",
     "full_date": "{{date, FULL_DATE}}"
   },
   "question": {
-    "is_on": "Ligado?"
+    "is_on": "¿Conectado?"
   },
   "user": {
-    "greeting": "Olá, {{name}}!"
+    "greeting": "¡Hola, {{name}}!"
   }
 }
