@@ -29,10 +29,8 @@
   "heading": {
     "my_devices": "Meus Dispositivos",
     "add_device": "Adicionar Dispositivo",
-    "add_user": "Cadastrar Usuário",
     "access": "Acessar",
     "user_profile": "Perfil do Usuário",
-    "user_data": "Dados Pessoais",
     "user_address": "Endereço"
   },
   "input": {
@@ -42,8 +40,6 @@
     "username_placeholder": "digite o seu email...",
     "password": "Senha",
     "password_placeholder": "digite sua senha...",
-    "passwordConfirm": "Confirme a senha",
-    "passwordConfirm_placeholder": "digite sua senha novamente...",
     "submit": "Entrar",
     "error": "Usuário ou senha inválidos",
 
@@ -62,30 +58,6 @@
     "is_on": "Ligado?"
   },
   "user": {
-    "greeting": "Olá, {{name}}!",
-    "fullName": "Nome completo",
-    "fullName_placeholder": "digite seu nome completo...",
-    "phone": "Telefone",
-    "phone_placeholder": "digite seu telefone...",
-    "email": "Email",
-    "email_placeholder": "digite seu email...",
-    "photoUrl": "URL da Foto",
-    "photoUrl_placeholder": "insira a url da foto...",
-    "address": {
-      "street": "Endereço",
-      "street_placeholder": "digite o endereço...",
-      "number": "Número",
-      "number_placeholder": "digite o número...",
-      "neighborhood": "Bairro",
-      "neighborhood_placeholder": "digite o bairro...",
-      "compliment": "Complemento",
-      "compliment_placeholder": "digite o complemento...",
-      "city": "Cidade",
-      "city_placeholder": "digite a cidade...",
-      "state": "Estado",
-      "state_placeholder": "digite o estado...",
-      "zip_code": "CEP",
-      "zip_code_placeholder": "digite o CEP..."
-    }
+    "greeting": "Olá, {{name}}!"
   }
 }
