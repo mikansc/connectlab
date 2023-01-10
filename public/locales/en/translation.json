@@ -39,6 +39,8 @@
     "username_placeholder": "enter your email...",
     "password": "Password",
     "password_placeholder": "enter your password...",
+    "passwordConfirm": "Confirme a senha",
+    "passwordConfirm_placeholder": "digite sua senha novamente...",
     "submit": "Sign in",
     "error": "Invalid username or password",
     "local": "Local",
@@ -56,6 +58,30 @@
     "is_on": "Is on?"
   },
   "user": {
-    "greeting": "Hi, {{name}}!"
+    "greeting": "Hi, {{name}}!",
+    "fullName": "Nome completo",
+    "fullName_placeholder": "digite seu nome completo...",
+    "phone": "Telefone",
+    "phone_placeholder": "digite seu telefone...",
+    "email": "Email",
+    "email_placeholder": "digite seu email...",
+    "photoUrl": "URL da Foto",
+    "photoUrl_placeholder": "insira a url da foto...",
+    "address": {
+      "street": "Endereço",
+      "street_placeholder": "digite o endereço...",
+      "number": "Número",
+      "number_placeholder": "digite o número...",
+      "neighborhood": "Bairro",
+      "neighborhood_placeholder": "digite o bairro...",
+      "compliment": "Complemento",
+      "compliment_placeholder": "digite o complemento...",
+      "city": "Cidade",
+      "city_placeholder": "digite a cidade...",
+      "state": "Estado",
+      "state_placeholder": "digite o estado...",
+      "zip_code": "CEP",
+      "zip_code_placeholder": "digite o CEP..."
+    }
   }
 }
