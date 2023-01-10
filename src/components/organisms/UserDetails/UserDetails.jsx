@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { useAuthContext } from "@contexts";
 import { Button, ButtonGroup, Paper, Separator, Text, Title } from "@atoms";
@@ -7,6 +8,7 @@ import { Avatar, Property } from "@molecules";
 import { StyledContainer, StyledUserDataContainer } from "./UserDetails.styles";
 
 export const UserDetails = () => {
+  const t = useTranslation();
   const { user } = useAuthContext();
 
   const { fullName, email, photoUrl, userAddress, phone } = user;
@@ -14,7 +16,7 @@ export const UserDetails = () => {
 
   return (
     <Paper>
-      <Title as="h2">Perfil do usuário</Title>
+      <Title as="h2">{t("heading.user_profile")}</Title>
       <StyledContainer>
         <Avatar size="large" imageUrl={photoUrl} name={fullName} />
         <StyledUserDataContainer>
@@ -28,22 +30,22 @@ export const UserDetails = () => {
       </StyledContainer>
 
       <Separator />
-      <Title as="h3">Endereço</Title>
-      <Property title="Endereço" value={street} />
-      <Property title="Número" value={number} />
-      <Property title="Bairro" value={neighborhood} />
-      <Property title="Cidade" value={city} />
-      <Property title="Estado" value={state} />
-      <Property title="CEP" value={zipCode} />
+      <Title as="h3">{t("heading.user_address")}</Title>
+      <Property title={t("user.address.street")} value={street} />
+      <Property title={t("user.address.number")} value={number} />
+      <Property title={t("user.address.neighborhood")} value={neighborhood} />
+      <Property title={t("user.address.city")} value={city} />
+      <Property title={t("user.address.state")} value={state} />
+      <Property title={t("user.address.zip_code")} value={zipCode} />
 
       <Separator />
 
       <ButtonGroup>
         <Button as={Link} to="/dashboard">
-          Voltar
+          {t("button.go_back")}
         </Button>
         <Button as={Link} to="/dashboard/profile/edit">
-          Editar
+          {t("heading.edit")}
         </Button>
       </ButtonGroup>
     </Paper>
