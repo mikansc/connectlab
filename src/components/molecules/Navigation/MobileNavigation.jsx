@@ -13,15 +13,15 @@ import {
   StyledNavContainer,
 } from "./MobileNavigation.styles";
 
-const routeLinks = [
-  { path: "/dashboard", name: "Home" },
-  { path: "/dashboard/devices", name: "Dispositivos" },
-];
-
 export const MobileNavigation = ({ activePath, onSignOut, loggedUserComponent }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+
+  const routeLinks = [
+    { path: "/dashboard", name: t("button.home") },
+    { path: "/dashboard/devices", name: t("button.devices") },
+  ];
 
   const toggleMenu = () => {
     setOpen((o) => !o);

@@ -3,13 +3,14 @@ import { useTranslation } from "react-i18next";
 
 import { StyledLink, StyledNav } from "./Navigation.styles";
 
-const routeLinks = [
-  { path: "/dashboard", name: "Home" },
-  { path: "/dashboard/devices", name: "Dispositivos" },
-];
-
 export const Navigation = ({ activePath, onSignOut, loggedUserComponent }) => {
   const { t } = useTranslation();
+
+  const routeLinks = [
+    { path: "/dashboard", name: t("button.home") },
+    { path: "/dashboard/devices", name: t("button.devices") },
+  ];
+
   return (
     <>
       <StyledNav>

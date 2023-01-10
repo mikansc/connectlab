@@ -1,5 +1,7 @@
 {
   "button": {
+    "home": "Início",
+    "devices": "Dispositivos",
     "add": "Adicionar",
     "close": "Fechar",
     "cancel": "Cancelar",
