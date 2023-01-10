@@ -44,7 +44,7 @@ export const MobileNavigation = ({ activePath, onSignOut, loggedUserComponent })
           </StyledButton>
         ))}
         <StyledButton as="button" onClick={onSignOut}>
-          {t("button.signout")}
+          {t("button.sign_out")}
         </StyledButton>
       </StyledNavContainer>
     </>
