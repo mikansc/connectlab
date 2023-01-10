@@ -6,8 +6,8 @@
     "enter": "Sign in",
     "save": "Save",
     "sign_out": "Sign out",
-    "go_back": "Voltar",
-    "edit": "Editar",
+    "go_back": "Go back",
+    "edit": "Edit",
     "sign_up": "Register"
   },
   "device": {
@@ -29,11 +29,9 @@
   "heading": {
     "my_devices": "My Devices",
     "add_device": "Add Device",
-    "add_user": "Cadastrar Usuário",
     "access": "Access",
-    "user_profile": "Perfil do Usuário",
-    "user_data": "Dados Pessoais",
-    "user_address": "Endereço"
+    "user_profile": "User Profile",
+    "user_address": "Address"
   },
   "input": {
     "default_select": "Select...",
