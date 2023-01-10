@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useTranslation } from "react-i18next";
 
 import { useFetchAddress, useUserService } from "@hooks";
 import { Button, Paper, Separator, Title, ButtonGroup } from "@atoms";
@@ -9,6 +8,7 @@ import { InputField } from "@molecules";
 import { newUserSchema } from "@validations";
 
 import { StyledFields, StyledContainer, StyledRow, StyledButtonContainer } from "./UserForm.styles";
+import { useTranslation } from "react-i18next";
 
 const initial_data = {
   email: "",
@@ -34,7 +34,7 @@ const formConfig = {
 };
 
 export const UserCreateForm = () => {
-  const t = useTranslation();
+  const { t } = useTranslation();
   const { registerUser } = useUserService();
   const { register, handleSubmit, setValue, getValues, formState } = useForm(formConfig);
   const { errors } = formState;

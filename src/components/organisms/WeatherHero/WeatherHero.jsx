@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { useWeather } from "@hooks";
 import { useAuthContext } from "@contexts";
 import { Icon } from "@atoms";
@@ -20,19 +22,30 @@ import mistImg from "./assets/img/mist.png";
 import rainImg from "./assets/img/rain.png";
 
 export const WeatherHero = () => {
+  const { t, i18n } = useTranslation();
   const { user } = useAuthContext();
-  const { weather, status } = useWeather(user.userAddress.city);
+  const { weather, status, unit } = useWeather(user.userAddress.city);
 
   if (!weather || status.isLoading) return <StyledContainer>Carregando...</StyledContainer>;
+
+  const tempValue = t("weather.temperature_value", { value: weather.temp, unit });
+  const minTempValue = t("weather.minTemperature_value", { value: weather.tempMin, unit });
+  const maxTempValue = t("weather.maxTemperature_value", { value: weather.tempMax, unit });
+  const thermSensValue = t("weather.thermalSensation_value", { value: weather.feelsLike, unit });
+  const humidityValue = t("weather.humidity_value", { value: weather.humidity });
+  const updatedDateValue = Intl.DateTimeFormat(i18n.language, {
+    dateStyle: "short",
+    timeStyle: "short",
+  }).format(weather.date * 1000);
 
   return (
     <StyledContainer>
       <StyledBackground bgImg={getWeatherImg(weather.weatherId)}>
         <StyledTemperatureContainer>
-          <StyledTemperature>{weather.temp} °C</StyledTemperature>
+          <StyledTemperature>{tempValue}</StyledTemperature>
           <StyledSubContainer>
-            <Property title="min">{weather.tempMin} °C</Property>
-            <Property title="max">{weather.tempMax} °C</Property>
+            <Property title="min">{minTempValue}</Property>
+            <Property title="max">{maxTempValue}</Property>
           </StyledSubContainer>
         </StyledTemperatureContainer>
         <StyledCityContainer>
@@ -40,20 +53,20 @@ export const WeatherHero = () => {
           <Icon size="3rem" name={getWeatherIcon(weather.weatherId)} />
         </StyledCityContainer>
         <StyledWeatherDataContainer>
-          <Property title="Sensação térmica">{weather.feelsLike} °C</Property>
+          <Property title={t("weather.thermal_sensation")}>{thermSensValue}</Property>
           <span> | </span>
-          <Property title="Umidade do ar">{weather.humidity} %</Property>
+          <Property title={t("weather.humidity")}>{humidityValue}</Property>
           <span> | </span>
-          <Property title="Atualizado em">
-            {Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short" }).format(
-              weather.date * 1000,
-            )}
-          </Property>
+          <Property title={t("weather.updated_at")}>{updatedDateValue}</Property>
         </StyledWeatherDataContainer>
       </StyledBackground>
     </StyledContainer>
   );
 };
+
+// function toCelsius(temperature) {
+//   return new Intl.NumberFormat("pt-BR", { unit: "celsius", style: "unit" }).format(temperature);
+// }
 
 function getWeatherImg(weatherId) {
   // Mapeando imagens do weatherAPI

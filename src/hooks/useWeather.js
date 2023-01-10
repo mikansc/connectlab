@@ -5,9 +5,10 @@ import { getWeatherByCityName, storageService } from "@services";
 
 const query = "weather";
 
-export const useWeather = (cityName) => {
-  const { setStatus, status } = useAppContext();
+export const useWeather = (cityName, options) => {
+  const [unit, setUnit] = useState("celsius");
   const [weather, setWeather] = useState();
+  const { setStatus, status } = useAppContext();
 
   if (!cityName) throw new Error("You need to pass cityName to useWeather");
 
@@ -17,7 +18,7 @@ export const useWeather = (cityName) => {
 
   const getWeather = useCallback(() => {
     setStatus.loading();
-    getWeatherByCityName(cityName)
+    getWeatherByCityName(cityName, unit)
       .then((data) => {
         storageService.save(query, data);
         setWeather(data);
@@ -27,7 +28,7 @@ export const useWeather = (cityName) => {
         console.error(err);
         setStatus.error();
       });
-  }, [cityName, setStatus]);
+  }, [cityName, setStatus, unit]);
 
   useEffect(() => {
     const weather = retrieveWeather();
@@ -41,6 +42,8 @@ export const useWeather = (cityName) => {
   return {
     status,
     weather,
+    unit,
+    setUnit,
   };
 };
 

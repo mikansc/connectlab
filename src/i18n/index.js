@@ -4,9 +4,11 @@ import Backend from "i18next-http-backend";
 import { formatDate } from "./formatters/full_date";
 import { formatTemperature } from "./formatters/temperature";
 
+const debugMode = process.env.NODE_ENV === "development";
+
 i18n.use(Backend).use(initReactI18next).init({
-  debug: true,
-  fallbackLng: "pt-BR",
+  debug: debugMode,
+  fallbackLng: "pt",
   loadPath: "/locales/{{lng}}/{{ns}}.json",
 });
 

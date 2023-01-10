@@ -8,7 +8,7 @@ import { Avatar, Property } from "@molecules";
 import { StyledContainer, StyledUserDataContainer } from "./UserDetails.styles";
 
 export const UserDetails = () => {
-  const t = useTranslation();
+  const { t } = useTranslation();
   const { user } = useAuthContext();
 
   const { fullName, email, photoUrl, userAddress, phone } = user;
