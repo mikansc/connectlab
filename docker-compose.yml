@@ -27,7 +27,6 @@ services:
 
   frontend:
     container_name: front_connectlab
-    env_file: .env
     build:
       context: ./
       dockerfile: Dockerfile
