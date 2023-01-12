@@ -12,7 +12,7 @@ COPY . /app
 
 RUN yarn build
 
-EXPOSE 3000
+EXPOSE 8080
 
 ARG API_URL
 ARG WEATHER_API_KEY
@@ -23,4 +23,4 @@ ENV VITE_PORT=3000
 ENV VITE_VIACEP_URL=https://viacep.com.br/
 ENV VITE_OW_URL=https://api.openweathermap.org/
 
-CMD ["yarn", "dev"]
+CMD ["yarn", "preview"]
