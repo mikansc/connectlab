@@ -9,7 +9,7 @@ import { formatTemperature } from "./formatters/temperature";
 const development_mode = process.env.NODE_ENV === "development";
 
 const languageDetectorOptions = {
-  order: ["cookie", "htmlTag", "navigator"],
+  order: ["cookie", "navigator", "htmlTag"],
   lookupCookie: "i18n",
   caches: ["cookie"],
 };
