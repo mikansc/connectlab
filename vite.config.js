@@ -26,7 +26,12 @@ export default defineConfig({
       functions: 95,
       statements: 95,
       logHeapUsage: true,
-      exclude: ["**/*.styles.js", "src/test-utils/*.{js,jsx}"],
+      exclude: [
+        "**/*.styles.js",
+        "src/test-utils/*.{js,jsx}",
+        "src/setup-test.js",
+        "**/__tests__/*",
+      ],
     },
   },
   resolve: {
