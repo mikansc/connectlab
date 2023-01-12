@@ -1,10 +1,14 @@
 {
+  "a_test": "Cadena de prueba",
   "button": {
+    "home": "Casa",
+    "devices": "Dispositivos",
     "add": "Añadir",
     "close": "Cerrar",
     "cancel": "Cancelar",
     "enter": "Iniciar sesión",
     "save": "Guardar",
+    "search": "Buscar",
     "sign_out": "Salir",
     "go_back": "Voltar",
     "edit": "Editar",
@@ -29,6 +33,7 @@
   "heading": {
     "my_devices": "Mis dispositivos",
     "add_device": "Agregar dispositivo",
+    "all_devices": "Todos los dispositivos",
     "add_user": "Registrar usuario",
     "access": "Acceso",
     "user_profile": "Perfil de usuario",
@@ -39,10 +44,6 @@
     "default_select": "Selecciona...",
     "username": "Usuario",
     "username_placeholder": "introduce tu correo electrónico...",
-    "password": "Contraseña",
-    "password_placeholder": "introduce tu contraseña...",
-    "passwordConfirm": "Confirme la contraseña",
-    "passwordConfirm_placeholder": "vuelve a escribir tu contraseña...",
     "submit": "Iniciar sesión",
     "error": "Nombre de usuario o contraseña inválidos",
     "local": "Local",
@@ -54,7 +55,8 @@
     "wait": "Espera...",
     "loading": "Cargando...",
     "no_devices": "No hay ningún dispositivo para mostrar.",
-    "full_date": "{{date, FULL_DATE}}"
+    "full_date": "{{date, FULL_DATE}}",
+    "temperature": "{{value, TEMPERATURE(unit: unit)}}"
   },
   "question": {
     "is_on": "¿Conectado?"
@@ -62,28 +64,43 @@
   "user": {
     "greeting": "¡Hola, {{name}}!",
     "fullName": "Nombre completo",
-    "fullName_placeholder": "digite seu nome completo...",
-    "phone": "Telefone",
-    "phone_placeholder": "digite seu telefone...",
-    "email": "Email",
-    "email_placeholder": "digite seu email...",
-    "photoUrl": "URL da Foto",
-    "photoUrl_placeholder": "insira a url da foto...",
+    "fullName_placeholder": "introduce tu nombre completo...",
+    "phone": "teléfono",
+    "phone_placeholder": "introduce tu número de teléfono...",
+    "email": "Correo",
+    "email_placeholder": "escribe tu correo electrónico...",
+    "password": "Contraseña",
+    "password_placeholder": "introduce tu contraseña...",
+    "passwordConfirm": "Confirme la contraseña",
+    "passwordConfirm_placeholder": "vuelve a escribir tu contraseña...",
+    "photoUrl": "URL de la foto",
+    "photoUrl_placeholder": "introduce la URL de la foto...",
     "address": {
-      "street": "Endereço",
-      "street_placeholder": "digite o endereço...",
+      "street": "Dirección",
+      "street_placeholder": "introduce la dirección...",
       "number": "Número",
-      "number_placeholder": "digite o número...",
-      "neighborhood": "Bairro",
-      "neighborhood_placeholder": "digite o bairro...",
-      "compliment": "Complemento",
-      "compliment_placeholder": "digite o complemento...",
-      "city": "Cidade",
-      "city_placeholder": "digite a cidade...",
-      "state": "Estado",
-      "state_placeholder": "digite o estado...",
-      "zip_code": "CEP",
-      "zip_code_placeholder": "digite o CEP..."
+      "number_placeholder": "introduce el número...",
+      "neighborhood": "Barrio",
+      "neighborhood_placeholder": "escriba el barrio...",
+      "compliment": "Complementar",
+      "compliment_placeholder": "escriba el complemento...",
+      "city": "pueblo",
+      "city_placeholder": "entra en la ciudad...",
+      "state": "condición de estado",
+      "state_placeholder": "introduce el estado...",
+      "zip_code": "CÓDIGO POSTAL",
+      "zip_code_placeholder": "introduce el código postal..."
     }
+  },
+  "weather": {
+    "temperature_value": "{{value, TEMPERATURE(unit: unit)}}",
+    "minTemperature_value": "{{value, TEMPERATURE(unit: unit)}}",
+    "maxTemperature_value": "{{value, TEMPERATURE(unit: unit)}}",
+    "thermalSensation_value": "{{value, TEMPERATURE(unit: unit)}}",
+    "humidity_value": "{{value}}%",
+    "updatedAt_value": "{!{date, datetime}}",
+    "thermal_sensation": "Sensación térmica",
+    "humidity": "Humedad",
+    "updated_at": "Actualizado el"
   }
 }
