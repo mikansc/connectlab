@@ -8,6 +8,7 @@
     "cancel": "Cancelar",
     "enter": "Entrar",
     "save": "Salvar",
+    "search": "Buscar",
     "sign_out": "Sair",
     "go_back": "Voltar",
     "edit": "Editar",
@@ -44,10 +45,6 @@
 
     "username": "Usuário",
     "username_placeholder": "digite o seu email...",
-    "password": "Senha",
-    "password_placeholder": "digite sua senha...",
-    "passwordConfirm": "Confirme a senha",
-    "passwordConfirm_placeholder": "digite sua senha novamente...",
     "submit": "Entrar",
     "error": "Usuário ou senha inválidos",
 
@@ -74,6 +71,10 @@
     "phone_placeholder": "digite seu telefone...",
     "email": "Email",
     "email_placeholder": "digite seu email...",
+    "password": "Senha",
+    "password_placeholder": "digite sua senha...",
+    "passwordConfirm": "Confirme a senha",
+    "passwordConfirm_placeholder": "digite sua senha novamente...",
     "photoUrl": "URL da Foto",
     "photoUrl_placeholder": "insira a url da foto...",
     "address": {
