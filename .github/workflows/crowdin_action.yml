@@ -14,9 +14,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: crowdin action
+      - name: crowdin auto translate
         uses: crowdin/github-action@1.5.2
         with:
+          config: crowdin.yml
           upload_translations: true
 
           download_translations: true
@@ -28,8 +29,6 @@ jobs:
 
           pull_request_title: "New Crowdin translations for ${{github.ref_name}}"
 
-          project_id: $CROWDIN_PROJECT_ID
-          token: $CROWDIN_PERSONAL_TOKEN
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
