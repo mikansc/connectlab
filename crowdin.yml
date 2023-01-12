@@ -1,5 +1,5 @@
-project_id: 559461
-api_token: $CROWDIN_PERSONAL_TOKEN
+project_id:
+api_token:
 files:
   - source: /public/locales/pt/translation.json
     translation: /public/locales/%two_letters_code%/translation.json
