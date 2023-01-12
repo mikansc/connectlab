@@ -1,4 +1,5 @@
 {
+  "a_test": "String de teste",
   "button": {
     "home": "Início",
     "devices": "Dispositivos",
