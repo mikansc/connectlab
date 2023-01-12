@@ -5,6 +5,10 @@ on:
   push:
     paths:
       - "public/locales/pt-BR/translation.json"
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -21,6 +25,7 @@ jobs:
         with:
           config: crowdin.yml
           upload_translations: true
+          auto_approve_imported: true
 
           download_translations: true
           push_translations: true
