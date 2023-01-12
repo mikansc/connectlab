@@ -1,5 +1,8 @@
 {
+  "a_test": "Test String12",
   "button": {
+    "home": "Home",
+    "devices": "Devices",
     "add": "Add",
     "close": "Close",
     "cancel": "Cancel",
@@ -29,8 +32,11 @@
   "heading": {
     "my_devices": "My Devices",
     "add_device": "Add Device",
+    "all_devices": "All Devices",
+    "add_user": "Register User",
     "access": "Access",
     "user_profile": "User Profile",
+    "user_data": "Personal Data",
     "user_address": "Address"
   },
   "input": {
@@ -39,8 +45,8 @@
     "username_placeholder": "enter your email...",
     "password": "Password",
     "password_placeholder": "enter your password...",
-    "passwordConfirm": "Confirme a senha",
-    "passwordConfirm_placeholder": "digite sua senha novamente...",
+    "passwordConfirm": "Confirm the password",
+    "passwordConfirm_placeholder": "type your password again...",
     "submit": "Sign in",
     "error": "Invalid username or password",
     "local": "Local",
@@ -52,36 +58,48 @@
     "wait": "Wait...",
     "loading": "Loading...",
     "no_devices": "There are no devices to display.",
-    "full_date": "{{date, FULL_DATE}}"
+    "full_date": "{{date, FULL_DATE}}",
+    "temperature": "{{value, TEMPERATURE(unit: unit)}}"
   },
   "question": {
     "is_on": "Is on?"
   },
   "user": {
     "greeting": "Hi, {{name}}!",
-    "fullName": "Nome completo",
-    "fullName_placeholder": "digite seu nome completo...",
-    "phone": "Telefone",
-    "phone_placeholder": "digite seu telefone...",
+    "fullName": "Full name",
+    "fullName_placeholder": "enter your full name...",
+    "phone": "telephone",
+    "phone_placeholder": "enter your phone number...",
     "email": "Email",
-    "email_placeholder": "digite seu email...",
-    "photoUrl": "URL da Foto",
-    "photoUrl_placeholder": "insira a url da foto...",
+    "email_placeholder": "type your email...",
+    "photoUrl": "Photo URL",
+    "photoUrl_placeholder": "enter the URL of the photo...",
     "address": {
-      "street": "Endereço",
-      "street_placeholder": "digite o endereço...",
-      "number": "Número",
-      "number_placeholder": "digite o número...",
+      "street": "Address",
+      "street_placeholder": "enter the address...",
+      "number": "Number",
+      "number_placeholder": "enter the number...",
       "neighborhood": "Bairro",
-      "neighborhood_placeholder": "digite o bairro...",
-      "compliment": "Complemento",
-      "compliment_placeholder": "digite o complemento...",
-      "city": "Cidade",
-      "city_placeholder": "digite a cidade...",
-      "state": "Estado",
-      "state_placeholder": "digite o estado...",
-      "zip_code": "CEP",
-      "zip_code_placeholder": "digite o CEP..."
+      "neighborhood_placeholder": "type the neighborhood...",
+      "compliment": "Complement",
+      "compliment_placeholder": "type the add-on...",
+      "city": "town",
+      "city_placeholder": "enter the city...",
+      "state": "statehood",
+      "state_placeholder": "enter the state...",
+      "zip_code": "ZIP CODE",
+      "zip_code_placeholder": "enter zip code..."
     }
+  },
+  "weather": {
+    "temperature_value": "{{value, TEMPERATURE(unit: unit)}}",
+    "minTemperature_value": "{{value, TEMPERATURE(unit: unit)}}",
+    "maxTemperature_value": "{{value, TEMPERATURE(unit: unit)}}",
+    "thermalSensation_value": "{{value, TEMPERATURE(unit: unit)}}",
+    "humidity_value": "{{value}}%",
+    "updatedAt_value": "{{date, datetime}}",
+    "thermal_sensation": "Thermal Sensation",
+    "humidity": "Humidity",
+    "updated_at": "Updated on"
   }
 }
