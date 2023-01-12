@@ -5,6 +5,10 @@ on:
   push:
     paths:
       - "public/locales/pt-BR/translation.json"
+env:
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+  CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
 jobs:
   synchronize-with-crowdin:
@@ -28,10 +32,5 @@ jobs:
 
           pull_request_title: "New Crowdin translations for ${{github.ref_name}}"
 
-          project_id: ${{ secrets.CROWDIN_PROJECT_ID }}
-          token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
-
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+          project_id: $CROWDIN_PROJECT_ID
+          token: $CROWDIN_PERSONAL_TOKEN
