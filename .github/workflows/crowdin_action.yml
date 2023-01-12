@@ -25,6 +25,11 @@ jobs:
           localization_branch_name: "i18n_${{github.ref_name}}"
           pull_request_base_branch_name: ${{ github.head_ref || github.ref_name }}
 
+          pull_request_title: "New Crowdin translations for ${{github.ref_name}}"
+
+          project_id: ${{ secrets.CROWDIN_PROJECT_ID }}
+          token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
