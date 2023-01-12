@@ -1,0 +1,37 @@
+name: Crowdin
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "public/locales/pt-BR/translation.json"
+
+jobs:
+  synchronize-with-crowdin:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: crowdin action
+        uses: crowdin/github-action@1.5.2
+        with:
+          upload_translations: true
+
+          download_translations: true
+          push_translations: true
+          commit_message: "New Crowdin translations"
+          export_only_approved: false
+          localization_branch_name: "i18n_${{github.ref_name}}"
+          pull_request_base_branch_name: ${{ github.head_ref || github.ref_name }}
+
+          pull_request_title: "New Crowdin translations for ${{github.ref_name}}"
+
+          project_id: ${{ secrets.CROWDIN_PROJECT_ID }}
+          token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
