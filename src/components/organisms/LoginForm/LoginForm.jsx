@@ -40,7 +40,7 @@ export const LoginForm = () => {
             error={errors.password?.message}
             type="password"
             label={t("input.password")}
-            placeholder={t("input.password_placeholder")}
+            placeholder={t("user.password_placeholder")}
           />
         </StyledLoginFields>
         <ButtonGroup>
