@@ -57,4 +57,4 @@ Configure as variáveis de ambiente de acordo com o arquivo [`.env.example`](.en
 docker compose up -d
 ```
 
-- Acesse `http://localhost:porta`
+- Acesse `http://localhost:3000`
