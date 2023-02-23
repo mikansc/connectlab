@@ -39,7 +39,7 @@ export const LoginForm = () => {
             {...register("password")}
             error={errors.password?.message}
             type="password"
-            label={t("input.password")}
+            label={t("user.password")}
             placeholder={t("user.password_placeholder")}
           />
         </StyledLoginFields>
