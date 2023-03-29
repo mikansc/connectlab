@@ -27,7 +27,7 @@ Configure as variáveis de ambiente de acordo com o arquivo [`.env.example`](.en
 yarn
 ```
 
-- Sem seguida, execute
+- Em seguida, execute
 
 ```bash
 yarn dev
