@@ -19,7 +19,7 @@ Configure as variáveis de ambiente de acordo com o arquivo [`.env.example`](.en
 | `VITE_OW_URL`     | API do Weather API para consulta de previsão do tempo **(não alterar)**                                                           |
 | `VITE_WAPI`       | Chave API do Weather API (você precisa se cadastrar e gerar a chave). [Ver o site Weather Api](https://openweathermap.org/api)    |
 
-- Verifique se o back end já está rodando corretamente. [Ver Backend Connectlab](https://github.com/DEVin-Intelbras/connect-lab-server-node)
+- Verifique se o back end já está rodando corretamente. [Ver Backend Connectlab](https://github.com/mikansc/connect-lab-server-node)
 
 - Abra o terminal na pasta raiz do projeto e execute o comando
 
